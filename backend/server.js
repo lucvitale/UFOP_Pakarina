@@ -1,0 +1,13 @@
+require("dotenv").config();
+const app = require("./app");
+const { logger } = require("./config/logger");
+
+const PORT = process.env.PORT || 3000;
+
+app.listen(PORT, () => {
+  logger.info(`Pakarina API started`, {
+    url: `http://localhost:${PORT}`,
+    environment: process.env.NODE_ENV || "development",
+  });
+  console.log(`🚀 Pakarina API running on http://localhost:${PORT}`);
+});
