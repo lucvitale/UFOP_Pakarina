@@ -54,11 +54,10 @@ Verify that the required tools are installed correctly:
 
 In a terminal, write these commands :
 
-"
-git --version
-node -v
-npm -v
-"
+- git --version
+- node -v
+- npm -v
+
 
 If these commands return versions, your environment is correctly configured.
 
