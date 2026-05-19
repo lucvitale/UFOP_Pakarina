@@ -85,10 +85,11 @@ git clone https://github.com/lucvitale/UFOP_Pakarina.git
 cd UFOP_Pakarina
 
 ### 5. Open the project in VS Code
+
 code .
 
 ---
-## Git Configuration
+## 6. Git Configuration
 
 If it is your first time using Git on your machine:
 
@@ -97,11 +98,17 @@ git config --global user.email "your_email@gmail.com"
 git config --global user.name "your_github_username"
 
 ---
-## Branches
+## 7. Development Workflow
 
+The project uses the following Git workflow:
 - `main` — stable version
 - `dev` — active development
 - `feature/*` — one branch per feature
+
+Rules :
+- No direct commits to main
+- All changes go through dev
+
 ---
 
 
