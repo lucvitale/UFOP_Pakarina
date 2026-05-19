@@ -15,6 +15,11 @@ The main objective of the project is to centralize fragmented data sources and p
 The project is designed to be scalable and modular in order to support future extensions such as advanced analytics and hardware integrations.
 
 ---
+## Tool Versions
+
+- **Visual Studio Code** : 1.120.0
+- **Git** : 2.54.0 (Windows)
+- **Node.js** : 22.22.1
 
 ## Technologies Used
 
@@ -40,8 +45,8 @@ The project is designed to be scalable and modular in order to support future ex
 
 Before starting, ensure the following tools are installed:
 
-- Git
-- VS Code
+- [Visual Studio Code](https://code.visualstudio.com/)
+- [Git](https://git-scm.com/)
 
 ---
 
@@ -82,3 +87,21 @@ cd UFOP_Pakarina
 ### 5. Open the project in VS Code
 
 code .
+
+## Git Configuration
+
+If it is your first time using Git on your machine:
+
+git config --global user.email "your_email@gmail.com"
+git config --global user.name "your_github_username"
+
+## Branches
+
+- `main` — stable version
+- `dev` — active development
+- `feature/*` — one branch per feature
+
+
+
+
+
