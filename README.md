@@ -73,7 +73,7 @@ Terminal → New Terminal
 
 ### 3. Clone the repository
 
-git clone [<repository-url>](https://github.com/lucvitale/UFOP_Pakarina.git)
+git clone https://github.com/lucvitale/UFOP_Pakarina.git
 
 ### 4. Navigate into the project folder
 
