@@ -109,6 +109,8 @@ git config --global user.name "your_github_username"
 
 ## 8. Running the projet 
 
+---
+
 ## Environment Variables
 
 The backend will use a `.env` file for configuration such as:
@@ -116,6 +118,8 @@ The backend will use a `.env` file for configuration such as:
 - Database credentials
 - API keys
 -  Server configuration
+
+---
   
 ## Development Workflow
 
