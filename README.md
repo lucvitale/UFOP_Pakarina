@@ -135,6 +135,7 @@ The project uses the following Git workflow:
 Rules :
 - No direct commits to `main`
 - All changes go through `dev`
+- Feature branches are merged via pull request
 
 ---
 
