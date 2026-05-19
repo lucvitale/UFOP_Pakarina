@@ -1,0 +1,1 @@
+console.log("Pesquiza UFOP — Frontend initialized.");
