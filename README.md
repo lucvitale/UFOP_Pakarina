@@ -92,8 +92,8 @@ code .
 
 If it is your first time using Git on your machine:
 
-git config --global user.email "your_email@gmail.com"
-git config --global user.name "your_github_username"
+-git config --global user.email "your_email@gmail.com"
+-git config --global user.name "your_github_username"
 
 ## Branches
 
