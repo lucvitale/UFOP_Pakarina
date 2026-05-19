@@ -41,10 +41,7 @@ The project is designed to be scalable and modular in order to support future ex
 Before starting, ensure the following tools are installed:
 
 - Git
-- Node.js 
-- npm (comes with Node.js)
 - VS Code
-- MySQL (local or server instance)
 
 ---
 
@@ -76,7 +73,7 @@ Terminal → New Terminal
 
 ### 3. Clone the repository
 
-git clone <repository-url>
+git clone [<repository-url>](https://github.com/lucvitale/UFOP_Pakarina.git)
 
 ### 4. Navigate into the project folder
 
