@@ -150,4 +150,3 @@ All technical documentation will be progressively stored in the `docs/` folder:
 ---
 
 
-
