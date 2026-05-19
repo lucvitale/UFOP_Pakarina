@@ -109,6 +109,10 @@ git config --global user.name "your_github_username"
 
 ## 8. Running the projet 
 
+### Backend
+
+### Frontend
+
 ---
 
 ## Environment Variables
