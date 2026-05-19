@@ -91,14 +91,33 @@ code .
 ---
 ## 6. Git Configuration
 
-If it is your first time using Git on your machine:
+If it is your first time using Git on your machine, write in your terminal :
 
 git config --global user.email "your_email@gmail.com"
 
 git config --global user.name "your_github_username"
 
 ---
-## 7. Development Workflow
+
+## 7. Installation
+
+### Backend
+
+### Frontend
+
+---
+
+## 8. Running the projet 
+
+## Environment Variables
+
+The backend will use a `.env` file for configuration such as:
+
+- Database credentials
+- API keys
+-  Server configuration
+  
+## Development Workflow
 
 The project uses the following Git workflow:
 - `main` — stable version
@@ -106,12 +125,20 @@ The project uses the following Git workflow:
 - `feature/*` — one branch per feature
 
 Rules :
-- No direct commits to main
-- All changes go through dev
+- No direct commits to `main`
+- All changes go through `dev`
 
 ---
 
+## Documentation
 
+All technical documentation will be progressively stored in the `docs/` folder:
+- Architecture decisions
+- API documentation
+- Setup guides
+- Development standards
+
+---
 
 
 
