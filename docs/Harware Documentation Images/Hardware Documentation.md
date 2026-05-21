@@ -30,8 +30,9 @@ holding SD cards for reading and writing.
 
 **Materials:**
 
-12V Symmetric Power Supply 2x IC LM311 (Schmitt Trigger) 2x IC OP07
-(OpAmp)
+12V Symmetric Power Supply 
+2x IC LM311 (Schmitt Trigger) 
+2x IC OP07 (OpAmp)
 
 40x BPW34 (Photodiodes)
 
