@@ -52,9 +52,9 @@ The circuit for detecting the entry and exit of insects consists of
 using photodiodes (BPW34) and Schmitt Trigger type circuits. Photodiodes
 are electronic components
 
-<img src="./bg5beh3j.png"
-style="width:2.09375in;height:2.09375in" /><img src="./1p203fsl.png"
-style="width:1.91667in;height:2.46875in" /><img src="./lrlqrcz0.png"
+<img src="./BPW34.png"
+style="width:2.09375in;height:2.09375in" /><img src="./Relative_spectral_sensivity.png"
+style="width:1.91667in;height:2.46875in" /><img src="./Photodiode\ Array.png"
 style="width:6.27083in;height:2.42708in" />
 
 that, when subjected to light excitation at a given wavelength, conduct
