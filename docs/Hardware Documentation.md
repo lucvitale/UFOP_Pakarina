@@ -1,4 +1,4 @@
-<img src="./UFOP LOGO.png"
+<img src="./UFOP_LOGO.png"
 style="width:1.61458in;height:3.39583in" />
 
 > **Digital** **Electronic** **Ovitrap:** Hardware and Construction
