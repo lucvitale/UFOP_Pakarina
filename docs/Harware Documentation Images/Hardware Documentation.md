@@ -1,12 +1,11 @@
 <img src="./UFOP_LOGO.png"
 style="width:1.61458in;height:3.39583in" />
 
-> **Digital** **Electronic** **Ovitrap:** Hardware and Construction
-> Characteristics
->
-> André Luís Araújo Cotta – 22.2.8990 Agustina Josefina Cruz - 26.1.0001
->
-> **May** **18,** **2026**
+ **Digital** **Electronic** **Ovitrap:** Hardware and Construction Characteristics
+
+André Luís Araújo Cotta – 22.2.8990 
+Agustina Josefina Cruz - 26.1.0001
+
 
 **1-** **General** **Description**
 
