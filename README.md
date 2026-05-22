@@ -99,20 +99,41 @@ git config --global user.name "your_github_username"
 
 ---
 
-## 7. Installation
-
+##  Installation
 ### Backend
 
-### Frontend
+In a terminal :
+cd backend
+npm install
+This installs all backend dependencies (Express, MySQL driver, dotenv, etc.).
 
----
+### 
+Frontend
+At this stage, the frontend is purely static:
 
-## 8. Running the projet 
+- HTML
+- CSS
+- JavaScript
 
+If future frameworks are added (React, Vite, etc.) :
+
+cd frontend
+npm install
+
+## Running the Project
 ### Backend
+In a terminal :
 
+cd backend
+node server.js
+
+Backend runs on: http://localhost:3000
 ### Frontend
 
+Open directly :
+frontend/index.html
+
+Or use the Live Server extension in VS Code for a better experience.
 ---
 
 ## Environment Variables
@@ -151,7 +172,7 @@ All technical documentation will be progressively stored in the `docs/` folder:
 
 
 
-## 🛡️ Error Logging and Handling
+## Error Logging and Handling
 
 ### Strategy
 
@@ -209,3 +230,5 @@ try {
 
 Stack traces are hidden from API responses — only logged server-side.
 Set `NODE_ENV=production` in your `.env` to enable this.
+
+---
