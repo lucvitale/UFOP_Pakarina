@@ -146,9 +146,9 @@ The backend will use a `.env` file for configuration such as:
 
 ---
 
-# University Server Environment
+## University Server Environment
 
-## Overview
+### Overview
 
 The Pakarina project uses a university Ubuntu server for:
 
@@ -161,7 +161,7 @@ The Pakarina project uses a university Ubuntu server for:
 
 ---
 
-## Server Information
+### Server Information
 
 | Information | Value |
 |---|---|
@@ -173,16 +173,16 @@ The Pakarina project uses a university Ubuntu server for:
 
 ---
 
-## Required Software
+### Required Software
 
 Before connecting to the university server, install:
 
-### Windows
+#### Windows
 
 - PuTTY and private key on : https://drive.google.com/drive/folders/17QFyrJu24gvlFaZ_sh5Gai6QpHB3KiEP
 - WinSCP on : https://winscp.net/eng/download.php
 
-### Optional Tools
+#### Optional Tools
 
 - VS Code
 - Git
@@ -190,15 +190,15 @@ Before connecting to the university server, install:
 
 ---
 
-## SSH Connection Setup (PuTTY)
+### SSH Connection Setup (PuTTY)
 
-## Step 1 — Open PuTTY
+#### Step 1 — Open PuTTY
 
 Launch the PuTTY application.
 
 ---
 
-## Step 2 — Configure Session
+#### Step 2 — Configure Session
 
 | Field | Value |
 |---|---|
@@ -208,7 +208,7 @@ Launch the PuTTY application.
 
 ---
 
-## Step 3 — Configure Authentication
+#### Step 3 — Configure Authentication
 
 Navigate to:
 
@@ -226,7 +226,7 @@ Select the provided `.ppk` private key.
 
 ---
 
-## Step 4 — Configure Username
+#### Step 4 — Configure Username
 
 Navigate to:
 
@@ -242,7 +242,7 @@ Auto-login username: ubuntu
 
 ---
 
-## Step 5 — Save Session
+#### Step 5 — Save Session
 
 Return to:
 
@@ -270,7 +270,7 @@ Save
 
 ---
 
-## Step 6 — Connect
+#### Step 6 — Connect
 
 Click:
 
@@ -282,7 +282,7 @@ At first connection, accept the SSH security alert.
 
 ---
 
-# Successful SSH Connection Example
+### Successful SSH Connection Example
 
 ```txt
 Using username "ubuntu".
@@ -294,15 +294,15 @@ ubuntu@VM-EstacaoMeteorologica:~$
 
 ---
 
-# WinSCP Configuration
+### WinSCP Configuration
 
-## Step 1 — Open WinSCP
+#### Step 1 — Open WinSCP
 
 Launch WinSCP.
 
 ---
 
-## Step 2 — Configure Connection
+#### Step 2 — Configure Connection
 
 | Field | Value |
 |---|---|
@@ -312,7 +312,7 @@ Launch WinSCP.
 
 ---
 
-## Step 3 — Configure SSH Key
+#### Step 3 — Configure SSH Key
 
 Go to:
 
@@ -324,13 +324,13 @@ Select the `.ppk` private key.
 
 ---
 
-## Step 4 — Save Session
+#### Step 4 — Save Session
 
 Save the configuration for future use.
 
 ---
 
-## Step 5 — Login
+#### Step 5 — Login
 
 Click:
 
@@ -342,7 +342,7 @@ You should now have access to the remote server files.
 
 ---
 
-# File Transfer Validation
+### File Transfer Validation
 
 The following operations were successfully validated:
 
@@ -354,9 +354,9 @@ The following operations were successfully validated:
 Collaborative deployment through WinSCP is operational.
 
 ---
-# WinSCP File Transfer Test
+### WinSCP File Transfer Test
 
-## Create a Local Test File
+#### Create a Local Test File
 
 Create a simple test file on your computer.
 
@@ -374,7 +374,7 @@ test.py
 
 ---
 
-## Upload the File with WinSCP
+#### Upload the File with WinSCP
 
 1. Open WinSCP
 2. Connect to the university server
@@ -388,7 +388,7 @@ test.py
 
 ---
 
-## Verify File Transfer
+#### Verify File Transfer
 
 After upload, open the SSH terminal with PuTTY and run:
 
@@ -406,7 +406,7 @@ test.py
 
 ---
 
-## Execute the Uploaded File
+#### Execute the Uploaded File
 
 Run:
 
@@ -422,7 +422,7 @@ WinSCP transfer successful
 
 ---
 
-## Validation Result
+#### Validation Result
 
 If the script executes successfully, this confirms:
 
@@ -433,16 +433,16 @@ If the script executes successfully, this confirms:
 
 ---
 
-# Python Environment
+### Python Environment
 
-## Verify Python Installation
+#### Verify Python Installation
 
 Run:
 
 ```bash
 python3 --version
 ```
-## Install Python (if necessary)
+#### Install Python (if necessary)
 
 Run:
 
@@ -451,7 +451,7 @@ sudo apt install python3 -y
 ```
 ---
 
-## Execute a Python Script
+#### Execute a Python Script
 
 Example:
 
@@ -467,9 +467,9 @@ python3 test.py
 
 ---
 
-# Node.js Environment
+### Node.js Environment
 
-## Verify Installation
+#### Verify Installation
 
 Run:
 
@@ -480,7 +480,7 @@ npm -v
 
 ---
 
-## Install Node.js (if necessary)
+#### Install Node.js (if necessary)
 
 ```bash
 sudo apt install nodejs -y
@@ -489,9 +489,9 @@ sudo apt install npm -y
 
 ---
 
-# MySQL Database Access
+### MySQL Database Access
 
-## Connection Credentials
+#### Connection Credentials
 
 ```txt
 host=localhost
@@ -501,7 +501,7 @@ password=nova_senha_segura
 
 ---
 
-## Show Databases
+#### Show Databases
 
 ```bash
 mysql -u root -pnova_senha_segura -e "SHOW DATABASES;"
@@ -509,7 +509,7 @@ mysql -u root -pnova_senha_segura -e "SHOW DATABASES;"
 
 ---
 
-## Project Database
+#### Project Database
 
 ```txt
 microbioviews
@@ -517,7 +517,7 @@ microbioviews
 
 ---
 
-## Show Tables
+#### Show Tables
 
 ```bash
 mysql -u root -pnova_senha_segura -e "SHOW TABLES;" microbioviews
@@ -525,7 +525,7 @@ mysql -u root -pnova_senha_segura -e "SHOW TABLES;" microbioviews
 
 ---
 
-# Tables Available
+##### Tables Available
 
 ```txt
 noticias
@@ -536,7 +536,7 @@ notificacoes
 
 ---
 
-# Current Server Capabilities
+### Current Server Capabilities
 
 The server currently supports:
 
@@ -547,12 +547,11 @@ The server currently supports:
 - Remote file transfer
 - Collaborative deployment preparation
 
-
 ---
   
 ## Development Workflow
 
-The project uses the following Git workflow:
+The project uses the following Git workflow :
 - `main` — stable version
 - `dev` — active development
 - `feature/*` — one branch per feature
