@@ -168,6 +168,7 @@ console.log("Node.js server environment working");
 ## Execution Result
 
 Node.js and npm were successfully installed and validated on the server environment.
+
 ---
 
 # File Transfer Validation

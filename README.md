@@ -134,6 +134,7 @@ Open directly :
 frontend/index.html
 
 Or use the Live Server extension in VS Code for a better experience.
+
 ---
 
 ## Environment Variables
