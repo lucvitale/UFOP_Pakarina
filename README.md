@@ -89,7 +89,7 @@ cd UFOP_Pakarina
 code .
 
 ---
-## 6. Git Configuration
+## Git Configuration
 
 If it is your first time using Git on your machine, write in your terminal :
 
@@ -143,6 +143,410 @@ The backend will use a `.env` file for configuration such as:
 - Database credentials
 - API keys
 -  Server configuration
+
+---
+
+# University Server Environment
+
+## Overview
+
+The Pakarina project uses a university Ubuntu server for:
+
+- Backend testing
+- Python execution
+- Node.js execution
+- Database access
+- Remote deployment validation
+- Collaborative development
+
+---
+
+## Server Information
+
+| Information | Value |
+|---|---|
+| Host | 200.239.155.206 |
+| Port | 22 |
+| Protocol | SSH |
+| Main User | ubuntu |
+| Operating System | Ubuntu 24.04 LTS |
+
+---
+
+## Required Software
+
+Before connecting to the university server, install:
+
+### Windows
+
+- PuTTY and private key on : https://drive.google.com/drive/folders/17QFyrJu24gvlFaZ_sh5Gai6QpHB3KiEP
+- WinSCP on : https://winscp.net/eng/download.php
+
+### Optional Tools
+
+- VS Code
+- Git
+- Node.js
+
+---
+
+## SSH Connection Setup (PuTTY)
+
+## Step 1 — Open PuTTY
+
+Launch the PuTTY application.
+
+---
+
+## Step 2 — Configure Session
+
+| Field | Value |
+|---|---|
+| Host Name | 200.239.155.206 |
+| Port | 22 |
+| Connection Type | SSH |
+
+---
+
+## Step 3 — Configure Authentication
+
+Navigate to:
+
+```txt
+Connection > SSH > Auth > Credentials
+```
+
+In:
+
+```txt
+Private key file for authentication
+```
+
+Select the provided `.ppk` private key.
+
+---
+
+## Step 4 — Configure Username
+
+Navigate to:
+
+```txt
+Connection > Data
+```
+
+Set:
+
+```txt
+Auto-login username: ubuntu
+```
+
+---
+
+## Step 5 — Save Session
+
+Return to:
+
+```txt
+Session
+```
+
+In:
+
+```txt
+Saved Sessions
+```
+
+Enter:
+
+```txt
+pakarina_server
+```
+
+Click:
+
+```txt
+Save
+```
+
+---
+
+## Step 6 — Connect
+
+Click:
+
+```txt
+Open
+```
+
+At first connection, accept the SSH security alert.
+
+---
+
+# Successful SSH Connection Example
+
+```txt
+Using username "ubuntu".
+Authenticating with public key "imported-openssh-key"
+
+Welcome to Ubuntu 24.04.3 LTS
+ubuntu@VM-EstacaoMeteorologica:~$
+```
+
+---
+
+# WinSCP Configuration
+
+## Step 1 — Open WinSCP
+
+Launch WinSCP.
+
+---
+
+## Step 2 — Configure Connection
+
+| Field | Value |
+|---|---|
+| Host | 200.239.155.206 |
+| Port | 22 |
+| User | ubuntu |
+
+---
+
+## Step 3 — Configure SSH Key
+
+Go to:
+
+```txt
+Advanced > SSH > Authentication
+```
+
+Select the `.ppk` private key.
+
+---
+
+## Step 4 — Save Session
+
+Save the configuration for future use.
+
+---
+
+## Step 5 — Login
+
+Click:
+
+```txt
+Login
+```
+
+You should now have access to the remote server files.
+
+---
+
+# File Transfer Validation
+
+The following operations were successfully validated:
+
+- File upload
+- File download
+- Remote file visibility
+- Remote execution after upload
+
+Collaborative deployment through WinSCP is operational.
+
+---
+# WinSCP File Transfer Test
+
+## Create a Local Test File
+
+Create a simple test file on your computer.
+
+Example:
+
+```python
+print("WinSCP transfer successful")
+```
+
+Save the file as:
+
+```txt
+test.py
+```
+
+---
+
+## Upload the File with WinSCP
+
+1. Open WinSCP
+2. Connect to the university server
+3. Navigate to the remote directory:
+
+```txt
+/home/ubuntu
+```
+
+4. Drag and drop the `test.py` file into the remote directory
+
+---
+
+## Verify File Transfer
+
+After upload, open the SSH terminal with PuTTY and run:
+
+```bash
+ls
+```
+
+The uploaded file should appear in the directory.
+
+Example:
+
+```txt
+test.py
+```
+
+---
+
+## Execute the Uploaded File
+
+Run:
+
+```bash
+python3 test.py
+```
+
+Expected result:
+
+```txt
+WinSCP transfer successful
+```
+
+---
+
+## Validation Result
+
+If the script executes successfully, this confirms:
+
+- WinSCP file transfer is operational
+- Uploaded files are accessible on the server
+- Collaborative remote deployment is possible
+- Python execution after upload works correctly
+
+---
+
+# Python Environment
+
+## Verify Python Installation
+
+Run:
+
+```bash
+python3 --version
+```
+## Install Python (if necessary)
+
+Run:
+
+```bash
+sudo apt install python3 -y
+```
+---
+
+## Execute a Python Script
+
+Example:
+
+```python
+print("Python server test successful")
+```
+
+Run:
+
+```bash
+python3 test.py
+```
+
+---
+
+# Node.js Environment
+
+## Verify Installation
+
+Run:
+
+```bash
+node -v
+npm -v
+```
+
+---
+
+## Install Node.js (if necessary)
+
+```bash
+sudo apt install nodejs -y
+sudo apt install npm -y
+```
+
+---
+
+# MySQL Database Access
+
+## Connection Credentials
+
+```txt
+host=localhost
+user=root
+password=nova_senha_segura
+```
+
+---
+
+## Show Databases
+
+```bash
+mysql -u root -pnova_senha_segura -e "SHOW DATABASES;"
+```
+
+---
+
+## Project Database
+
+```txt
+microbioviews
+```
+
+---
+
+## Show Tables
+
+```bash
+mysql -u root -pnova_senha_segura -e "SHOW TABLES;" microbioviews
+```
+
+---
+
+# Tables Available
+
+```txt
+noticias
+usuarios
+favoritos
+notificacoes
+```
+
+---
+
+# Current Server Capabilities
+
+The server currently supports:
+
+- SSH remote administration
+- Python execution
+- Node.js execution
+- MySQL database access
+- Remote file transfer
+- Collaborative deployment preparation
+
 
 ---
   
