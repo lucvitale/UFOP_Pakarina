@@ -547,12 +547,11 @@ The server currently supports:
 - Remote file transfer
 - Collaborative deployment preparation
 
-
 ---
   
 ## Development Workflow
 
-The project uses the following Git workflow:
+The project uses the following Git workflow :
 - `main` — stable version
 - `dev` — active development
 - `feature/*` — one branch per feature
