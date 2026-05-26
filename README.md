@@ -139,13 +139,134 @@ Or use the Live Server extension in VS Code for a better experience.
 
 ## Environment Variables
 
-The backend will use a `.env` file for configuration such as:
+The backend requires a `.env` file to run. This file is not included in the repository for security reasons.
 
-- Database credentials
-- API keys
--  Server configuration
+### Port Overview
+
+| Port | Role |
+|------|------|
+| 22 | SSH — used by PuTTY to connect remotely to the university server |
+| 3306 | MySQL — used by the backend to communicate with the database |
+| 3000 | Node.js — the port your local backend server runs on |
 
 ---
+
+### Install SSH Dependency
+
+The backend uses an SSH tunnel to connect to the university database.
+Before running the project, install the required package:
+
+```bash
+cd backend
+npm install ssh2
+```
+
+---
+
+
+
+### Create the .env File
+
+Create a `.env` file inside the `backend/` folder:
+
+```bash
+New-Item backend/.env
+```
+
+Then add the following variables:
+
+```env
+PORT=3000
+DB_HOST=200.239.155.206
+DB_PORT=3306
+DB_NAME=microbioviews
+DB_USER=root
+DB_PASSWORD=nova_senha_segura
+SSH_KEY_PATH=your/path/to/Edgard-EstacaoM-KeySSH.key
+```
+
+The `.env.example` file at the root of the `backend/` folder shows the exact structure expected
+
+### SSH_KEY_PATH
+
+The `SSH_KEY_PATH` variable must point to the SSH private key file on your local machine.
+
+The key file is available on the shared Google Drive:
+https://drive.google.com/drive/folders/17QFyrJu24gvlFaZ_sh5Gai6QpHB3KiEP
+
+Download `Edgard-EstacaoM-KeySSH.key` and set the path accordingly.
+
+#### Examples
+
+Windows:
+```env
+SSH_KEY_PATH=C:/Users/yourname/Downloads/Edgard-EstacaoM-KeySSH.key
+```
+
+Mac/Linux:
+```env
+SSH_KEY_PATH=/home/yourname/Downloads/Edgard-EstacaoM-KeySSH.key
+```
+
+### Verify Connection
+
+After configuring your `.env`, run:
+
+```bash
+cd backend
+node server.js
+```
+
+Expected output:
+
+[INFO]  Pakarina API started
+🚀 Pakarina API running on http://localhost:3000
+[INFO]  MySQL connected via SSH tunnel
+
+If you see `MySQL connected via SSH tunnel`, the database connection is working correctly.
+
+---
+
+
+### Test Database Connection
+
+To confirm the database is reachable and contains data, create a test file `backend/test-db.js`:
+
+```bash
+cd backend
+New-Item test-db.js
+```
+
+```javascript
+require("dotenv").config();
+const { getPool } = require("./config/db");
+
+async function test() {
+  const pool = await getPool();
+  const [rows] = await pool.query("SELECT * FROM noticias LIMIT 5;");
+  console.log("✅ Data from noticias:", rows);
+}
+
+test().catch((err) => console.error("❌ Error:", err.message));
+```
+
+Run it:
+
+```bash
+node test-db.js
+```
+
+If you see articles displayed in the terminal, the connection is fully operational.
+
+After testing, delete the file:
+
+```bash
+# Windows
+Remove-Item test-db.js
+
+# Mac/Linux
+rm test-db.js
+```
 
 ## University Server Environment
 
