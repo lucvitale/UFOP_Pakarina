@@ -1,4 +1,5 @@
 require("dotenv").config();
+const { getPool } = require("./config/db");
 const app = require("./app");
 const { logger } = require("./config/logger");
 
@@ -10,4 +11,7 @@ app.listen(PORT, () => {
     environment: process.env.NODE_ENV || "development",
   });
   console.log(`🚀 Pakarina API running on http://localhost:${PORT}`);
+  getPool()
+  .then(() => logger.info("MySQL connected via SSH tunnel"))
+  .catch((err) => logger.error("MySQL connection failed", { error: err.message }));
 });
