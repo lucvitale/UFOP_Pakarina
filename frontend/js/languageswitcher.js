@@ -18,7 +18,8 @@ async function loadTranslations(lang) {
     lang = DEFAULT_LANG;
   }
   try {
-    const response = await fetch(`locales/${lang}.json`);
+    const base = window.location.pathname.includes("/pages/") ? "../locales" : "locales";
+    const response = await fetch(`${base}/${lang}.json`);
     if (!response.ok) throw new Error(`Failed to load locales/${lang}.json`);
     return await response.json();
   } catch (err) {
