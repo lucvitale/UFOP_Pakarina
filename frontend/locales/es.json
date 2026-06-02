@@ -1,7 +1,24 @@
 {
-  "title": "Proyecto Pakarina",
-  "subtitle": "Plataforma de monitoreo del dengue — UFOP",
-  "hello": "Hola Mundo"
+  "app_name": "Proyecto Pakarina",
+  "nav_home": "Inicio",
+  "nav_news": "Noticias",
+  "nav_climate": "Clima",
+  "nav_awareness": "Concientización",
+  "nav_dashboard": "Panel",
+  "nav_about": "Sobre nosotros",
+  "nav_contact": "Contacto",
+  "home_title": "Hola Mundo",
+  "home_subtitle": "Plataforma de monitoreo del dengue — UFOP",
+  "news_title": "Noticias",
+  "news_subtitle": "Últimas noticias epidemiológicas",
+  "climate_title": "Clima",
+  "climate_subtitle": "Condiciones ambientales y análisis",
+  "awareness_title": "Concientización",
+  "awareness_subtitle": "Educación y prevención",
+  "dashboard_title": "Panel",
+  "dashboard_subtitle": "Monitoreo del sistema",
+  "about_title": "Sobre nosotros",
+  "about_subtitle": "El equipo del proyecto Pakarina",
+  "contact_title": "Contacto",
+  "contact_subtitle": "Contáctenos"
 }
-
-
