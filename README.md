@@ -1038,3 +1038,31 @@ No additional libraries required for MVP. Uses the native `fetch` API with in-me
 - bcrypt: https://www.npmjs.com/package/bcrypt
 - Passport.js: https://www.passportjs.org/
 - Google OAuth: https://developers.google.com/identity/protocols/oauth2
+
+---
+
+### Chosen Implementation
+
+For Sprint 1, email/password authentication with JWT was implemented.
+
+- Passwords are hashed using bcrypt (10 salt rounds)
+- JWT tokens are generated on login and expire after 24 hours
+- A middleware validates the token on protected routes
+- Login and register pages are available in EN, FR, ES, and PT
+- Google OAuth architecture is prepared for a future sprint
+
+---
+
+### Environment Variable
+
+Add the following line to your `.env` file:
+
+```env
+JWT_SECRET=your_jwt_secret_key
+```
+
+Choose a long and random string for security. You can generate one with:
+
+```bash
+node -e "console.log(require('crypto').randomBytes(32).toString('hex'))"
+```

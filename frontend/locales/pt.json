@@ -20,5 +20,18 @@
   "about_title": "Sobre nós",
   "about_subtitle": "A equipe do projeto Pakarina",
   "contact_title": "Contato",
-  "contact_subtitle": "Entre em contato conosco"
+  "contact_subtitle": "Entre em contato conosco",
+  "login_title": "Entrar",
+  "login_email": "Email",
+  "login_password": "Senha",
+  "login_button": "Entrar",
+  "login_no_account": "Ainda não tem conta?",
+  "login_register_link": "Registrar",
+  "register_title": "Cadastro",
+  "register_name": "Nome completo",
+  "register_email": "Email",
+  "register_password": "Senha",
+  "register_button": "Cadastrar",
+  "register_have_account": "Já tem uma conta?",
+  "register_login_link": "Entrar"
 }
