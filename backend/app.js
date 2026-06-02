@@ -5,6 +5,7 @@ const { logger, morganMiddleware } = require("./config/logger");
 const healthRouter = require("./routes/health.routes");
 const apiRouter = require("./routes/api.routes");
 const errorHandler = require("./middlewares/errorHandler");
+const authRouter = require("./routes/auth.routes");
 
 const app = express();
 
@@ -14,6 +15,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(morganMiddleware);
 
 app.use("/api/health", healthRouter);
+app.use("/api/auth", authRouter);
 app.use("/api", apiRouter);
 
 app.use((req, res) => {
