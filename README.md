@@ -697,6 +697,124 @@ All technical documentation will be progressively stored in the `docs/` folder:
 
 
 
+## 🛡️ Error Logging and Handling
+
+### Strategy
+
+Every error in Pakarina goes through a centralized system so nothing is lost and debugging is easy.
+
+**Three log files are auto-generated in `backend/logs/` at runtime:**
+
+| File | Contains |
+|------|----------|
+| `app.log` | Everything — INFO, WARN, ERROR |
+| `error.log` | Errors only |
+| `http.log` | Every HTTP request (method, URL, status, response time) |
+
+**Log format — newline-delimited JSON:**
+```json
+{"timestamp":"2025-05-19T19:00:00.000Z","level":"ERROR","message":"Route not found","method":"GET","url":"/api/unknown"}
+```
+
+### How it works
+
+1. **Every HTTP request** is logged automatically by Morgan → `logs/http.log`
+2. **Warnings** (ex: unknown route) are caught by the 404 handler in `app.js` → `logs/app.log`
+3. **Errors** thrown anywhere in the app use `next(err)` → caught by `middlewares/errorHandler.js` → logged to `logs/error.log` + `logs/app.log` → returns a clean JSON response to the client
+4. **DB connection failures** are logged at startup
+
+### What is logged
+
+| Event | Logged |
+|-------|--------|
+| Server startup | ✅ |
+| Every HTTP request | ✅ |
+| 404 unknown routes | ✅ |
+| Application errors | ✅ |
+| DB connection success/failure | ✅ |
+| SQL queries | ❌ (future sprint) |
+| Auth events | ❌ (future sprint) |
+
+### How to throw an error in a controller
+
+```js
+// Simple error
+const err = new Error("Resource not found");
+err.status = 404;
+next(err);
+
+// Or in a try/catch
+try {
+  // ... code
+} catch (err) {
+  next(err);
+}
+```
+
+### In production
+
+Stack traces are hidden from API responses — only logged server-side.
+Set `NODE_ENV=production` in your `.env` to enable this.
+
+## 🛡️ Error Logging and Handling
+
+### Strategy
+
+Every error in Pakarina goes through a centralized system so nothing is lost and debugging is easy.
+
+**Three log files are auto-generated in `backend/logs/` at runtime:**
+
+| File | Contains |
+|------|----------|
+| `app.log` | Everything — INFO, WARN, ERROR |
+| `error.log` | Errors only |
+| `http.log` | Every HTTP request (method, URL, status, response time) |
+
+**Log format — newline-delimited JSON:**
+```json
+{"timestamp":"2025-05-19T19:00:00.000Z","level":"ERROR","message":"Route not found","method":"GET","url":"/api/unknown"}
+```
+
+### How it works
+
+1. **Every HTTP request** is logged automatically by Morgan → `logs/http.log`
+2. **Warnings** (ex: unknown route) are caught by the 404 handler in `app.js` → `logs/app.log`
+3. **Errors** thrown anywhere in the app use `next(err)` → caught by `middlewares/errorHandler.js` → logged to `logs/error.log` + `logs/app.log` → returns a clean JSON response to the client
+4. **DB connection failures** are logged at startup
+
+### What is logged
+
+| Event | Logged |
+|-------|--------|
+| Server startup | ✅ |
+| Every HTTP request | ✅ |
+| 404 unknown routes | ✅ |
+| Application errors | ✅ |
+| DB connection success/failure | ✅ |
+| SQL queries | ❌ (future sprint) |
+| Auth events | ❌ (future sprint) |
+
+### How to throw an error in a controller
+
+```js
+// Simple error
+const err = new Error("Resource not found");
+err.status = 404;
+next(err);
+
+// Or in a try/catch
+try {
+  // ... code
+} catch (err) {
+  next(err);
+}
+```
+
+### In production
+
+Stack traces are hidden from API responses — only logged server-side.
+Set `NODE_ENV=production` in your `.env` to enable this.
+
 ## Error Logging and Handling
 
 ### Strategy
