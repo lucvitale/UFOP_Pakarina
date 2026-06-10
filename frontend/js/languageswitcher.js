@@ -30,6 +30,7 @@ async function loadTranslations(lang) {
 
 async function applyTranslations(lang) {
   const translations = await loadTranslations(lang);
+  window._currentTranslations = translations;
 
   document.querySelectorAll("[data-i18n]").forEach((el) => {
     const key = el.getAttribute("data-i18n");
@@ -38,7 +39,11 @@ async function applyTranslations(lang) {
     } else {
       console.warn(`[i18n] Missing translation key: "${key}" for lang: "${lang}"`);
     }
-  });
+  })
+  document.querySelectorAll("[data-i18n-title]").forEach((el) => {
+  const key = el.getAttribute("data-i18n-title");
+  if (translations[key]) el.title = translations[key];
+});;
 
   document.documentElement.lang = lang;
   currentLang = lang;
