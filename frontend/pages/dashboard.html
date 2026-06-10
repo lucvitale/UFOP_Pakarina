@@ -25,15 +25,98 @@
       </div>
     </header>
 
-    <main class="main">
-      <section class="hero">
-        <h1 data-i18n="dashboard_title">Dashboard</h1>
-        <p data-i18n="dashboard_subtitle">Coming soon</p>
+    <main class="main dashboard-main">
+      <section class="dashboard-container">
+
+        <div class="dashboard-header">
+          <h1 data-i18n="dashboard_title">Dashboard</h1>
+          <p class="dashboard-notice" data-i18n="dashboard_notice"></p>
+        </div>
+
+        <!-- WEATHER WIDGET -->
+        <div class="dashboard-card weather-card">
+          <h2 data-i18n="dashboard_weather_title">Weather</h2>
+
+          <div class="weather-search">
+            <input
+              type="text"
+              id="city-input"
+              placeholder="Search a city..."
+            />
+            <button onclick="searchCity()" data-i18n="dashboard_search_btn">Search</button>
+            <button class="gps-btn" onclick="getGPSLocation()" data-i18n-title="dashboard_gps_tooltip">📍</button>
+          </div>
+
+          <div id="weather-result" class="weather-result">
+            <div class="weather-loading" id="weather-loading">
+              <span data-i18n="dashboard_loading">Loading...</span>
+            </div>
+            <div class="weather-data" id="weather-data" style="display:none;">
+              <div class="weather-top">
+                <img id="weather-icon" src="" alt="weather icon" />
+                <div>
+                  <p class="weather-city" id="weather-city"></p>
+                  <p class="weather-temp" id="weather-temp"></p>
+                  <p class="weather-desc" id="weather-desc"></p>
+                </div>
+              </div>
+              <div class="weather-details">
+                <div class="weather-detail-item">
+                  <span data-i18n="dashboard_humidity">Humidity</span>
+                  <strong id="weather-humidity"></strong>
+                </div>
+                <div class="weather-detail-item">
+                  <span data-i18n="dashboard_wind">Wind</span>
+                  <strong id="weather-wind"></strong>
+                </div>
+                <div class="weather-detail-item">
+                  <span data-i18n="dashboard_feels_like">Feels like</span>
+                  <strong id="weather-feels"></strong>
+                </div>
+              </div>
+              <p class="weather-dengue-warning" id="weather-dengue-warning"></p>
+            </div>
+            <div class="weather-error" id="weather-error" style="display:none;">
+              <p data-i18n="dashboard_error">City not found. Please try again.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- PREVIEW MODELS -->
+        <div class="dashboard-card models-card">
+          <h2 data-i18n="dashboard_models_title">Monitoring Models</h2>
+          <p class="models-notice" data-i18n="dashboard_models_notice"></p>
+          <div class="models-grid">
+            <div class="model-item">
+              <div class="model-icon">📡</div>
+              <p data-i18n="dashboard_model_sensors">Sensors</p>
+              <span class="model-badge" data-i18n="dashboard_coming_soon">Coming soon</span>
+            </div>
+            <div class="model-item">
+              <div class="model-icon">🗺️</div>
+              <p data-i18n="dashboard_model_map">Dengue Map</p>
+              <span class="model-badge" data-i18n="dashboard_coming_soon">Coming soon</span>
+            </div>
+            <div class="model-item">
+              <div class="model-icon">📊</div>
+              <p data-i18n="dashboard_model_stats">Statistics</p>
+              <span class="model-badge" data-i18n="dashboard_coming_soon">Coming soon</span>
+            </div>
+            <div class="model-item">
+              <div class="model-icon">🚨</div>
+              <p data-i18n="dashboard_model_alerts">Alerts</p>
+              <span class="model-badge" data-i18n="dashboard_coming_soon">Coming soon</span>
+            </div>
+          </div>
+        </div>
+
       </section>
     </main>
 
+    <script src="../js/config.js"></script>
     <script src="../js/app.js"></script>
     <script src="../js/languageswitcher.js"></script>
+    <script src="../js/weather.js"></script>
 
   </body>
 </html>
