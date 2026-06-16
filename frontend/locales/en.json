@@ -65,5 +65,10 @@
   "register_have_account": "Already have an account?",
   "register_login_link": "Login",
   "dashboard_dengue_warning": "⚠️ Current conditions may favour dengue mosquito proliferation.",
-  "dashboard_gps_tooltip": "Use my location"
+  "dashboard_gps_tooltip": "Use my location",
+  "nav_login": "Login",
+  "nav_logout": "Logout",
+  "dashboard_welcome": "Welcome",
+  "dashboard_access_required": "You must be logged in to access the dashboard.",
+  "dashboard_redirecting": "Redirecting to login..."
 }

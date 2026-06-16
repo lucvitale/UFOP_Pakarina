@@ -27,10 +27,11 @@ if (loginForm) {
       const data = await response.json();
 
       if (response.ok) {
-        localStorage.setItem("token", data.token);
-        localStorage.setItem("user", JSON.stringify(data.user));
-        showMessage("Login successful! Redirecting...");
-        setTimeout(() => (window.location.href = "../index.html"), 1500);
+       if (response.ok) {
+          localStorage.setItem("token", data.token);
+          localStorage.setItem("user", JSON.stringify(data.user));
+          window.location.href = "dashboard.html";
+}
       } else {
         showMessage(data.error || "Login failed", true);
       }
@@ -58,8 +59,7 @@ if (registerForm) {
       const data = await response.json();
 
       if (response.ok) {
-        showMessage("Registration successful! Redirecting to login...");
-        setTimeout(() => (window.location.href = "login.html"), 1500);
+        window.location.href = "login.html";
       } else {
         showMessage(data.error || "Registration failed", true);
       }

@@ -65,5 +65,10 @@
   "register_have_account": "Já tem uma conta?",
   "register_login_link": "Entrar",
   "dashboard_dengue_warning": "⚠️ As condições atuais podem favorecer a proliferação do mosquito transmissor da dengue.",
-  "dashboard_gps_tooltip": "Usar minha localização"
+  "dashboard_gps_tooltip": "Usar minha localização",
+  "nav_login": "Entrar",
+  "nav_logout": "Sair",
+  "dashboard_welcome": "Bem-vindo",
+  "dashboard_access_required": "Você precisa estar conectado para acessar o painel.",
+  "dashboard_redirecting": "Redirecionando para o login..."
 }

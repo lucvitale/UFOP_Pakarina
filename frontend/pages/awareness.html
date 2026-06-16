@@ -19,9 +19,21 @@
         <a href="about.html" data-i18n="nav_about">About Us</a>
         <a href="contact.html" data-i18n="nav_contact">Contact</a>
       </nav>
-      <div class="lang-switcher">
-        <button id="lang-btn" class="lang-btn" onclick="toggleDropdown()">EN ▾</button>
-        <div id="lang-dropdown" class="lang-dropdown"></div>
+      <div class="topbar-right">
+
+        <span id="user-greeting" class="user-greeting"></span>
+
+        <a href="login.html"
+          id="auth-btn"
+          class="auth-btn">
+          Login
+        </a>
+
+        <div class="lang-switcher">
+          <button id="lang-btn" class="lang-btn" onclick="toggleDropdown()">EN ▾</button>
+          <div id="lang-dropdown" class="lang-dropdown"></div>
+        </div>
+
       </div>
     </header>
 
@@ -34,6 +46,7 @@
 
     <script src="../js/app.js"></script>
     <script src="../js/languageswitcher.js"></script>
+    <script src="../js/navbar-auth.js"></script>
 
   </body>
 </html>

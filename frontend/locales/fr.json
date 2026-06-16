@@ -51,10 +51,10 @@
   "contact_coordinator": "Coordinateur du projet",
   "contact_coordinator_phone": "Téléphone : +5493874087037",
   "contact_closing": "Nous serons ravis de vous entendre.",
-  "login_title": "Connexion",
+  "login_title": "Se Connecter",
   "login_email": "Email",
   "login_password": "Mot de passe",
-  "login_button": "Se connecter",
+  "login_button": "Connexion",
   "login_no_account": "Pas encore de compte ?",
   "login_register_link": "S'inscrire",
   "register_title": "Inscription",
@@ -65,5 +65,10 @@
   "register_have_account": "Déjà un compte ?",
   "dashboard_dengue_warning": "⚠️ Les conditions actuelles peuvent favoriser la prolifération du moustique vecteur de la dengue.",
   "register_login_link": "Se connecter",
-  "dashboard_gps_tooltip": "Utiliser ma position"
+  "dashboard_gps_tooltip": "Utiliser ma position",
+  "nav_login": "Se Connecter",
+  "nav_logout": "Déconnexion",
+  "dashboard_welcome": "Bienvenue",
+  "dashboard_access_required": "Vous devez être connecté pour accéder au tableau de bord.",
+  "dashboard_redirecting": "Redirection vers la connexion..."
 }

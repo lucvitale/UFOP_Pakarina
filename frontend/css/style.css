@@ -707,3 +707,34 @@ body {
 .gps-btn:hover {
   background: #f0e7da;
 }
+
+/*TOPBAR AUTH*/
+.topbar-right {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.user-greeting {
+  font-size: 0.9rem;
+  color: #5a5246;
+  font-weight: 500;
+}
+
+.auth-btn {
+  padding: 0.4rem 0.9rem;
+  border: 1px solid #cbbba3;
+  border-radius: 10px;
+  background: white;
+  color: #5a5246;
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.auth-btn:hover {
+  background: #f0e7da;
+  color: #2c3e50;
+}
