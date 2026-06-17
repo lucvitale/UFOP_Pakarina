@@ -20,33 +20,105 @@
         <a href="contact.html" data-i18n="nav_contact">Contact</a>
       </nav>
       <div class="topbar-right">
-
         <span id="user-greeting" class="user-greeting"></span>
-
-        <a href="login.html"
-          id="auth-btn"
-          class="auth-btn">
-          Login
-        </a>
-
+        <a href="login.html" id="auth-btn" class="auth-btn">Login</a>
         <div class="lang-switcher">
           <button id="lang-btn" class="lang-btn" onclick="toggleDropdown()">EN ▾</button>
           <div id="lang-dropdown" class="lang-dropdown"></div>
         </div>
-
       </div>
     </header>
 
-    <main class="main">
-      <section class="hero">
-        <h1 data-i18n="climate_title">Climate</h1>
-        <p data-i18n="climate_subtitle">Coming soon</p>
+    <main class="main climate-main">
+      <section class="climate-container">
+
+        <div class="climate-header">
+          <h1 data-i18n="climate_analysis_title">Dengue Risk Analysis</h1>
+          <p data-i18n="climate_analysis_subtitle">Environmental conditions favoring mosquito proliferation</p>
+        </div>
+
+        <div class="climate-card">
+          <div class="weather-search">
+            <input type="text" id="climate-city-input" data-i18n-placeholder="climate_search_placeholder" placeholder="Search a city..." />
+            <button onclick="analyzeCity()" data-i18n="climate_search_btn">Analyze</button>
+            <button class="gps-btn" onclick="analyzeGPS()">📍</button>
+          </div>
+        </div>
+
+        <div id="climate-loading" class="climate-loading" style="display:none;">
+          <p data-i18n="climate_loading">Loading climate data...</p>
+        </div>
+
+        <div id="climate-no-data" class="climate-no-data">
+          <p data-i18n="climate_no_data">Search a city to see the dengue risk analysis.</p>
+        </div>
+
+        <div id="climate-results" style="display:none;">
+
+          <div class="climate-card risk-card" id="risk-card">
+            <div class="risk-header">
+              <h2 id="risk-city-name"></h2>
+              <span id="risk-badge" class="risk-badge"></span>
+            </div>
+            <p id="risk-message" class="risk-message"></p>
+          </div>
+
+          <div class="climate-indicators">
+
+            <div class="indicator-card">
+              <div class="indicator-icon">🌡️</div>
+              <div class="indicator-info">
+                <span class="indicator-label" data-i18n="climate_temp_label">Temperature</span>
+                <span class="indicator-value" id="ind-temp"></span>
+                <span class="indicator-bar-wrap"><span class="indicator-bar" id="bar-temp"></span></span>
+                <span class="indicator-hint" id="hint-temp">Dengue mosquitoes thrive between 25°C and 35°C</span>
+              </div>
+            </div>
+
+            <div class="indicator-card">
+              <div class="indicator-icon">💧</div>
+              <div class="indicator-info">
+                <span class="indicator-label" data-i18n="climate_humidity_label">Humidity</span>
+                <span class="indicator-value" id="ind-humidity"></span>
+                <span class="indicator-bar-wrap"><span class="indicator-bar" id="bar-humidity"></span></span>
+                <span class="indicator-hint" id="hint-humidity">Humidity above 60% favors mosquito breeding</span>
+              </div>
+            </div>
+
+            <div class="indicator-card">
+              <div class="indicator-icon">💨</div>
+              <div class="indicator-info">
+                <span class="indicator-label" data-i18n="climate_wind_label">Wind Speed</span>
+                <span class="indicator-value" id="ind-wind"></span>
+                <span class="indicator-bar-wrap"><span class="indicator-bar" id="bar-wind"></span></span>
+                <span class="indicator-hint" id="hint-wind">Low wind speeds allow mosquitoes to remain active</span>
+              </div>
+            </div>
+
+            <div class="indicator-card">
+              <div class="indicator-icon">🌧️</div>
+              <div class="indicator-info">
+                <span class="indicator-label" data-i18n="climate_precipitation_label">Precipitation</span>
+                <span class="indicator-value" id="ind-precipitation"></span>
+                <span class="indicator-bar-wrap">
+                  <span class="indicator-bar" id="bar-precipitation"></span>
+                </span>
+                <span class="indicator-hint" id="hint-precipitation">Rain increases mosquito breeding sites by creating standing water</span>
+                </span>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
       </section>
     </main>
 
+    <script src="../js/config.js"></script>
     <script src="../js/app.js"></script>
     <script src="../js/languageswitcher.js"></script>
     <script src="../js/navbar-auth.js"></script>
+    <script src="../js/climate.js"></script>
 
   </body>
 </html>

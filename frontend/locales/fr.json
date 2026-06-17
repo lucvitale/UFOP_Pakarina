@@ -70,5 +70,37 @@
   "nav_logout": "Déconnexion",
   "dashboard_welcome": "Bienvenue",
   "dashboard_access_required": "Vous devez être connecté pour accéder au tableau de bord.",
-  "dashboard_redirecting": "Redirection vers la connexion..."
+  "dashboard_redirecting": "Redirection vers la connexion...",
+  "climate_analysis_title": "Analyse du risque dengue",
+  "climate_analysis_subtitle": "Conditions environnementales favorisant la prolifération des moustiques",
+  "climate_risk_low": "Risque faible",
+  "climate_risk_medium": "Risque modéré",
+  "climate_risk_high": "Risque élevé",
+  "climate_temp_label": "Température",
+  "climate_humidity_label": "Humidité",
+  "climate_wind_label": "Vitesse du vent",
+  "climate_search_placeholder": "Rechercher une ville...",
+  "climate_search_btn": "Analyser",
+  "climate_loading": "Chargement des données climatiques...",
+  "climate_error": "Ville introuvable. Veuillez réessayer.",
+  "climate_no_data": "Recherchez une ville pour voir l'analyse du risque dengue.",
+  "climate_msg_high": "⚠️ Les conditions actuelles sont très favorables à la prolifération des moustiques de la dengue. Prenez des mesures préventives.",
+  "climate_msg_medium": "⚡ Les conditions favorisent partiellement l'activité des moustiques. Restez vigilant et éliminez les eaux stagnantes.",
+  "climate_msg_low": "✅ Les conditions actuelles ne sont pas particulièrement favorables à la prolifération des moustiques de la dengue.",
+  "climate_temp_msg_verylow": "Risque très faible ( < 10°C) : la plupart des moustiques adultes ne survivent pas durablement à ces températures. Attention toutefois si la zone bénéficie d'un microclimat plus chaud (intérieur chauffé, zone abritée).",
+  "climate_temp_msg_low": "Températures fraîches (10°C < T < 20°C) : activité et reproduction des moustiques ralenties, mais pas nulles.",
+  "climate_temp_msg_medium": "Conditions modérément favorables (20°C < T < 25°C) : l'activité et la reproduction des moustiques augmentent progressivement.",
+  "climate_temp_msg_high": "⚠️ 25°C < T < 35°C  => Conditions idéales pour la prolifération et la survie des moustiques adultes. Restez vigilant.",
+  "climate_temp_msg_extreme": "Chaleur excessive ( > 35°C): peut réduire la survie des moustiques et des larves. Restez tout de même vigilant.",
+
+  "climate_humidity_msg_low": "Air sec (0-40%): conditions peu favorables à la survie, à l'activité et à la reproduction des moustiques.",
+  "climate_humidity_msg_medium": "Humidité modérée (40-60%) : conditions partiellement favorables à la survie, à l'activité et à la reproduction des moustiques.",
+  "climate_humidity_msg_high": "⚠️ Humidité élevée ( > 60%) : favorise nettement la survie et la reproduction des moustiques.",
+
+  "climate_wind_msg_low": "Vent faible (< 3m/s): les moustiques restent actifs et volent facilement.",
+  "climate_wind_msg_high": "Vent suffisant pour limiter le vol et l'activité des moustiques. (>3m/s)",
+
+  "climate_precip_msg_low": "Pas d'accumulation d'eau significative (0-5mm); risque de gîtes larvaires faible.",
+  "climate_precip_msg_medium": "Peut créer de l'eau stagnante, favorisant l'apparition de gîtes larvaires. (5mm-20mm)",
+  "climate_precip_msg_high": "Augmente fortement les sites potentiels de reproduction ( > 20mm)"
 }
