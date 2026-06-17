@@ -7,7 +7,7 @@
   "nav_dashboard": "Dashboard",
   "nav_about": "About Us",
   "nav_contact": "Contact",
-  "home_title": "Hello World",
+  "home_title": "Pakarina",
   "home_subtitle": "Dengue monitoring platform — UFOP",
   "news_title": "News",
   "news_subtitle": "Latest epidemiological news",
@@ -106,6 +106,36 @@
 
   "climate_precip_msg_low": "No significant water accumulation (0-5mm); low risk of breeding sites.",
   "climate_precip_msg_medium": "May create standing water, favoring the appearance of breeding sites. (5mm-20mm)",
-  "climate_precip_msg_high": "Significantly increases potential breeding sites. (> 20mm)"
+  "climate_precip_msg_high": "Significantly increases potential breeding sites. (> 20mm)",
+
+  "home_module_news": "Stay informed with the latest epidemiological news on dengue, automatically collected from over 20 trusted media sources across Brazil, Argentina, Peru, France, and beyond. Filter by country, source, or date to follow what matters most.",
+  "home_module_climate": "Visualize real-time weather conditions and understand how temperature, humidity, and rainfall influence dengue mosquito proliferation. Climate data is combined with environmental analysis to provide actionable risk insights.",
+  "home_module_awareness": "Access educational resources, prevention guides, and awareness campaigns related to dengue. This module supports communities, schools, and institutions with clear and accessible public health information.",
+  "home_module_dashboard": "Monitor the platform's key indicators through an integrated dashboard. Currently displaying live weather data for João Monlevade, the dashboard will progressively integrate sensor data, maps, and real-time alerts in future sprints.",
+  "home_hero_text": "A centralized platform for dengue monitoring, data integration, and community awareness — developed at UFOP.",
+
+  "home_btn_dashboard": "Explore Dashboard",
+  "home_btn_about": "Learn More",
+
+  "home_dengue_title": "Dengue in Brazil — A Growing Crisis",
+
+  "home_dengue_text": "Brazil is the country most affected by dengue in the world. In 2024, over 10 million cases were recorded — a historic record — along with nearly 6,000 deaths. The disease spreads through the Aedes aegypti mosquito and thrives in warm, humid conditions, making monitoring and prevention more critical than ever.",
+
+  "home_stat_cases": "cases in Brazil in 2024",
+  "home_stat_deaths": "deaths recorded in 2024",
+  "home_stat_share": "of all Latin American cases",
+  "home_stat_serotypes": "serotypes circulating simultaneously",
+
+  "home_stat_source": "Sources: Brazilian Ministry of Health, PAHO — 2024 data",
+
+  "home_summary_title": "What is Pakarina?",
+
+  "home_summary_text": "Pakarina is an interdisciplinary initiative developed at the Federal University of Ouro Preto (UFOP) in partnership with UCASAL and Yncrea. It centralizes fragmented data sources related to dengue into a single, unified web platform — improving coordination between technical teams, researchers, educators, and public health institutions.",
+
+  "home_modules_title": "Platform Modules",
+
+  "home_mission_title": "Our Mission",
+
+  "home_mission_text": "Pakarina aims to build a sustainable technological ecosystem that strengthens monitoring capabilities, improves information accessibility, and promotes collaboration between technical and non-technical participants. By combining technology, research, and community engagement, Pakarina seeks to create tools that contribute to public health, environmental awareness, and innovation-driven problem solving."
 
 }

@@ -7,10 +7,39 @@
   "nav_dashboard": "Painel",
   "nav_about": "Sobre nós",
   "nav_contact": "Contato",
-  "home_title": "Olá Mundo",
+  "home_title": "Pakarina",
   "home_subtitle": "Plataforma de monitoramento de dengue — UFOP",
   "news_title": "Notícias",
   "news_subtitle": "Últimas notícias epidemiológicas",
+  "login_button_nav": "Entrar",
+
+  "home_title": "Pakarina",
+
+  "home_hero_text": "Uma plataforma centralizada para monitoramento da dengue, integração de dados e conscientização da comunidade — desenvolvida na UFOP.",
+
+  "home_btn_dashboard": "Explorar Dashboard",
+  "home_btn_about": "Saiba Mais",
+
+  "home_dengue_title": "Dengue no Brasil — Uma Crise Crescente",
+
+  "home_dengue_text": "O Brasil é o país mais afetado pela dengue no mundo. Em 2024, mais de 10 milhões de casos foram registrados — um recorde histórico — juntamente com quase 6 mil mortes. A doença é transmitida pelo mosquito Aedes aegypti e se desenvolve em condições quentes e úmidas, tornando o monitoramento e a prevenção mais importantes do que nunca.",
+
+  "home_stat_cases": "casos no Brasil em 2024",
+  "home_stat_deaths": "mortes registradas em 2024",
+  "home_stat_share": "de todos os casos da América Latina",
+  "home_stat_serotypes": "sorotipos circulando simultaneamente",
+
+  "home_stat_source": "Fontes: Ministério da Saúde do Brasil, OPAS — dados de 2024",
+
+  "home_summary_title": "O que é Pakarina?",
+
+  "home_summary_text": "Pakarina é uma iniciativa interdisciplinar desenvolvida na Universidade Federal de Ouro Preto (UFOP) em parceria com a UCASAL e a Yncrea. Ela centraliza fontes de dados fragmentadas relacionadas à dengue em uma única plataforma web, melhorando a coordenação entre equipes técnicas, pesquisadores, educadores e instituições de saúde pública.",
+
+  "home_modules_title": "Módulos da Plataforma",
+
+  "home_mission_title": "Nossa Missão",
+
+  "home_mission_text": "Pakarina busca construir um ecossistema tecnológico sustentável que fortaleça as capacidades de monitoramento, melhore o acesso à informação e promova a colaboração entre participantes técnicos e não técnicos. Combinando tecnologia, pesquisa e engajamento comunitário, o projeto procura criar ferramentas que contribuam para a saúde pública, a conscientização ambiental e a inovação.",
   "climate_title": "Clima",
   "climate_subtitle": "Condições ambientais e análise",
   "awareness_title": "Conscientização",
@@ -61,6 +90,10 @@
   "register_name": "Nome completo",
   "register_email": "E-mail",
   "register_password": "Senha",
+  "home_module_news": "Fique informado com as últimas notícias epidemiológicas sobre dengue, coletadas automaticamente de mais de 20 fontes midiáticas confiáveis no Brasil, Argentina, Peru, França e além. Filtre por país, fonte ou data para acompanhar o que mais importa.",
+"home_module_climate": "Visualize as condições climáticas em tempo real e entenda como temperatura, umidade e chuvas influenciam a proliferação do mosquito transmissor da dengue. Os dados climáticos são combinados com análise ambiental para fornecer indicadores de risco concretos.",
+"home_module_awareness": "Acesse recursos educacionais, guias de prevenção e campanhas de conscientização relacionadas à dengue. Este módulo apoia comunidades, escolas e instituições com informações de saúde pública claras e acessíveis.",
+"home_module_dashboard": "Monitore os principais indicadores da plataforma por meio de um painel integrado. Atualmente exibindo dados meteorológicos ao vivo para João Monlevade, o painel integrará progressivamente dados de sensores, mapas e alertas em tempo real em sprints futuros.",
   "register_button": "Cadastrar",
   "register_have_account": "Já tem uma conta?",
   "register_login_link": "Entrar",

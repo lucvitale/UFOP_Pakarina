@@ -3,11 +3,44 @@
   "nav_home": "Accueil",
   "nav_news": "Actualités",
   "nav_climate": "Climat",
+  "home_module_news": "Restez informé des dernières actualités épidémiologiques sur la dengue, collectées automatiquement depuis plus de 20 sources médiatiques fiables au Brésil, en Argentine, au Pérou, en France et ailleurs. Filtrez par pays, source ou date pour suivre ce qui vous intéresse.",
+"home_module_climate": "Visualisez les conditions météorologiques en temps réel et comprenez comment la température, l'humidité et les précipitations influencent la prolifération du moustique vecteur de la dengue. Les données climatiques sont combinées à une analyse environnementale pour fournir des indicateurs de risque concrets.",
+"home_module_awareness": "Accédez à des ressources éducatives, des guides de prévention et des campagnes de sensibilisation liées à la dengue. Ce module soutient les communautés, les écoles et les institutions avec des informations de santé publique claires et accessibles.",
+"home_module_dashboard": "Suivez les indicateurs clés de la plateforme via un tableau de bord intégré. Affichant actuellement les données météo en direct pour João Monlevade, le tableau de bord intégrera progressivement des données de capteurs, des cartes et des alertes en temps réel dans les prochains sprints.",
   "nav_awareness": "Sensibilisation",
   "nav_dashboard": "Tableau de bord",
   "nav_about": "À propos",
   "nav_contact": "Contact",
-  "home_title": "Bonjour le Monde",
+  "login_button_nav": "Connexion",
+
+  "home_title": "Pakarina",
+
+  "home_hero_text": "Une plateforme centralisée pour la surveillance de la dengue, l'intégration des données et la sensibilisation communautaire — développée à l'UFOP.",
+
+  "home_btn_dashboard": "Explorer le Tableau de Bord",
+  "home_btn_about": "En Savoir Plus",
+
+  "home_dengue_title": "La Dengue au Brésil — Une Crise Croissante",
+
+  "home_dengue_text": "Le Brésil est le pays le plus touché par la dengue au monde. En 2024, plus de 10 millions de cas ont été enregistrés — un record historique — ainsi que près de 6 000 décès. La maladie est transmise par le moustique Aedes aegypti et se développe dans des conditions chaudes et humides, rendant la surveillance et la prévention plus importantes que jamais.",
+
+  "home_stat_cases": "cas au Brésil en 2024",
+  "home_stat_deaths": "décès enregistrés en 2024",
+  "home_stat_share": "de tous les cas d'Amérique latine",
+  "home_stat_serotypes": "sérotypes circulant simultanément",
+
+  "home_stat_source": "Sources : Ministère brésilien de la Santé, OPS — données 2024",
+
+  "home_summary_title": "Qu'est-ce que Pakarina ?",
+
+  "home_summary_text": "Pakarina est une initiative interdisciplinaire développée à l'Université Fédérale d'Ouro Preto (UFOP) en partenariat avec l'UCASAL et Yncrea. Elle centralise des sources de données fragmentées liées à la dengue dans une plateforme web unique, améliorant la coordination entre les équipes techniques, les chercheurs, les éducateurs et les institutions de santé publique.",
+
+  "home_modules_title": "Modules de la Plateforme",
+
+  "home_mission_title": "Notre Mission",
+
+  "home_mission_text": "Pakarina vise à construire un écosystème technologique durable qui renforce les capacités de surveillance, améliore l'accès à l'information et favorise la collaboration entre les participants techniques et non techniques. En combinant technologie, recherche et engagement communautaire, Pakarina cherche à développer des outils contribuant à la santé publique, à la sensibilisation environnementale et à l'innovation.",
+  "home_title": "Pakarina",
   "home_subtitle": "Plateforme de surveillance de la dengue — UFOP",
   "news_title": "Actualités",
   "news_subtitle": "Dernières actualités épidémiologiques",
