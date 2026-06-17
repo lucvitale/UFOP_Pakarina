@@ -7,10 +7,39 @@
   "nav_dashboard": "Panel",
   "nav_about": "Sobre nosotros",
   "nav_contact": "Contacto",
-  "home_title": "Hola Mundo",
+  "home_title": "Pakarina",
   "home_subtitle": "Plataforma de monitoreo del dengue — UFOP",
   "news_title": "Noticias",
   "news_subtitle": "Últimas noticias epidemiológicas",
+  "login_button_nav": "Iniciar Sesión",
+
+  "home_title": "Pakarina",
+
+  "home_hero_text": "Una plataforma centralizada para el monitoreo del dengue, la integración de datos y la concientización comunitaria — desarrollada en la UFOP.",
+
+  "home_btn_dashboard": "Explorar Dashboard",
+  "home_btn_about": "Saber Más",
+
+  "home_dengue_title": "El Dengue en Brasil — Una Crisis Creciente",
+
+  "home_dengue_text": "Brasil es el país más afectado por el dengue en el mundo. En 2024 se registraron más de 10 millones de casos, un récord histórico, junto con casi 6.000 muertes. La enfermedad se transmite por el mosquito Aedes aegypti y prospera en condiciones cálidas y húmedas, haciendo que el monitoreo y la prevención sean más importantes que nunca.",
+
+  "home_stat_cases": "casos en Brasil en 2024",
+  "home_stat_deaths": "muertes registradas en 2024",
+  "home_stat_share": "de todos los casos de América Latina",
+  "home_stat_serotypes": "serotipos circulando simultáneamente",
+
+  "home_stat_source": "Fuentes: Ministerio de Salud de Brasil, OPS — datos de 2024",
+
+  "home_summary_title": "¿Qué es Pakarina?",
+
+  "home_summary_text": "Pakarina es una iniciativa interdisciplinaria desarrollada en la Universidad Federal de Ouro Preto (UFOP) en colaboración con UCASAL y Yncrea. Centraliza fuentes de datos fragmentadas relacionadas con el dengue en una única plataforma web, mejorando la coordinación entre equipos técnicos, investigadores, educadores e instituciones de salud pública.",
+
+  "home_modules_title": "Módulos de la Plataforma",
+
+  "home_mission_title": "Nuestra Misión",
+
+  "home_mission_text": "Pakarina busca construir un ecosistema tecnológico sostenible que fortalezca las capacidades de monitoreo, mejore el acceso a la información y promueva la colaboración entre participantes técnicos y no técnicos. Combinando tecnología, investigación y participación comunitaria, Pakarina pretende crear herramientas que contribuyan a la salud pública, la concientización ambiental y la innovación.",
   "climate_title": "Clima",
   "climate_subtitle": "Condiciones ambientales y análisis",
   "awareness_title": "Concientización",
@@ -59,11 +88,20 @@
   "login_register_link": "Registrarse",
   "register_title": "Registro",
   "register_name": "Nombre completo",
+  "home_module_news": "Manténgase informado con las últimas noticias epidemiológicas sobre el dengue, recopiladas automáticamente de más de 20 fuentes mediáticas confiables en Brasil, Argentina, Perú, Francia y más. Filtre por país, fuente o fecha para seguir lo que más le importa.",
+"home_module_climate": "Visualice las condiciones climáticas en tiempo real y comprenda cómo la temperatura, la humedad y las precipitaciones influyen en la proliferación del mosquito transmisor del dengue. Los datos climáticos se combinan con análisis ambientales para proporcionar indicadores de riesgo accionables.",
+"home_module_awareness": "Acceda a recursos educativos, guías de prevención y campañas de concientización relacionadas con el dengue. Este módulo apoya a comunidades, escuelas e instituciones con información de salud pública clara y accesible.",
+"home_module_dashboard": "Monitoree los indicadores clave de la plataforma a través de un panel integrado. Actualmente muestra datos meteorológicos en vivo para João Monlevade y progresivamente integrará datos de sensores, mapas y alertas en tiempo real en futuros sprints.",
   "register_email": "Correo electrónico",
   "register_password": "Contraseña",
   "register_button": "Registrarse",
   "register_have_account": "¿Ya tienes cuenta?",
   "register_login_link": "Iniciar sesión",
   "dashboard_dengue_warning": "⚠️ Las condiciones actuales pueden favorecer la proliferación del mosquito transmisor del dengue.",
-  "dashboard_gps_tooltip": "Usar mi ubicación"
+  "dashboard_gps_tooltip": "Usar mi ubicación",
+  "nav_login": "Iniciar sesión",
+  "nav_logout": "Cerrar sesión",
+  "dashboard_welcome": "Bienvenido",
+  "dashboard_access_required": "Debes iniciar sesión para acceder al panel.",
+  "dashboard_redirecting": "Redirigiendo al inicio de sesión..."
 }

@@ -1,97 +1,180 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Pakarina Project</title>
-    <link rel="stylesheet" href="css/style.css" />
-  </head>
-  <body>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pakarina Project</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
 
-    <header class="topbar">
-      <div class="logo" data-i18n="app_name">Pakarina Project</div>
-      <nav class="nav">
-        <a href="index.html" data-i18n="nav_home">Home</a>
-        <a href="pages/news.html" data-i18n="nav_news">News</a>
-        <a href="pages/climate.html" data-i18n="nav_climate">Climate</a>
-        <a href="pages/awareness.html" data-i18n="nav_awareness">Awareness</a>
-        <a href="pages/dashboard.html" data-i18n="nav_dashboard">Dashboard</a>
-        <a href="pages/about.html" data-i18n="nav_about">About Us</a>
-        <a href="pages/contact.html" data-i18n="nav_contact">Contact</a>
-      </nav>
+<script src="js/navbar-auth.js"></script>
+
+<body>
+
+  <header class="topbar">
+    <div class="logo" data-i18n="app_name">Pakarina Project</div>
+
+    <nav class="nav">
+      <a href="index.html" data-i18n="nav_home">Home</a>
+      <a href="pages/news.html" data-i18n="nav_news">News</a>
+      <a href="pages/climate.html" data-i18n="nav_climate">Climate</a>
+      <a href="pages/awareness.html" data-i18n="nav_awareness">Awareness</a>
+      <a href="pages/dashboard.html" data-i18n="nav_dashboard">Dashboard</a>
+      <a href="pages/about.html" data-i18n="nav_about">About Us</a>
+      <a href="pages/contact.html" data-i18n="nav_contact">Contact</a>
+    </nav>
+
+    <div class="topbar-right">
+
+      <span id="user-greeting" class="user-greeting"></span>
+
+      <a href="pages/login.html"
+         id="auth-btn"
+         class="auth-btn"
+         data-i18n="login_button_nav">
+         Login
+      </a>
+
       <div class="lang-switcher">
         <button id="lang-btn" class="lang-btn" onclick="toggleDropdown()">EN ▾</button>
         <div id="lang-dropdown" class="lang-dropdown"></div>
       </div>
-    </header>
 
-    <main class="home-main">
+    </div>
+  </header>
 
-      <!-- HERO -->
-      <section class="hero">
-        <h1 data-i18n="home_title">Pakarina</h1>
-        <p class="hero-mission" data-i18n="home_mission">A centralized platform for dengue monitoring, data integration, and community awareness — developed at UFOP.</p>
-        <div class="hero-actions">
-          <a href="pages/dashboard.html" class="btn-primary" data-i18n="home_btn_dashboard">Explore Dashboard</a>
-          <a href="pages/about.html" class="btn-secondary" data-i18n="home_btn_about">Learn More</a>
+  <main class="home-main">
+
+    <!-- HERO -->
+    <section class="hero">
+      <h1 data-i18n="home_title">Pakarina</h1>
+
+      <p class="hero-mission" data-i18n="home_hero_text">
+        A centralized platform for dengue monitoring, data integration, and community awareness — developed at UFOP.
+      </p>
+
+      <div class="hero-actions">
+        <a href="pages/dashboard.html"
+           class="btn-primary"
+           data-i18n="home_btn_dashboard">
+           Explore Dashboard
+        </a>
+
+        <a href="pages/about.html"
+           class="btn-secondary"
+           data-i18n="home_btn_about">
+           Learn More
+        </a>
+      </div>
+    </section>
+
+    <!-- DENGUE -->
+    <section class="home-section">
+
+      <h2 data-i18n="home_dengue_title">
+        Dengue in Brazil — A Growing Crisis
+      </h2>
+
+      <p data-i18n="home_dengue_text">
+        Brazil is the country most affected by dengue in the world. In 2024, over 10 million cases were recorded — a historic record — along with nearly 6,000 deaths.
+      </p>
+
+      <div class="stats-grid">
+
+        <div class="stat-card">
+          <span class="stat-number">10M+</span>
+          <span class="stat-label" data-i18n="home_stat_cases">
+            cases in Brazil in 2024
+          </span>
         </div>
-      </section>
 
-      <!-- DENGUE IN BRAZIL -->
-      <section class="home-section">
-        <h2 data-i18n="home_dengue_title">Dengue in Brazil — A Growing Crisis</h2>
-        <p data-i18n="home_dengue_text">Brazil is the country most affected by dengue in the world. In 2024, over 10 million cases were recorded — a historic record — along with nearly 6,000 deaths. The disease spreads through the Aedes aegypti mosquito and thrives in warm, humid conditions, making monitoring and prevention more critical than ever.</p>
-        <div class="stats-grid">
-          <div class="stat-card">
-            <span class="stat-number">10M+</span>
-            <span class="stat-label" data-i18n="home_stat_cases">cases in Brazil in 2024</span>
-          </div>
-          <div class="stat-card">
-            <span class="stat-number">~6,000</span>
-            <span class="stat-label" data-i18n="home_stat_deaths">deaths recorded in 2024</span>
-          </div>
-          <div class="stat-card">
-            <span class="stat-number">50%</span>
-            <span class="stat-label" data-i18n="home_stat_share">of all Latin American cases</span>
-          </div>
-          <div class="stat-card">
-            <span class="stat-number">4</span>
-            <span class="stat-label" data-i18n="home_stat_serotypes">serotypes circulating simultaneously</span>
-          </div>
+        <div class="stat-card">
+          <span class="stat-number">~6,000</span>
+          <span class="stat-label" data-i18n="home_stat_deaths">
+            deaths recorded in 2024
+          </span>
         </div>
-        <p class="stat-source" data-i18n="home_stat_source">Sources: Brazilian Ministry of Health, PAHO — 2024 data</p>
-      </section>
 
-      <!-- WHAT IS PAKARINA -->
-      <section class="home-section">
-        <h2 data-i18n="home_summary_title">What is Pakarina?</h2>
-        <p data-i18n="home_summary_text">Pakarina is an interdisciplinary initiative developed at the Federal University of Ouro Preto (UFOP) in partnership with UCASAL and Yncrea. It centralizes fragmented data sources related to dengue into a single, unified web platform — improving coordination between technical teams, researchers, educators, and public health institutions.</p>
-      </section>
-
-      <!-- PLATFORM MODULES CAROUSEL -->
-      <section class="home-section">
-        <h2 data-i18n="home_modules_title">Platform Modules</h2>
-        <div class="carousel-wrapper">
-          <button class="carousel-btn" onclick="slideCarousel(-1)">&#8592;</button>
-          <div class="carousel-viewport">
-            <div class="carousel-track" id="carousel-track"></div>
-          </div>
-          <button class="carousel-btn" onclick="slideCarousel(1)">&#8594;</button>
+        <div class="stat-card">
+          <span class="stat-number">50%</span>
+          <span class="stat-label" data-i18n="home_stat_share">
+            of all Latin American cases
+          </span>
         </div>
-        <div class="carousel-dots" id="carousel-dots"></div>
-      </section>
 
-      <!-- MISSION -->
-      <section class="home-section home-mission-section">
-        <h2 data-i18n="home_mission_title">Our Mission</h2>
-        <p data-i18n="home_mission_text">Pakarina aims to build a sustainable technological ecosystem that strengthens monitoring capabilities, improves information accessibility, and promotes collaboration between technical and non-technical participants. By combining technology, research, and community engagement, Pakarina seeks to create tools that contribute to public health, environmental awareness, and innovation-driven problem solving.</p>
-      </section>
+        <div class="stat-card">
+          <span class="stat-number">4</span>
+          <span class="stat-label" data-i18n="home_stat_serotypes">
+            serotypes circulating simultaneously
+          </span>
+        </div>
 
-    </main>
+      </div>
 
-    <script src="js/app.js"></script>
-    <script src="js/languageswitcher.js"></script>
-    <script src="js/carousel.js"></script>
+      <p class="stat-source" data-i18n="home_stat_source">
+        Sources: Brazilian Ministry of Health, PAHO — 2024 data
+      </p>
 
-  </body>
+    </section>
+
+    <!-- WHAT IS PAKARINA -->
+    <section class="home-section">
+
+      <h2 data-i18n="home_summary_title">
+        What is Pakarina?
+      </h2>
+
+      <p data-i18n="home_summary_text">
+        Pakarina is an interdisciplinary initiative developed at the Federal University of Ouro Preto (UFOP) in partnership with UCASAL and Yncrea.
+      </p>
+
+    </section>
+
+    <!-- MODULES -->
+    <section class="home-section">
+
+      <h2 data-i18n="home_modules_title">
+        Platform Modules
+      </h2>
+
+      <div class="carousel-wrapper">
+
+        <button class="carousel-btn" onclick="slideCarousel(-1)">
+          &#8592;
+        </button>
+
+        <div class="carousel-viewport">
+          <div class="carousel-track" id="carousel-track"></div>
+        </div>
+
+        <button class="carousel-btn" onclick="slideCarousel(1)">
+          &#8594;
+        </button>
+
+      </div>
+
+      <div class="carousel-dots" id="carousel-dots"></div>
+
+    </section>
+
+    <!-- MISSION -->
+    <section class="home-section home-mission-section">
+
+      <h2 data-i18n="home_mission_title">
+        Our Mission
+      </h2>
+
+      <p data-i18n="home_mission_text">
+        Pakarina aims to build a sustainable technological ecosystem that strengthens monitoring capabilities and promotes collaboration.
+      </p>
+
+    </section>
+
+  </main>
+
+  <script src="js/app.js"></script>
+  <script src="js/languageswitcher.js"></script>
+  <script src="js/carousel.js"></script>
+
+</body>
 </html>

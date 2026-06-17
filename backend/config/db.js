@@ -1,8 +1,11 @@
 require("dotenv").config({ path: "../.env" });
 const mysql = require("mysql2/promise");
 const { Client } = require("ssh2");
+const fs = require("fs");
 
-function createSSHTunnel() {
+let pool = null;
+
+async function createSSHTunnel() {
   return new Promise((resolve, reject) => {
     const ssh = new Client();
 
@@ -23,15 +26,24 @@ function createSSHTunnel() {
       host: "200.239.155.206",
       port: 22,
       username: "ubuntu",
-      privateKey: require("fs").readFileSync(process.env.SSH_KEY_PATH),
+      privateKey: fs.readFileSync(process.env.SSH_KEY_PATH),
+      keepaliveInterval: 10000,
+      keepaliveCountMax: 10,
     });
   });
 }
 
-let pool;
-
 async function getPool() {
-  if (pool) return pool;
+  if (pool) {
+    try {
+      const conn = await pool.getConnection();
+      await conn.ping();
+      conn.release();
+      return pool;
+    } catch {
+      pool = null;
+    }
+  }
 
   const { stream, ssh } = await createSSHTunnel();
 
@@ -44,9 +56,14 @@ async function getPool() {
     password: process.env.DB_PASSWORD,
     waitForConnections: true,
     connectionLimit: 10,
+    enableKeepAlive: true,
+    keepAliveInitialDelay: 10000,
   });
 
-  pool.on("end", () => ssh.end());
+  ssh.on("error", () => { pool = null; });
+  ssh.on("end", () => { pool = null; });
+  ssh.on("close", () => { pool = null; });
+
   return pool;
 }
 
