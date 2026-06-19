@@ -268,6 +268,127 @@ Remove-Item test-db.js
 rm test-db.js
 ```
 
+## Dengue Risk Logic — Climate Indicators
+
+### Why this exists
+
+The Climate page calculates a real-time dengue risk level (Low / Medium / High) for a given location, based on four weather variables: temperature, relative humidity, wind speed, and precipitation. 
+
+This section explains why these specific variables and their thresholds were chosen and the general direction in which each one affects risk.
+
+The thresholds are not invented — they are derived from entomological research on
+*Aedes aegypti*, the main mosquito species responsible for dengue transmission. Each
+variable affects a different part of the mosquito life cycle (adult survival, larval
+development, flight behavior, or breeding site formation), so each one needed its own
+justification.
+
+### Variables used and why
+
+**Temperature** 
+
+| Range | Risk level | Reasoning |
+|---|---|---|
+| < 10°C | Very low | Larvae generally fail to develop below this threshold. |
+| 10–20°C | Low | Mosquito activity and reproduction are slowed but not stopped. |
+| 20–25°C | Medium | Activity and reproduction increase progressively. |
+| 25–35°C | High | This is the optimal range for *Aedes* survival, development, and reproduction. |
+| > 35°C | Extreme (reduced risk) | Adult survival and larval development drop sharply; above 40°C adults die and eggs/larvae stop developing. |
+
+Multiple independent studies converge on a 25–30°C (sometimes extended to 22–32°C)
+optimum for development, longevity, and fecundity, with a sharp decline above 35–40°C.
+This justifies treating 25–35°C as the highest-risk band rather than assuming "hotter is
+always worse."
+
+**Sources:**
+- Reiskind & Zarrabi (2012), cited in *Frontiers in Cellular and Infection Microbiology* (2023) — optimal development range 25–30°C, mortality above 40°C: https://www.frontiersin.org/journals/cellular-and-infection-microbiology/articles/10.3389/fcimb.2023.1242173/full
+- Marinho et al. (2016), *Journal of Vector Ecology* — optimal range for development, longevity and fecundity between 22–32°C: https://onlinelibrary.wiley.com/doi/full/10.1111/jvec.12187
+- Sok et al., *Parasites & Vectors* — highest egg-hatching rate for *Ae. aegypti* at 25°C; larvae do not survive past first instar at 40°C: https://link.springer.com/article/10.1186/s13071-025-06892-y
+
+
+**Relative humidity**
+
+| Range | Risk level | Reasoning |
+|---|---|---|
+| 0–40% | Low | Dry air is unfavorable for mosquito survival and reproduction. |
+| 40–60% | Medium | Partially favorable conditions. |
+| > 60% | High | Clearly favors survival and reproduction. |
+
+Field studies consistently find a positive correlation between relative humidity and
+*Aedes aegypti* density / breeding indices, and at moderate temperatures higher humidity
+specifically increases survival rates.
+
+**Sources:**
+- Density study in Antioquia, Colombia, *PLOS ONE* / PMC — significant correlation between vector density and relative humidity: https://pmc.ncbi.nlm.nih.gov/articles/PMC10810462/
+- Climate study, Punjab, Pakistan — at moderate temperatures (20–30°C), higher relative humidity increased survival rates: https://www.ncbi.nlm.nih.gov/pmc/articles/PMC12112272/
+
+
+**Wind speed** 
+
+| Range | Risk level | Reasoning |
+|---|---|---|
+| < 3 m/s | High | Mosquitoes remain active and can fly/feed normally. |
+| > 3 m/s | Low | Wind disrupts flight and feeding activity, reducing effective mosquito activity. |
+
+This reflects a well-documented behavioral effect rather than a survival effect: wind does not kill mosquitoes, but it physically limits their ability to fly and locate hosts, which lowers real-world biting/breeding activity even when temperature and humidity are otherwise favorable.
+
+**Precipitation** 
+
+| Range | Risk level | Reasoning |
+|---|---|---|
+| 0–5 mm | Low | No significant water accumulation; low breeding-site risk. |
+| 5–20 mm | Medium | Can create stagnant water, favoring larval breeding sites. |
+| > 20 mm | High | Strongly increases the number of potential breeding sites. |
+
+Precipitation's effect on dengue risk is more nuanced than temperature or humidity: moderate rainfall creates the standing water *Aedes* needs to breed, but very heavy rainfall can flush away eggs and larvae. Since *Aedes aegypti* breeds mostly in artificial, often indoor or sheltered containers (rather than open outdoor pools), it is comparatively less affected by rain-flushing than mosquito species that breed outdoors — which is why the model treats higher precipitation as increasing rather than decreasing
+risk.
+
+**Sources:**
+- Systematic review & meta-analysis, *PMC* — heavy rainfall can flush away immature mosquito stages short-term, but precipitation creates breeding-favorable conditions
+  long-term: https://pmc.ncbi.nlm.nih.gov/articles/PMC9767811/
+- Sri Lanka prediction model study — Breteau Index (breeding-site density) correlated with rainfall, premise/ovitrap indices correlated with humidity: https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9810403/
+
+  ### Limitations / notes for contributors
+
+- These thresholds describe conditions favorable to the *mosquito vector*, not a direct
+  measurement of dengue case incidence — risk level is a proxy, not an epidemiological
+  forecast.
+- Thresholds were synthesized from multiple studies conducted in different countries
+  (Cambodia, Brazil, Pakistan, Colombia, Sri Lanka) with *Aedes aegypti* and sometimes
+  *Aedes albopictus*; exact optimal values vary slightly by population/region, so the
+  ranges used here are intentionally conservative midpoints rather than a single study's
+  exact figures.
+- If thresholds are adjusted in the future, update both the code (`climate.js`) and this
+  table together so they don't drift apart.
+
+  **Additional sources :**
+
+- Climate change and dengue: a critical and systematic review of quantitative modelling approaches : https://link.springer.com/article/10.1186/1471-2334-14-167
+
+- Associations between climatic variables and dengue incidence in high-burden countries: a systematic review and meta-analysis : https://www.frontiersin.org/journals/climate/articles/10.3389/fclim.2026.1804553/full
+
+- Factors influencing establishment of dengue fever vectors in urban areas : https://www.emro.who.int/emhj-volume-31-2025/volume-31-issue-3/factors-influencing-establishment-of-dengue-fever-vectors-in-urban-areas.html
+
+- The association between dengue case and climate: A systematic review and meta-analysis : https://pmc.ncbi.nlm.nih.gov/articles/PMC9767811/
+
+- A Systematic Review and Meta-Analysis of Dengue Risk with Temperature Change : https://pmc.ncbi.nlm.nih.gov/articles/PMC4306847/
+
+- DENGUE SEASONALITY AND NON-MONOTONIC RESPONSE TO MOISTURE: A MODEL-DATA ANALYSIS OF SRI LANKA INCIDENCE FROM 2011 TO 2016 : https://arxiv.org/pdf/2009.02847
+
+- Dengue World Health Organization : https://www.who.int/news-room/fact-sheets/detail/dengue-and-severe-dengue
+
+- The global distribution and burden of dengue : https://pubmed.ncbi.nlm.nih.gov/23563266/
+
+- The overlapping global distribution of dengue, chikungunya, Zika and yellow fever : https://pubmed.ncbi.nlm.nih.gov/40210848/
+
+- Dengue Fever : https://www.ncbi.nlm.nih.gov/books/NBK430732/
+
+- Epidemiology of dengue: past, present and future prospects : https://pmc.ncbi.nlm.nih.gov/articles/PMC3753061/
+
+- Dengue: global situation, surveillance and progress – 2024 update : https://iris.who.int/server/api/core/bitstreams/b405cbfa-3642-4da1-a45e-627c58cec6f2/content
+- 
+- 
+- 
+
 ## University Server Environment
 
 ### Overview
