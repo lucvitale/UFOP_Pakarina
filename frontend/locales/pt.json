@@ -13,8 +13,6 @@
   "news_subtitle": "Últimas notícias epidemiológicas",
   "login_button_nav": "Entrar",
 
-  "home_title": "Pakarina",
-
   "home_hero_text": "Uma plataforma centralizada para monitoramento da dengue, integração de dados e conscientização da comunidade — desenvolvida na UFOP.",
 
   "home_btn_dashboard": "Explorar Dashboard",
@@ -111,5 +109,41 @@
   "nav_logout": "Sair",
   "dashboard_welcome": "Bem-vindo",
   "dashboard_access_required": "Você precisa estar conectado para acessar o painel.",
-  "dashboard_redirecting": "Redirecionando para o login..."
+  "dashboard_redirecting": "Redirecionando para o login...",
+  "climate_analysis_title": "Análise de risco de dengue",
+  "climate_analysis_subtitle": "Condições ambientais que favorecem a proliferação de mosquitos",
+  "climate_risk_low": "Risco baixo",
+  "climate_risk_medium": "Risco médio",
+  "climate_risk_high": "Risco alto",
+  "climate_temp_label": "Temperatura",
+  "climate_humidity_label": "Umidade",
+  "climate_wind_label": "Velocidade do vento",
+  "climate_temp_info": "Mosquitos adultos prosperam entre 25°C e 35°C. Abaixo de 10°C, a maioria dos mosquitos adultos não sobrevive por longos períodos.",
+  "climate_humidity_info": "Umidade acima de 60% favorece a sobrevivência e reprodução dos mosquitos.",
+  "climate_wind_info": "Ventos abaixo de 3 m/s permitem que os mosquitos permaneçam ativos e voem com mais facilidade.",
+  "climate_precipitation_info": "Precipitações acima de 5 mm podem criar água parada. Acima de 20 mm, os locais potenciais de reprodução aumentam significativamente.",
+  "climate_search_placeholder": "Pesquisar uma cidade...",
+  "climate_search_btn": "Analisar",
+  "climate_loading": "Carregando dados climáticos...",
+  "climate_error": "Cidade não encontrada. Por favor tente novamente.",
+  "climate_no_data": "Pesquise uma cidade para ver a análise de risco de dengue.",
+  "climate_msg_high": "⚠️ As condições atuais são muito favoráveis à proliferação de mosquitos da dengue. Tome medidas preventivas.",
+  "climate_msg_medium": "⚡ As condições favorecem parcialmente a atividade dos mosquitos. Fique alerta e elimine água parada.",
+  "climate_msg_low": "✅ As condições atuais não são particularmente favoráveis à proliferação de mosquitos da dengue.",
+  "climate_temp_msg_verylow": "Risco muito baixo (< 10°C): a maioria dos mosquitos adultos não sobrevive por muito tempo a essas temperaturas. Tenha cuidado se a área se beneficiar de um microclima mais quente (ambiente interno climatizado, área abrigada).",
+  "climate_temp_msg_low": "Temperaturas amenas (10°C < T < 20°C): a atividade e a reprodução dos mosquitos ficam mais lentas, mas não cessam.",
+  "climate_temp_msg_medium": "Condições moderadamente favoráveis (20°C < T < 25°C): a atividade e a reprodução dos mosquitos aumentam progressivamente.",
+  "climate_temp_msg_high": "⚠️ 25°C < T < 35°C  => Condições ideais para a proliferação e sobrevivência dos mosquitos adultos. Mantenha-se vigilante.",
+  "climate_temp_msg_extreme": "Calor excessivo (> 35°C): pode reduzir a sobrevivência dos mosquitos e das larvas. Mantenha-se vigilante mesmo assim.",
+
+  "climate_humidity_msg_low": "Ar seco (0-40%): condições pouco favoráveis à sobrevivência, atividade e reprodução dos mosquitos.",
+  "climate_humidity_msg_medium": "Umidade moderada (40-60%): condições parcialmente favoráveis à sobrevivência, atividade e reprodução dos mosquitos.",
+  "climate_humidity_msg_high": "⚠️ Umidade elevada (> 60%): favorece claramente a sobrevivência e reprodução dos mosquitos.",
+
+  "climate_wind_msg_low": "Vento fraco (< 3m/s): os mosquitos permanecem ativos e voam com facilidade.",
+  "climate_wind_msg_high": "Vento suficiente para limitar o voo e a atividade dos mosquitos. (> 3m/s)",
+
+  "climate_precip_msg_low": "Sem acúmulo significativo de água (0-5mm); baixo risco de locais de reprodução.",
+  "climate_precip_msg_medium": "Pode criar água estagnada, favorecendo o surgimento de locais de reprodução. (5mm-20mm)",
+  "climate_precip_msg_high": "Aumenta significativamente os possíveis locais de reprodução. (> 20mm)"
 }
