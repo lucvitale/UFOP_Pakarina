@@ -83,4 +83,23 @@ async function login(req, res, next) {
   }
 }
 
-module.exports = { register, login };
+async function me(req, res, next) {
+  try {
+    const pool = await getPool();
+
+    const [rows] = await pool.query(
+      "SELECT id, nome, email FROM usuarios WHERE id = ?",
+      [req.user.id]
+    );
+
+    if (rows.length === 0) {
+      return res.status(404).json({ error: "User not found" });
+    }
+
+    return res.status(200).json({ user: rows[0] });
+  } catch (err) {
+    next(err);
+  }
+}
+
+module.exports = { register, login, me };
