@@ -9,8 +9,6 @@
   "nav_contact": "Contact",
   "home_title": "Pakarina",
   "home_subtitle": "Dengue monitoring platform — UFOP",
-  "news_title": "News",
-  "news_subtitle": "Latest epidemiological news",
   "climate_title": "Climate",
   "climate_subtitle": "Environmental conditions and analysis",
   "awareness_title": "Awareness",
@@ -144,6 +142,15 @@
 
   "home_mission_title": "Our Mission",
 
-  "home_mission_text": "Pakarina aims to build a sustainable technological ecosystem that strengthens monitoring capabilities, improves information accessibility, and promotes collaboration between technical and non-technical participants. By combining technology, research, and community engagement, Pakarina seeks to create tools that contribute to public health, environmental awareness, and innovation-driven problem solving."
+  "home_mission_text": "Pakarina aims to build a sustainable technological ecosystem that strengthens monitoring capabilities, improves information accessibility, and promotes collaboration between technical and non-technical participants. By combining technology, research, and community engagement, Pakarina seeks to create tools that contribute to public health, environmental awareness, and innovation-driven problem solving.",
+  "news_title": "News",
+  "news_subtitle": "Track arbovirus-related coverage as it breaks, city by city.",
+  "news_search_placeholder": "Search a city (e.g. Rio de Janeiro, BR)",
+  "news_search_button": "Search",
+  "news_no_results": "No news found for this city yet.",
+  "news_empty_city": "Please enter a city name to search.",
+  "news_available_locations": "News are currently available for:",
+  "news_loading": "Searching news...",
+  "news_fetch_error": "Error fetching news. Please try again later."
 
 }

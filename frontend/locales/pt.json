@@ -9,8 +9,7 @@
   "nav_contact": "Contato",
   "home_title": "Pakarina",
   "home_subtitle": "Plataforma de monitoramento de dengue — UFOP",
-  "news_title": "Notícias",
-  "news_subtitle": "Últimas notícias epidemiológicas",
+
   "login_button_nav": "Entrar",
 
   "home_hero_text": "Uma plataforma centralizada para monitoramento da dengue, integração de dados e conscientização da comunidade — desenvolvida na UFOP.",
@@ -145,5 +144,14 @@
 
   "climate_precip_msg_low": "Sem acúmulo significativo de água (0-5mm); baixo risco de locais de reprodução.",
   "climate_precip_msg_medium": "Pode criar água estagnada, favorecendo o surgimento de locais de reprodução. (5mm-20mm)",
-  "climate_precip_msg_high": "Aumenta significativamente os possíveis locais de reprodução. (> 20mm)"
+  "climate_precip_msg_high": "Aumenta significativamente os possíveis locais de reprodução. (> 20mm)",
+  "news_title": "Notícias",
+  "news_subtitle": "Acompanhe a cobertura sobre arbovírus, cidade por cidade.",
+  "news_search_placeholder": "Busque uma cidade (ex: Rio de Janeiro, BR)",
+  "news_search_button": "Buscar",
+  "news_no_results": "Nenhuma notícia encontrada para esta cidade.",
+  "news_empty_city": "Digite o nome de uma cidade para buscar.",
+  "news_loading": "Buscando notícias...",
+  "news_available_locations": "As notícias estão atualmente disponíveis para:",
+  "news_fetch_error": "Erro ao buscar notícias. Tente novamente mais tarde."
 }

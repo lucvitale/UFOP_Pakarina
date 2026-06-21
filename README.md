@@ -386,6 +386,51 @@ risk.
 
 - Dengue: global situation, surveillance and progress – 2024 update : https://iris.who.int/server/api/core/bitstreams/b405cbfa-3642-4da1-a45e-627c58cec6f2/content
 
+
+### News Module
+
+#### Purpose
+
+The News Module allows users to search for dengue and arbovirus-related news articles collected from external sources and stored in the project's database.
+
+The objective is to provide quick access to epidemiological information associated with specific locations and help users monitor recent dengue-related events.
+
+---
+
+#### Features
+
+- Search news articles by city, region, or country.
+- Display article title, source, publication date, location, and summary.
+- Open the original article in a new browser tab.
+- Support multiple languages through the project's internationalization system (English, French, Spanish, and Portuguese).
+
+---
+
+#### No Results Handling
+
+If no news articles are found for the requested location:
+
+1. A translated message informs the user that no articles are currently available for that search.
+2. The system automatically retrieves all locations currently present in the database.
+3. These available locations are displayed as clickable buttons.
+
+---
+
+#### Interactive Suggestions
+
+When available locations are displayed, users can click directly on any suggested location.
+
+The application automatically launches a new search for the selected location, making navigation easier without requiring manual input.
+
+---
+
+#### Dynamic Content
+
+The list of available locations is generated dynamically from the `noticias` database table.
+
+As new locations are added by the news collection system, they automatically become available in the interface without requiring any code modification.
+
+
 ## University Server Environment
 
 ### Overview

@@ -62,6 +62,12 @@ async function applyTranslations(lang) {
   document.querySelectorAll(".lang-option").forEach((el) => {
     el.classList.toggle("active", el.dataset.lang === lang);
   });
+
+  document.dispatchEvent(
+  new CustomEvent("languageChanged", {
+    detail: { lang }
+  })
+);
 }
 
 function toggleDropdown() {

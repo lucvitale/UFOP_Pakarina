@@ -20,33 +20,44 @@
         <a href="contact.html" data-i18n="nav_contact">Contact</a>
       </nav>
       <div class="topbar-right">
-
         <span id="user-greeting" class="user-greeting"></span>
-
-        <a href="login.html"
-          id="auth-btn"
-          class="auth-btn">
-          Login
-        </a>
-
+        <a href="login.html" id="auth-btn" class="auth-btn">Login</a>
         <div class="lang-switcher">
           <button id="lang-btn" class="lang-btn" onclick="toggleDropdown()">EN ▾</button>
           <div id="lang-dropdown" class="lang-dropdown"></div>
         </div>
-
       </div>
     </header>
 
-    <main class="main">
-      <section class="hero">
+    <main class="main news-main">
+      <section class="news-page-header">
         <h1 data-i18n="news_title">News</h1>
-        <p data-i18n="news_subtitle">Coming soon</p>
+        <p data-i18n="news_subtitle">Track arbovirus-related coverage as it breaks, city by city.</p>
+      </section>
+
+      <section id="news-section" class="news-section">
+        <div class="news-search-card">
+          <div class="news-search-bar">
+            <input
+              type="text"
+              id="news-city-input"
+              data-i18n-placeholder="news_search_placeholder"
+              placeholder="Search a city (e.g. Rio de Janeiro, BR)"
+            />
+            <button id="news-search-btn" type="button" data-i18n="news_search_button">Search</button>
+          </div>
+        </div>
+
+        <div id="news-status" class="news-status" hidden></div>
+
+        <div id="news-results" class="news-results"></div>
       </section>
     </main>
 
     <script src="../js/app.js"></script>
     <script src="../js/languageswitcher.js"></script>
     <script src="../js/navbar-auth.js"></script>
+    <script src="../js/news.js"></script>
 
   </body>
 </html>
