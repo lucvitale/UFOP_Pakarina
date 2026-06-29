@@ -1,4 +1,4 @@
-require("dotenv").config({ path: "../.env" });
+require("dotenv").config();
 const mysql = require("mysql2/promise");
 const { Client } = require("ssh2");
 const fs = require("fs");
@@ -8,7 +8,6 @@ let pool = null;
 async function createSSHTunnel() {
   return new Promise((resolve, reject) => {
     const ssh = new Client();
-
     ssh.on("ready", () => {
       ssh.forwardOut(
         "127.0.0.1", 0,
@@ -19,9 +18,7 @@ async function createSSHTunnel() {
         }
       );
     });
-
     ssh.on("error", reject);
-
     ssh.connect({
       host: "200.239.155.206",
       port: 22,
@@ -44,9 +41,7 @@ async function getPool() {
       pool = null;
     }
   }
-
   const { stream, ssh } = await createSSHTunnel();
-
   pool = mysql.createPool({
     stream,
     host: "127.0.0.1",
@@ -59,11 +54,9 @@ async function getPool() {
     enableKeepAlive: true,
     keepAliveInitialDelay: 10000,
   });
-
   ssh.on("error", () => { pool = null; });
   ssh.on("end", () => { pool = null; });
   ssh.on("close", () => { pool = null; });
-
   return pool;
 }
 
