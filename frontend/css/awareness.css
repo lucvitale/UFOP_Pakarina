@@ -1,0 +1,222 @@
+/* ===== AWARENESS PAGE ===== */
+.awareness-main {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem 4rem;
+}
+
+/* Header */
+.aw-header {
+  text-align: center;
+  padding: 3rem 1rem;
+  background: linear-gradient(135deg, #2e7d4f 0%, #1b5e3a 100%);
+  border-radius: 20px;
+  color: white;
+  margin-bottom: 3rem;
+}
+.aw-header h1 {
+  font-size: 2.2rem;
+  margin-bottom: 1rem;
+}
+.aw-intro {
+  max-width: 800px;
+  margin: 0 auto;
+  line-height: 1.7;
+  color: #e8f3ec;
+}
+
+/* Sections */
+.aw-section {
+  margin-bottom: 3.5rem;
+}
+.aw-section h2 {
+  text-align: center;
+  font-size: 1.8rem;
+  color: #2e7d4f;
+  margin-bottom: 0.5rem;
+}
+.aw-section-sub {
+  text-align: center;
+  color: #7a8a7e;
+  margin-bottom: 2rem;
+}
+.aw-text {
+  max-width: 800px;
+  margin: 0 auto 2rem;
+  text-align: center;
+  line-height: 1.7;
+  color: #4a4a4a;
+}
+
+/* Cards grid */
+.aw-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+.aw-cards-3 {
+  grid-template-columns: repeat(3, 1fr);
+}
+.aw-card {
+  background: white;
+  border-radius: 16px;
+  padding: 2rem 1.5rem;
+  text-align: center;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.06);
+  transition: transform 0.2s, box-shadow 0.2s;
+  border: 1px solid #e6e0d4;
+}
+.aw-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 24px rgba(46, 125, 79, 0.15);
+}
+.aw-card-icon {
+  font-size: 2.8rem;
+  margin-bottom: 1rem;
+}
+.aw-card h3 {
+  color: #2e7d4f;
+  margin-bottom: 0.6rem;
+  font-size: 1.1rem;
+}
+.aw-card p {
+  color: #6a6a6a;
+  font-size: 0.92rem;
+  line-height: 1.5;
+}
+
+/* Prevention measures */
+.aw-prevention {
+  background: #eef6f0;
+  border-radius: 20px;
+  padding: 3rem 2rem;
+}
+.aw-measures {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  max-width: 900px;
+  margin: 0 auto;
+}
+.aw-measure {
+  background: white;
+  padding: 0.9rem 1.4rem;
+  border-radius: 30px;
+  font-weight: 500;
+  color: #2c3e50;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+/* Origami video */
+.aw-origami {
+  text-align: center;
+}
+.aw-video-area {
+  max-width: 700px;
+  margin: 0 auto;
+}
+.aw-video-placeholder {
+  background: #1b5e3a;
+  border-radius: 16px;
+  padding: 4rem 2rem;
+  color: white;
+  margin-bottom: 1.5rem;
+}
+.aw-video-icon {
+  font-size: 3rem;
+  display: block;
+  margin-bottom: 1rem;
+}
+.aw-video-btn,
+.aw-final-btn {
+  display: inline-block;
+  background: #2e7d4f;
+  color: white;
+  text-decoration: none;
+  padding: 0.9rem 1.8rem;
+  border-radius: 30px;
+  font-weight: 600;
+  transition: background 0.2s;
+}
+.aw-video-btn:hover,
+.aw-final-btn:hover {
+  background: #1b5e3a;
+}
+
+/* Gallery */
+.aw-gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+.aw-gallery-item {
+  background: #e6e0d4;
+  border-radius: 12px;
+  height: 180px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.5rem;
+  color: #a48a6a;
+}
+.aw-gallery-note {
+  text-align: center;
+  color: #999;
+  font-style: italic;
+  font-size: 0.9rem;
+}
+
+/* Final message */
+.aw-final {
+  background: linear-gradient(135deg, #2e7d4f 0%, #1b5e3a 100%);
+  border-radius: 20px;
+  padding: 3.5rem 2rem;
+  text-align: center;
+  color: white;
+}
+.aw-final h2 {
+  color: white;
+  font-size: 1.8rem;
+  margin-bottom: 1.5rem;
+}
+.aw-final-text {
+  max-width: 700px;
+  margin: 0 auto 2rem;
+  line-height: 1.7;
+  font-style: italic;
+  color: #e8f3ec;
+}
+.aw-final-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+}
+.aw-final .aw-final-btn {
+  background: white;
+  color: #1b5e3a;
+}
+.aw-final .aw-final-btn:hover {
+  background: #e8f3ec;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .aw-cards,
+  .aw-cards-3,
+  .aw-gallery {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 600px) {
+  .aw-cards,
+  .aw-cards-3,
+  .aw-gallery {
+    grid-template-columns: 1fr;
+  }
+  .aw-header h1 {
+    font-size: 1.6rem;
+  }
+}

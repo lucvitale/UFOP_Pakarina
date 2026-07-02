@@ -5,9 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Pakarina — Awareness</title>
     <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/awareness.css" />
   </head>
   <body>
-
     <header class="topbar">
       <div class="logo" data-i18n="app_name">Pakarina Project</div>
       <nav class="nav">
@@ -20,33 +20,130 @@
         <a href="contact.html" data-i18n="nav_contact">Contact</a>
       </nav>
       <div class="topbar-right">
-
         <span id="user-greeting" class="user-greeting"></span>
-
-        <a href="login.html"
-          id="auth-btn"
-          class="auth-btn">
-          Login
-        </a>
-
+        <a href="login.html" id="auth-btn" class="auth-btn">Login</a>
         <div class="lang-switcher">
           <button id="lang-btn" class="lang-btn" onclick="toggleDropdown()">EN ▾</button>
           <div id="lang-dropdown" class="lang-dropdown"></div>
         </div>
-
       </div>
     </header>
 
-    <main class="main">
-      <section class="hero">
-        <h1 data-i18n="awareness_title">Awareness</h1>
-        <p data-i18n="awareness_subtitle">Coming soon</p>
+    <main class="awareness-main">
+      <section class="aw-header">
+        <h1 data-i18n="aw_main_title">Dengue Awareness and Environmental Education</h1>
+        <p class="aw-intro" data-i18n="aw_intro">We carry out awareness activities in several schools with the aim of providing clear, practical, and engaging information about dengue prevention and environmental care. Through educational talks, creative activities, and interactive experiences, we encourage habits that contribute to the health and well-being of the entire community.</p>
+      </section>
+
+      <section class="aw-section">
+        <h2 data-i18n="aw_schools_title">What Do We Do in Schools?</h2>
+        <p class="aw-section-sub" data-i18n="aw_schools_sub">Main activities of our awareness programs</p>
+        <div class="aw-cards">
+          <div class="aw-card">
+            <div class="aw-card-icon">🦟</div>
+            <h3 data-i18n="aw_card1_title">Dengue Prevention</h3>
+            <p data-i18n="aw_card1_text">Educational talks about dengue and the importance of preventing mosquito breeding sites.</p>
+          </div>
+          <div class="aw-card">
+            <div class="aw-card-icon">🏠</div>
+            <h3 data-i18n="aw_card2_title">Elimination of Breeding Sites</h3>
+            <p data-i18n="aw_card2_text">How to identify and remove containers with standing water where mosquito larvae develop.</p>
+          </div>
+          <div class="aw-card">
+            <div class="aw-card-icon">📄</div>
+            <h3 data-i18n="aw_card3_title">Educational Materials</h3>
+            <p data-i18n="aw_card3_text">Distribution of flyers so students can share prevention practices with their families.</p>
+          </div>
+          <div class="aw-card">
+            <div class="aw-card-icon">✂️</div>
+            <h3 data-i18n="aw_card4_title">Creative Origami Workshop</h3>
+            <p data-i18n="aw_card4_text">Interactive activities that teach students about dengue through mosquito origami.</p>
+          </div>
+          <div class="aw-card">
+            <div class="aw-card-icon">🌳</div>
+            <h3 data-i18n="aw_card5_title">Environmental Education</h3>
+            <p data-i18n="aw_card5_text">Activities promoting environmental awareness and the importance of protecting ecosystems.</p>
+          </div>
+          <div class="aw-card">
+            <div class="aw-card-icon">🔥</div>
+            <h3 data-i18n="aw_card6_title">Forest Fire & Wildlife</h3>
+            <p data-i18n="aw_card6_text">Educational activities focused on wildfire prevention and respect for local wildlife.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="aw-section aw-prevention">
+        <h2 data-i18n="aw_prev_title">How Can We Prevent Dengue?</h2>
+        <p class="aw-text" data-i18n="aw_prev_text">During the activities, students learn that the mosquito responsible for transmitting dengue can reproduce in containers with stagnant water, such as bottles, tires, flower pots, and buckets. We promote simple actions that help eliminate breeding sites and protect the community.</p>
+        <div class="aw-measures">
+          <div class="aw-measure" data-i18n="aw_measure1">✅ Eliminate standing water</div>
+          <div class="aw-measure" data-i18n="aw_measure2">✅ Cover water storage containers</div>
+          <div class="aw-measure" data-i18n="aw_measure3">✅ Check tires, bottles, and flower pots</div>
+          <div class="aw-measure" data-i18n="aw_measure4">✅ Keep yards and surrounding areas clean</div>
+          <div class="aw-measure" data-i18n="aw_measure5">✅ Share prevention information with family</div>
+        </div>
+      </section>
+
+      <section class="aw-section aw-origami">
+        <h2 data-i18n="aw_origami_title">Learning Through Creativity</h2>
+        <p class="aw-text" data-i18n="aw_origami_text">As part of the awareness activities, students participate in a creative mosquito origami workshop. This activity provides a visual, practical, and interactive way of learning, turning an artistic experience into an educational tool that reinforces dengue prevention messages.</p>
+        <div class="aw-video-area">
+          <div class="aw-video-placeholder">
+            <span class="aw-video-icon">🎥</span>
+            <p data-i18n="aw_video_soon">Origami tutorial video — coming soon</p>
+          </div>
+          <a href="#" id="origami-btn" class="aw-video-btn" data-i18n="aw_origami_btn">🎥 Learn How to Make Your Own Mosquito Origami</a>
+        </div>
+      </section>
+
+      <section class="aw-section">
+        <h2 data-i18n="aw_env_title">Protecting the Environment Is Also Prevention</h2>
+        <div class="aw-cards aw-cards-3">
+          <div class="aw-card">
+            <div class="aw-card-icon">🌲</div>
+            <h3 data-i18n="aw_env1_title">Environmental Education</h3>
+            <p data-i18n="aw_env1_text">Together with forest rangers, students learn about environmental protection and preserving local ecosystems.</p>
+          </div>
+          <div class="aw-card">
+            <div class="aw-card-icon">🔥</div>
+            <h3 data-i18n="aw_env2_title">Forest Fire Prevention</h3>
+            <p data-i18n="aw_env2_text">Students learn how careless actions can lead to forest fires and why responsible behavior matters.</p>
+          </div>
+          <div class="aw-card">
+            <div class="aw-card-icon">🦎</div>
+            <h3 data-i18n="aw_env3_title">Local Wildlife Awareness</h3>
+            <p data-i18n="aw_env3_text">Students are introduced to regional species and encouraged to respect and protect wildlife.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="aw-section aw-gallery-section" id="gallery">
+        <h2 data-i18n="aw_gallery_title">Gallery of Experiences</h2>
+        <p class="aw-section-sub" data-i18n="aw_gallery_sub">Photos from our school awareness activities</p>
+        <div class="aw-gallery">
+          <div class="aw-gallery-item">📷</div>
+          <div class="aw-gallery-item">📷</div>
+          <div class="aw-gallery-item">📷</div>
+          <div class="aw-gallery-item">📷</div>
+          <div class="aw-gallery-item">📷</div>
+          <div class="aw-gallery-item">📷</div>
+        </div>
+        <p class="aw-gallery-note" data-i18n="aw_gallery_note">Photos from school visits will be added here.</p>
+      </section>
+
+      <section class="aw-final">
+        <h2 data-i18n="aw_final_title">A Message for the Community</h2>
+        <p class="aw-final-text" data-i18n="aw_final_text">"Prevention starts with small actions. Learning, eliminating mosquito breeding sites, and sharing knowledge with the community are essential steps toward building healthier and safer environments for everyone."</p>
+        <div class="aw-final-buttons">
+          <a href="climate.html" class="aw-final-btn" data-i18n="aw_final_btn1">🦟 Learn More About Prevention</a>
+          <a href="#" id="origami-btn2" class="aw-final-btn" data-i18n="aw_final_btn2">🎥 Watch the Origami Tutorial</a>
+          <a href="#gallery" class="aw-final-btn" data-i18n="aw_final_btn3">📸 View the Photo Gallery</a>
+        </div>
       </section>
     </main>
 
     <script src="../js/app.js"></script>
     <script src="../js/languageswitcher.js"></script>
     <script src="../js/navbar-auth.js"></script>
-
   </body>
 </html>
