@@ -40,27 +40,39 @@ function analyzeClimate(data) {
 
   const t = window._currentTranslations || {};
 
+  // ===== REFINED DENGUE PROLIFERATION MODEL (Sprint 3) =====
+  // Based on entomological research on Aedes aegypti (see docs/climate-model.md)
+  // Continuous scoring for finer granularity than the initial binary model.
   let riskScore = 0;
 
-  if (temp >= 25 && temp <= 35) riskScore += 2;
-  else if (temp > 20) riskScore += 1;
+  // Temperature — optimal 25-30°C, decline above 35°C, larvae fail below 10°C or above 40°C
+  if (temp >= 25 && temp <= 30) riskScore += 3;
+  else if (temp > 30 && temp <= 35) riskScore += 2;
+  else if (temp >= 20 && temp < 25) riskScore += 1.5;
+  else if (temp > 35 && temp <= 40) riskScore += 1;
+  else if (temp >= 10 && temp < 20) riskScore += 0.5;
 
+  // Relative humidity — higher favors survival and breeding
   if (humidity >= 60) riskScore += 2;
   else if (humidity >= 40) riskScore += 1;
 
+  // Wind — disrupts flight and feeding above ~3 m/s
   if (wind < 3) riskScore += 1;
+  else if (wind < 5) riskScore += 0.5;
 
-  if (precipitation > 5) riskScore += 1;
-
+  // Precipitation — moderate/heavy rain creates breeding sites
+  if (precipitation > 20) riskScore += 1.5;
+  else if (precipitation > 5) riskScore += 1;
+  else if (precipitation > 0) riskScore += 0.5;
   let riskLevel, riskColor, riskMessage, riskKey, riskMsgKey;
 
-  if (riskScore >= 4) {
+  if (riskScore >= 5) {
     riskKey = "climate_risk_high";
     riskMsgKey = "climate_msg_high";
     riskLevel = t[riskKey] || "High Risk";
     riskColor = "#e74c3c";
     riskMessage = t[riskMsgKey] || "⚠️ Current conditions are highly favorable for dengue mosquito proliferation. Take preventive measures.";
-  } else if (riskScore >= 2) {
+  } else if (riskScore >= 2.5) {
     riskKey = "climate_risk_medium";
     riskMsgKey = "climate_msg_medium";
     riskLevel = t[riskKey] || "Medium Risk";
