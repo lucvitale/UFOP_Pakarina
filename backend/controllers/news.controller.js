@@ -12,10 +12,6 @@ const { logger } = require("../config/logger");
 // -----------------------------------------------------------------------------
 // GET /api/news?city=Rio
 // -----------------------------------------------------------------------------
-// NOTA: nomes de coluna (titulo, link, jornal, data_publicacao, lat, lon,
-// local_nome) seguem estrutura_banco_sql.txt. Confirmar com "DESCRIBE noticias;"
-// no servidor real e ajustar se necessário.
-// -----------------------------------------------------------------------------
 async function getNewsByCity(req, res, next) {
   try {
     const { city } = req.query;
@@ -60,8 +56,57 @@ async function getNewsByCity(req, res, next) {
 }
 
 // -----------------------------------------------------------------------------
+// GET /api/news/search?q=dengue
+// Recherche unifiée : cherche dans titulo, termo_busca ET local_nome.
+// Permet de chercher par mot-clé (ex: "dengue") ou par ville, avec les
+// coordonnées lat/lon pour affichage sur la carte.
+// -----------------------------------------------------------------------------
+async function getNewsBySearch(req, res, next) {
+  try {
+    const { q } = req.query;
+
+    if (!q || q.trim().length === 0) {
+      return res.status(400).json({ error: "q parameter is required" });
+    }
+
+    const pool = await getPool();
+    const term = `%${q.trim()}%`;
+
+    const [rows] = await pool.query(
+      `SELECT
+         id,
+         titulo,
+         link,
+         jornal,
+         data_publicacao AS data,
+         lat,
+         lon,
+         local_nome,
+         termo_busca,
+         momento_coleta,
+         resumo
+       FROM noticias
+       WHERE titulo LIKE ? OR termo_busca LIKE ? OR local_nome LIKE ?
+       ORDER BY momento_coleta DESC
+       LIMIT 200`,
+      [term, term, term]
+    );
+
+    logger.info("News search", { q: q.trim(), count: rows.length });
+
+    return res.status(200).json({
+      query: q.trim(),
+      count: rows.length,
+      results: rows,
+    });
+  } catch (err) {
+    next(err);
+  }
+}
+
+// -----------------------------------------------------------------------------
 // GET /api/news/nearby?lat=-22.90&lon=-43.17&radius=50
-// Variante por geolocalização (raio em km), útil para clique no mapa.
+// Variante par geolocalização (raio em km), útil para clique no mapa.
 // -----------------------------------------------------------------------------
 async function getNewsNearby(req, res, next) {
   try {
@@ -112,8 +157,6 @@ async function getNewsNearby(req, res, next) {
 
 // -----------------------------------------------------------------------------
 // GET /api/news/cities
-// Retorna a lista de cidades distintas presentes na tabela noticias.
-// Útil para sugerir cidades disponíveis quando uma busca não retorna nada.
 // -----------------------------------------------------------------------------
 async function getAvailableCities(req, res, next) {
   try {
@@ -134,4 +177,4 @@ async function getAvailableCities(req, res, next) {
   }
 }
 
-module.exports = { getNewsByCity, getNewsNearby, getAvailableCities };
+module.exports = { getNewsByCity, getNewsBySearch, getNewsNearby, getAvailableCities };
