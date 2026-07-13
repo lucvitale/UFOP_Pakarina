@@ -81,9 +81,9 @@
   "contact_subtitle": "Entre em contato conosco",
   "contact_intro": "Pakarina é uma iniciativa colaborativa desenvolvida pela Universidade Federal de Ouro Preto (UFOP) em parceria com a Universidade Católica de Salta (UCASAL) e Yncrea. Se você deseja saber mais sobre o projeto, explorar oportunidades de colaboração ou solicitar informações adicionais, entre em contato:",
   "contact_ufop": "UFOP",
-  "contact_ufop_phone": "Telefone: +5531 3559-1240",
+  "contact_ufop_phone": "Telefone: +55 31 3559-1240",
   "contact_coordinator": "Coordenador do projeto",
-  "contact_coordinator_phone": "Telefone: +5493874087037",
+  "contact_coordinator_phone": "Telefone: +54 9 3874 08-7037",
   "contact_closing": "Aguardamos seu contato.",
   "login_title": "Entrar",
   "login_email": "E-mail",
@@ -195,5 +195,11 @@
   "aw_final_text": "\"A prevenção começa com pequenas ações. Aprender, eliminar criadouros de mosquitos e compartilhar o conhecimento com a comunidade são passos essenciais para construir ambientes mais saudáveis e seguros para todos.\"",
   "aw_final_btn1": "🦟 Saiba mais sobre a prevenção",
   "aw_final_btn2": "🎥 Assista ao tutorial de origami",
-  "aw_final_btn3": "📸 Ver a galeria de fotos"
+  "aw_final_btn3": "📸 Ver a galeria de fotos",
+  "footer_mission": "Plataforma de vigilância georreferenciada de arboviroses (dengue, chikungunya, Zika, Oropouche) com uma abordagem One Health.",
+"footer_institutions_title": "Instituições parceiras",
+"footer_contact_title": "Contato",
+"footer_contact_text": "Uma dúvida, dados para compartilhar, uma colaboração para propor?",
+"footer_contact_btn": "Fale conosco",
+"footer_academic": "Projeto acadêmico multiuniversitário"
 }
