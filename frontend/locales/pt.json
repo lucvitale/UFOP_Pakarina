@@ -201,5 +201,12 @@
 "footer_contact_title": "Contato",
 "footer_contact_text": "Uma dúvida, dados para compartilhar, uma colaboração para propor?",
 "footer_contact_btn": "Fale conosco",
-"footer_academic": "Projeto acadêmico multiuniversitário"
+"footer_academic": "Projeto acadêmico multiuniversitário",
+"dashboard_sensor_title": "🦟 Sensor de campo — Detecção de mosquitos",
+"dashboard_sensor_total": "Detecções totais",
+"dashboard_sensor_vectors": "Vetores da dengue",
+"dashboard_sensor_temp": "Temperatura média",
+"dashboard_sensor_humidity": "Umidade média",
+"dashboard_sensor_species": "Detecções por espécie",
+"dashboard_sensor_error": "Não foi possível carregar os dados do sensor."
 }

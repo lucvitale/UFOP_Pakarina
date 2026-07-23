@@ -199,6 +199,13 @@
 "footer_contact_title": "Contact",
 "footer_contact_text": "A question, data to share, a collaboration to propose?",
 "footer_contact_btn": "Contact us",
-"footer_academic": "Multi-university academic project"
+"footer_academic": "Multi-university academic project",
+"dashboard_sensor_title": "🦟 Field Sensor — Mosquito Detection",
+"dashboard_sensor_total": "Total detections",
+"dashboard_sensor_vectors": "Dengue vectors",
+"dashboard_sensor_temp": "Avg temperature",
+"dashboard_sensor_humidity": "Avg humidity",
+"dashboard_sensor_species": "Detections by species",
+"dashboard_sensor_error": "Unable to load sensor data."
 
 }

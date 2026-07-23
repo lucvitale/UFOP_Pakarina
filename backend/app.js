@@ -19,6 +19,7 @@ app.use(morganMiddleware);
 app.use("/api/health", healthRouter);
 app.use("/api/auth", authRouter);
 app.use('/api', newsRoutes);
+app.use("/api/sensor", require("./routes/sensor.routes"));
 app.use("/api", apiRouter);
 
 

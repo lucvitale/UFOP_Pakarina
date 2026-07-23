@@ -1626,3 +1626,86 @@ p {
     text-align: center;
   }
 }
+/* ===== SENSOR CARD (Hardware Integration) ===== */
+.sensor-location {
+  color: #7a8a7e;
+  font-size: 0.9rem;
+  margin-bottom: 1.5rem;
+}
+.sensor-loading, .sensor-error {
+  text-align: center;
+  padding: 2rem;
+  color: #7a8a7e;
+}
+.sensor-stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+.sensor-stat {
+  background: #f6f1e7;
+  border-radius: 12px;
+  padding: 1.2rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+.sensor-stat-alert {
+  background: #fdecea;
+  border: 1px solid #f5c6c0;
+}
+.sensor-stat-value {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #2c3e50;
+}
+.sensor-stat-alert .sensor-stat-value {
+  color: #e74c3c;
+}
+.sensor-stat-label {
+  font-size: 0.8rem;
+  color: #7a8a7e;
+}
+.sensor-subtitle {
+  font-size: 1.1rem;
+  color: #2c3e50;
+  margin-bottom: 1rem;
+}
+.sensor-species {
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+}
+.species-row {
+  display: grid;
+  grid-template-columns: 200px 1fr 40px;
+  align-items: center;
+  gap: 1rem;
+}
+.species-name {
+  font-size: 0.9rem;
+  color: #4a4a4a;
+}
+.species-bar-track {
+  background: #ece5d8;
+  border-radius: 20px;
+  height: 20px;
+  overflow: hidden;
+}
+.species-bar {
+  height: 100%;
+  border-radius: 20px;
+  transition: width 0.6s ease;
+}
+.species-count {
+  font-weight: 600;
+  color: #2c3e50;
+  text-align: right;
+}
+@media (max-width: 700px) {
+  .sensor-stats { grid-template-columns: repeat(2, 1fr); }
+  .species-row { grid-template-columns: 120px 1fr 30px; gap: 0.5rem; }
+  .species-name { font-size: 0.75rem; }
+}
