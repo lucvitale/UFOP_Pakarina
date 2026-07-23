@@ -175,5 +175,12 @@
 "footer_contact_title": "Contact",
 "footer_contact_text": "Une question, une donnée à partager, une collaboration à proposer ?",
 "footer_contact_btn": "Nous contacter",
-"footer_academic": "Projet académique multi-universitaire"
+"footer_academic": "Projet académique multi-universitaire",
+"dashboard_sensor_title": "🦟 Capteur de terrain — Détection de moustiques",
+"dashboard_sensor_total": "Détections totales",
+"dashboard_sensor_vectors": "Vecteurs de la dengue",
+"dashboard_sensor_temp": "Température moyenne",
+"dashboard_sensor_humidity": "Humidité moyenne",
+"dashboard_sensor_species": "Détections par espèce",
+"dashboard_sensor_error": "Impossible de charger les données du capteur."
 }

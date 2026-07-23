@@ -85,7 +85,37 @@
             </div>
           </div>
         </div>
-
+        <!-- SENSOR DATA -->
+        <div class="dashboard-card sensor-card">
+          <h2 data-i18n="dashboard_sensor_title">🦟 Field Sensor — Mosquito Detection</h2>
+          <p class="sensor-location" id="sensor-location"></p>
+          <div class="sensor-loading" id="sensor-loading" data-i18n="dashboard_loading">Loading...</div>
+          <div class="sensor-content" id="sensor-content" style="display:none;">
+            <div class="sensor-stats">
+              <div class="sensor-stat">
+                <span class="sensor-stat-value" id="sensor-total">0</span>
+                <span class="sensor-stat-label" data-i18n="dashboard_sensor_total">Total detections</span>
+              </div>
+              <div class="sensor-stat sensor-stat-alert">
+                <span class="sensor-stat-value" id="sensor-vectors">0</span>
+                <span class="sensor-stat-label" data-i18n="dashboard_sensor_vectors">Dengue vectors</span>
+              </div>
+              <div class="sensor-stat">
+                <span class="sensor-stat-value" id="sensor-temp">0°C</span>
+                <span class="sensor-stat-label" data-i18n="dashboard_sensor_temp">Avg temperature</span>
+              </div>
+              <div class="sensor-stat">
+                <span class="sensor-stat-value" id="sensor-humidity">0%</span>
+                <span class="sensor-stat-label" data-i18n="dashboard_sensor_humidity">Avg humidity</span>
+              </div>
+            </div>
+            <h3 class="sensor-subtitle" data-i18n="dashboard_sensor_species">Detections by species</h3>
+            <div class="sensor-species" id="sensor-species"></div>
+          </div>
+          <div class="sensor-error" id="sensor-error" style="display:none;" data-i18n="dashboard_sensor_error">
+            Unable to load sensor data.
+          </div>
+        </div>
         <!-- PREVIEW MODELS -->
         <div class="dashboard-card models-card">
           <h2 data-i18n="dashboard_models_title">Monitoring Models</h2>
@@ -121,6 +151,7 @@
     <script src="../js/app.js"></script>
     <script src="../js/languageswitcher.js"></script>
     <script src="../js/weather.js"></script>
+    <script src="../js/sensor.js"></script>
     <script src="../js/navbar-auth.js"></script>
     <footer class="site-footer">
   <div class="footer-inner">
