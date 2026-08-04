@@ -26,20 +26,18 @@ if (loginForm) {
 
       const data = await response.json();
 
-      if (response.ok) {
-       if (response.ok) {
-          localStorage.setItem("token", data.token);
-          localStorage.setItem("user", JSON.stringify(data.user));
-          window.location.href = "dashboard.html";
-}
-      } else {
-        showMessage(data.error || "Login failed", true);
+  if (response.ok) {
+            localStorage.setItem("token", data.token);
+            localStorage.setItem("user", JSON.stringify(data.user));
+            window.location.href = "dashboard.html";
+        } else {
+          showMessage(data.error || "Login failed", true);
+        }
+      } catch (err) {
+        showMessage("Server error. Please try again.", true);
       }
-    } catch (err) {
-      showMessage("Server error. Please try again.", true);
-    }
-  });
-}
+    });
+  }
 
 if (registerForm) {
   registerForm.addEventListener("submit", async (e) => {
