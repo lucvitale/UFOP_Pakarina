@@ -1,3 +1,3 @@
 const CONFIG = {
-  WEATHER_API_KEY: "ecccbb37d296ebabbac1aff60c83d665"
+  WEATHER_API_KEY: "e64f325637b380e9ecfefc97e3e418e8"
 };
