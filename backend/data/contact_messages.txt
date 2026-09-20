@@ -1,0 +1,24 @@
+
+--------------------------------------------------
+CONTACT MESSAGE
+Date: 9/17/2026, 3:11:05 PM
+Name: Test User
+Email: test@test.com
+Institution: UFOP
+Subject: Test
+Message:
+This is a test message.
+--------------------------------------------------
+
+
+--------------------------------------------------
+CONTACT MESSAGE
+Date: 9/17/2026, 3:11:51 PM
+Name: Luciano Gabriel Vitale Buegos
+Email: Lucianovitaleburgos.lv@gmail.com
+Institution: test
+Subject: test
+Message:
+asd
+--------------------------------------------------
+

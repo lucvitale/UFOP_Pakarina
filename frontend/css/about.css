@@ -1,0 +1,372 @@
+/* =========================================================
+   ABOUT PAGE
+   ========================================================= */
+
+.about-page {
+  background: #f7f3eb;
+  min-height: calc(100vh - 80px);
+}
+
+
+/* =========================================================
+   HERO
+   ========================================================= */
+
+.about-hero {
+  position: relative;
+  min-height: 330px;
+
+  display: flex;
+  align-items: flex-end;
+
+  overflow: hidden;
+
+  background-image: url("../assets/FotoOP.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+.about-hero-overlay {
+  position: absolute;
+  inset: 0;
+
+  background: rgba(8, 25, 38, 0.64);
+}
+
+.about-hero-content {
+  position: relative;
+  z-index: 2;
+
+  max-width: 800px;
+
+  padding: 4rem 4rem 3.5rem;
+}
+
+.about-hero-kicker {
+  display: block;
+
+  margin-bottom: 0.65rem;
+
+  color: #b8d8df;
+
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+}
+
+.about-hero h1 {
+  margin: 0 0 0.8rem;
+
+  color: #ffffff;
+
+  font-size: clamp(2.3rem, 4vw, 3.8rem);
+  font-weight: 600;
+  line-height: 1.05;
+}
+
+.about-hero p {
+  max-width: 650px;
+
+  margin: 0;
+
+  color: rgba(255, 255, 255, 0.86);
+
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.about-hero-location {
+  position: absolute;
+
+  right: 2.5rem;
+  bottom: 1.8rem;
+
+  z-index: 2;
+
+  color: rgba(255, 255, 255, 0.8);
+
+  font-size: 0.68rem;
+  letter-spacing: 0.05em;
+}
+
+.about-hero-location span {
+  margin-right: 0.35rem;
+
+  color: #b8d8df;
+}
+
+
+/* =========================================================
+   CONTENT
+   ========================================================= */
+
+.about-content {
+  max-width: 1080px;
+
+  margin: 0 auto;
+
+  padding: 4rem 2.5rem 5rem;
+}
+
+
+/* =========================================================
+   SECTION HEADINGS
+   ========================================================= */
+
+.about-section-heading,
+.about-platform-heading,
+.about-highlight-heading {
+  margin-bottom: 1rem;
+}
+
+.about-section-kicker {
+  display: block;
+
+  margin-bottom: 0.4rem;
+
+  color: var(--color-secondary);
+
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+}
+
+.about-section h2,
+.about-section-heading h2,
+.about-platform h2,
+.about-highlight h2,
+.about-vision h2 {
+  margin: 0;
+
+  color: var(--color-primary);
+
+  font-size: 1.45rem;
+  font-weight: 600;
+  line-height: 1.25;
+}
+
+
+/* =========================================================
+   INTRODUCTION
+   ========================================================= */
+
+.about-introduction {
+  max-width: 850px;
+
+  padding-bottom: 3.5rem;
+
+  border-bottom: 1px solid var(--color-border);
+}
+
+.about-introduction .about-section-heading {
+  padding-left: 0.9rem;
+
+  border-left: 3px solid var(--color-secondary);
+}
+
+.about-introduction p {
+  margin: 1.2rem 0 0;
+
+  color: var(--color-text-light);
+
+  font-size: 0.82rem;
+  line-height: 1.75;
+
+  text-align: justify;
+  text-justify: inter-word;
+}
+
+
+/* =========================================================
+   MAIN GRID
+   ========================================================= */
+
+.about-grid {
+  display: grid;
+
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+
+  gap: 0;
+
+  margin-top: 3.5rem;
+}
+
+.about-section {
+  padding: 1.8rem 2rem;
+
+  border-top: 1px solid var(--color-border);
+}
+
+.about-section:nth-child(odd) {
+  padding-left: 0;
+  border-right: 1px solid var(--color-border);
+}
+
+.about-section:nth-child(even) {
+  padding-right: 0;
+}
+
+.about-section p {
+  margin: 0.9rem 0 0;
+
+  color: var(--color-text-light);
+
+  font-size: 0.78rem;
+  line-height: 1.7;
+
+  text-align: justify;
+  text-justify: inter-word;
+}
+
+
+/* =========================================================
+   HIGHLIGHT
+   ========================================================= */
+
+.about-highlight {
+  display: grid;
+
+  grid-template-columns: 0.75fr 1.25fr;
+
+  gap: 3rem;
+
+  margin-top: 3.5rem;
+  padding: 2.2rem 0;
+
+  border-top: 1px solid var(--color-border);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.about-highlight-heading {
+  margin: 0;
+}
+
+.about-highlight p {
+  margin: 0;
+
+  color: var(--color-text-light);
+
+  font-size: 0.8rem;
+  line-height: 1.75;
+
+  text-align: justify;
+  text-justify: inter-word;
+}
+
+
+/* =========================================================
+   PLATFORM
+   ========================================================= */
+
+.about-platform {
+  max-width: 850px;
+
+  margin-top: 3.5rem;
+  padding-left: 1rem;
+
+  border-left: 3px solid var(--color-secondary);
+}
+
+.about-platform p {
+  margin: 1rem 0 0;
+
+  color: var(--color-text-light);
+
+  font-size: 0.8rem;
+  line-height: 1.75;
+
+  text-align: justify;
+  text-justify: inter-word;
+}
+
+
+/* =========================================================
+   VISION
+   ========================================================= */
+
+.about-vision {
+  max-width: 850px;
+
+  margin-top: 4rem;
+  padding: 2rem 0 0;
+
+  border-top: 1px solid var(--color-border);
+}
+
+.about-vision .about-section-heading {
+  padding-left: 0.9rem;
+
+  border-left: 3px solid var(--color-secondary);
+}
+
+.about-vision p {
+  margin: 1rem 0 0;
+
+  color: var(--color-text-light);
+
+  font-size: 0.8rem;
+  line-height: 1.75;
+
+  text-align: justify;
+  text-justify: inter-word;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 800px) {
+
+  .about-hero-content {
+    padding: 3rem 1.5rem 2.5rem;
+  }
+
+  .about-hero-location {
+    display: none;
+  }
+
+  .about-content {
+    padding: 3rem 1.5rem 4rem;
+  }
+
+  .about-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .about-section {
+    padding: 1.6rem 0;
+  }
+
+  .about-section:nth-child(odd) {
+    padding-left: 0;
+    border-right: none;
+  }
+
+  .about-section:nth-child(even) {
+    padding-right: 0;
+  }
+
+  .about-highlight {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+}
+
+@media (max-width: 480px) {
+
+  .about-hero {
+    min-height: 280px;
+  }
+
+  .about-hero h1 {
+    font-size: 2.2rem;
+  }
+
+  .about-content {
+    padding-left: 1.1rem;
+    padding-right: 1.1rem;
+  }
+
+}

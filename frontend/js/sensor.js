@@ -1,4 +1,5 @@
 // Sensor data visualization — Hardware Integration
+
 const SENSOR_API = "http://localhost:3000/api/sensor/summary";
 
 async function loadSensorData() {
@@ -8,50 +9,168 @@ async function loadSensorData() {
 
   try {
     const res = await fetch(SENSOR_API);
-    if (!res.ok) throw new Error("API error");
+
+    if (!res.ok) {
+      throw new Error("API error");
+    }
+
     const data = await res.json();
 
-    // Stats principales
+    // =========================================================
+    // MAIN SENSOR STATS
+    // =========================================================
+
     document.getElementById("sensor-total").textContent = data.total;
     document.getElementById("sensor-vectors").textContent = data.vectorCount;
-    document.getElementById("sensor-temp").textContent = `${data.avgTemperature}°C`;
-    document.getElementById("sensor-humidity").textContent = `${data.avgHumidity}%`;
+    document.getElementById("sensor-temp").textContent =
+      `${data.avgTemperature}°C`;
+    document.getElementById("sensor-humidity").textContent =
+      `${data.avgHumidity}%`;
 
-    // Localisation
+
+    // =========================================================
+    // SENSOR LOCATION
+    // =========================================================
+
     if (data.location) {
       document.getElementById("sensor-location").textContent =
         `📍 ${data.location.latitude}, ${data.location.longitude} — João Monlevade, MG`;
     }
 
-    // Graphique par espèce
-    const speciesEl = document.getElementById("sensor-species");
-    const maxCount = Math.max(...data.species.map((s) => s.count));
-    speciesEl.innerHTML = data.species
-      .sort((a, b) => b.count - a.count)
-      .map((s) => {
-        const label = s.sex === "unknown"
-          ? s.name
-          : `${s.name} (${s.sex === "female" ? "♀" : "♂"})`;
-        const pct = (s.count / maxCount) * 100;
-        const barColor = s.vector ? "#e74c3c" : "#a48a6a";
-        return `
-          <div class="species-row">
-            <span class="species-name">${label}${s.vector ? " ⚠️" : ""}</span>
-            <div class="species-bar-track">
-              <div class="species-bar" style="width:${pct}%;background:${barColor}"></div>
-            </div>
-            <span class="species-count">${s.count}</span>
-          </div>`;
-      })
-      .join("");
+
+    // =========================================================
+    // SPECIES DATA
+    // =========================================================
+
+    if (data.species && data.species.length > 0) {
+
+      const sortedSpecies = [...data.species].sort(
+        (a, b) => b.count - a.count
+      );
+
+      const maxCount = Math.max(
+        ...sortedSpecies.map((s) => s.count)
+      );
+
+
+      // =======================================================
+      // FIELD SENSOR — SPECIES GRAPH
+      // =======================================================
+
+      const speciesEl = document.getElementById("sensor-species");
+
+      if (speciesEl) {
+        speciesEl.innerHTML = sortedSpecies
+          .map((s) => {
+
+            const label =
+              s.sex === "unknown"
+                ? s.name
+                : `${s.name} (${s.sex === "female" ? "♀" : "♂"})`;
+
+            const pct = (s.count / maxCount) * 100;
+
+            const barColor = s.vector
+              ? "#e74c3c"
+              : "#a48a6a";
+
+            return `
+              <div class="species-row">
+
+                <span class="species-name">
+                  ${label}${s.vector ? " ⚠️" : ""}
+                </span>
+
+                <div class="species-bar-track">
+                  <div
+                    class="species-bar"
+                    style="width:${pct}%;background:${barColor}">
+                  </div>
+                </div>
+
+                <span class="species-count">
+                  ${s.count}
+                </span>
+
+              </div>
+            `;
+          })
+          .join("");
+      }
+
+
+      // =======================================================
+      // DASHBOARD — DETECTIONS BY SPECIES
+      // =======================================================
+
+      const speciesBarsEl =
+        document.getElementById("species-bars");
+
+      if (speciesBarsEl) {
+        speciesBarsEl.innerHTML = sortedSpecies
+          .map((s) => {
+
+            const label =
+              s.sex === "unknown"
+                ? s.name
+                : `${s.name} (${s.sex === "female" ? "♀" : "♂"})`;
+
+            const pct = (s.count / maxCount) * 100;
+
+            const typeClass =
+              s.vector
+                ? "vector"
+                : "non-vector";
+
+            return `
+              <div class="species-row">
+
+                <span class="species-name">
+                  ${label}${s.vector ? " ⚠" : ""}
+                </span>
+
+                <div class="species-bar-track">
+                  <div
+                    class="species-bar ${typeClass}"
+                    style="width:${pct}%">
+                  </div>
+                </div>
+
+                <span class="species-value">
+                  ${s.count}
+                </span>
+
+              </div>
+            `;
+          })
+          .join("");
+      }
+
+    }
+
+
+    // =========================================================
+    // SHOW CONTENT
+    // =========================================================
 
     loading.style.display = "none";
     content.style.display = "block";
+
   } catch (err) {
+
     loading.style.display = "none";
     errorEl.style.display = "block";
+
     console.error("[sensor] Error:", err.message);
   }
 }
 
-document.addEventListener("DOMContentLoaded", loadSensorData);
+
+// =============================================================
+// INITIALIZE
+// =============================================================
+
+document.addEventListener(
+  "DOMContentLoaded",
+  loadSensorData
+);

@@ -1,173 +1,636 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Pakarina — Climate</title>
-    <link rel="icon" type="image/png" href="../assets/Logos/Favicon.png">
-    <link rel="stylesheet" href="../css/style.css" />
-  </head>
-  <body>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <header class="topbar">
-      <div class="logo">
-        <img src="../assets/Logos/horizontal_logo.png" alt="Pakarina">
-      </div> 
-      <nav class="nav">
-        <a href="../index.html" data-i18n="nav_home">Home</a>
-        <a href="news.html" data-i18n="nav_news">News</a>
-        <a href="climate.html" data-i18n="nav_climate">Climate</a>
-        <a href="awareness.html" data-i18n="nav_awareness">Awareness</a>
-        <a href="dashboard.html" data-i18n="nav_dashboard">Dashboard</a>
-        <a href="about.html" data-i18n="nav_about">About Us</a>
-        <a href="contact.html" data-i18n="nav_contact">Contact</a>
-      </nav>
-      <div class="topbar-right">
-        <span id="user-greeting" class="user-greeting"></span>
-        <a href="login.html" id="auth-btn" class="auth-btn">Login</a>
-        <div class="lang-switcher">
-          <button id="lang-btn" class="lang-btn" onclick="toggleDropdown()">EN ▾</button>
-          <div id="lang-dropdown" class="lang-dropdown"></div>
-        </div>
+  <title>Pakarina — Climate</title>
+
+  <link
+    rel="icon"
+    type="image/png"
+    href="../assets/Logos/Favicon.png"
+  />
+
+  <link rel="stylesheet" href="../css/global.css" />
+  <link rel="stylesheet" href="../css/climate.css" />
+</head>
+
+<body>
+
+  <!-- =========================================================
+       NAVBAR
+       ========================================================= -->
+
+  <header class="topbar">
+
+    <div class="logo">
+      <img
+        src="../assets/Logos/horizontal_logo.png"
+        alt="Pakarina"
+      />
+    </div>
+
+    <nav class="nav">
+      <a href="../index.html" data-i18n="nav_home">Home</a>
+      <a href="news.html" data-i18n="nav_news">News</a>
+      <a href="climate.html" data-i18n="nav_climate">Climate</a>
+      <a href="awareness.html" data-i18n="nav_awareness">Awareness</a>
+      <a href="dashboard.html" data-i18n="nav_dashboard">Dashboard</a>
+      <a href="about.html" data-i18n="nav_about">About Us</a>
+      <a href="contact.html" data-i18n="nav_contact">Contact</a>
+    </nav>
+
+    <div class="topbar-right">
+
+      <span
+        id="user-greeting"
+        class="user-greeting"
+      ></span>
+
+      <a
+        href="login.html"
+        id="auth-btn"
+        class="auth-btn"
+        data-i18n="nav_login"
+      >
+        Login
+      </a>
+
+      <div class="lang-switcher">
+
+        <button
+          id="lang-btn"
+          class="lang-btn"
+          type="button"
+          onclick="toggleDropdown()"
+          aria-label="Select language"
+        >
+          EN ▾
+        </button>
+
+        <div
+          id="lang-dropdown"
+          class="lang-dropdown"
+        ></div>
+
       </div>
-    </header>
 
-    <main class="main climate-main">
-      <section class="climate-container">
+    </div>
 
-        <div class="climate-header">
-          <h1 data-i18n="climate_analysis_title">Dengue Risk Analysis</h1>
-          <p data-i18n="climate_analysis_subtitle">Environmental conditions favoring mosquito proliferation</p>
-        </div>
+  </header>
 
-        <div class="climate-card">
-          <div class="weather-search">
-            <input type="text" id="climate-city-input" data-i18n-placeholder="climate_search_placeholder" placeholder="Search a city..." />
-            <button onclick="analyzeCity()" data-i18n="climate_search_btn">Analyze</button>
-            <button class="gps-btn" onclick="analyzeGPS()">📍</button>
-          </div>
-        </div>
 
-        <div id="climate-loading" class="climate-loading" style="display:none;">
-          <p data-i18n="climate_loading">Loading climate data...</p>
-        </div>
+  <!-- =========================================================
+       CLIMATE PAGE
+       ========================================================= -->
 
-        <div id="climate-no-data" class="climate-no-data">
-          <p data-i18n="climate_no_data">Search a city to see the dengue risk analysis.</p>
-        </div>
+  <main class="climate-page">
 
-        <div id="climate-results" style="display:none;">
+    <!-- =======================================================
+         HERO
+         ======================================================= -->
 
-          <div class="climate-card risk-card" id="risk-card">
-            <div class="risk-header">
-              <h2 id="risk-city-name"></h2>
-              <span id="risk-badge" class="risk-badge"></span>
-            </div>
-            <p id="risk-message" class="risk-message"></p>
-          </div>
+    <section class="climate-hero">
 
-          <div class="climate-indicators">
+      <div class="climate-hero-overlay"></div>
 
-            <div class="indicator-card">
-              <div class="indicator-icon">🌡️</div>
-              <div class="indicator-info">
-                <span class="indicator-label" data-i18n="climate_temp_label">Temperature</span>
-                <span class="indicator-value" id="ind-temp"></span>
-                <span class="indicator-bar-wrap"><span class="indicator-bar" id="bar-temp"></span></span>
-                <span class="indicator-hint" id="hint-temp">Dengue mosquitoes thrive between 25°C and 35°C</span>
-              </div>
-            </div>
+      <div class="climate-hero-content">
 
-            <div class="indicator-card">
-              <div class="indicator-icon">💧</div>
-              <div class="indicator-info">
-                <span class="indicator-label" data-i18n="climate_humidity_label">Humidity</span>
-                <span class="indicator-value" id="ind-humidity"></span>
-                <span class="indicator-bar-wrap"><span class="indicator-bar" id="bar-humidity"></span></span>
-                <span class="indicator-hint" id="hint-humidity">Humidity above 60% favors mosquito breeding</span>
-              </div>
-            </div>
+        <span class="climate-hero-kicker">
+          PAKARINA
+        </span>
 
-            <div class="indicator-card">
-              <div class="indicator-icon">💨</div>
-              <div class="indicator-info">
-                <span class="indicator-label" data-i18n="climate_wind_label">Wind Speed</span>
-                <span class="indicator-value" id="ind-wind"></span>
-                <span class="indicator-bar-wrap"><span class="indicator-bar" id="bar-wind"></span></span>
-                <span class="indicator-hint" id="hint-wind">Low wind speeds allow mosquitoes to remain active</span>
-              </div>
-            </div>
+        <h1 data-i18n="climate_analysis_title">
+          Dengue Risk Analysis
+        </h1>
 
-            <div class="indicator-card">
-              <div class="indicator-icon">🌧️</div>
-              <div class="indicator-info">
-                <span class="indicator-label" data-i18n="climate_precipitation_label">Precipitation</span>
-                <span class="indicator-value" id="ind-precipitation"></span>
-                <span class="indicator-bar-wrap">
-                  <span class="indicator-bar" id="bar-precipitation"></span>
-                </span>
-                <span class="indicator-hint" id="hint-precipitation">Rain increases mosquito breeding sites by creating standing water</span>
-                </span>
-              </div>
-            </div>
+        <p data-i18n="climate_analysis_subtitle">
+          Environmental conditions favoring mosquito proliferation
+        </p>
 
-          </div>
+      </div>
+
+    </section>
+
+
+    <!-- =======================================================
+         CONTENT
+         ======================================================= -->
+
+    <div class="climate-content">
+
+      <!-- =====================================================
+           SEARCH
+           ===================================================== -->
+
+      <section class="climate-search-section">
+
+        <div class="climate-section-heading">
+
+  <div>
+    <span
+      class="climate-section-kicker"
+      data-i18n="climate_title"
+    >
+      Climate
+    </span>
+
+    <h2 data-i18n="climate_analysis_title">
+      Dengue Risk Analysis
+    </h2>
+  </div>
+
+</div>
+
+        <div class="weather-search">
+
+          <span class="climate-search-icon">
+            ⌕
+          </span>
+
+          <input
+            type="text"
+            id="climate-city-input"
+            data-i18n-placeholder="climate_search_placeholder"
+            placeholder="Search a city..."
+          />
+
+          <button
+            onclick="analyzeCity()"
+            data-i18n="climate_search_btn"
+          >
+            Analyze
+          </button>
+
+          <button
+            class="gps-btn"
+            onclick="analyzeGPS()"
+            data-i18n-title="dashboard_gps_tooltip"
+            aria-label="Use current location"
+          >
+            📍
+          </button>
+
         </div>
 
       </section>
-    </main>
 
-    <script src="../js/config.js"></script>
-    <script src="../js/app.js"></script>
-    <script src="../js/languageswitcher.js"></script>
-    <script src="../js/navbar-auth.js"></script>
-    <script src="../js/climate.js"></script>
-  <footer class="site-footer">
-  <div class="footer-inner">
 
-    <div class="footer-brand">
-      <div class="footer-logo">
-        <div class="footer-logo">
-          <img src="../assets/Logos/simple_logo.png" alt="Pakarina" class="footer-logo-mark">
-          <span class="footer-logo-name">Pakarina</span>
-        </div>
+      <!-- =====================================================
+           LOADING
+           ===================================================== -->
+
+      <div
+        id="climate-loading"
+        class="climate-loading"
+        style="display: none;"
+      >
+        <p data-i18n="climate_loading">
+          Loading climate data...
+        </p>
       </div>
-      <p class="footer-mission" data-i18n="footer_mission">
-        Geo-referenced arboviral disease surveillance platform (dengue, chikungunya, Zika, Oropouche)
-        using a One Health approach.
-      </p>
+
+
+      <!-- =====================================================
+           NO DATA
+           ===================================================== -->
+
+      <div
+        id="climate-no-data"
+        class="climate-no-data"
+      >
+        <p data-i18n="climate_no_data">
+          Search a city to see the dengue risk analysis.
+        </p>
+      </div>
+
+
+      <!-- =====================================================
+           RESULTS
+           ===================================================== -->
+
+      <div
+        id="climate-results"
+        class="climate-results"
+        style="display: none;"
+      >
+
+        <!-- ===================================================
+             RISK
+             =================================================== -->
+
+        <section class="climate-risk-section">
+
+          <div class="climate-section-heading">
+
+  <div>
+    <span
+      class="climate-section-kicker"
+      data-i18n="climate_analysis_title"
+    >
+      Dengue Risk Analysis
+    </span>
+  </div>
+
+</div>
+
+          <div
+            class="risk-card"
+            id="risk-card"
+          >
+
+            <div class="risk-header">
+
+              <h2 id="risk-city-name"></h2>
+
+              <span
+                id="risk-badge"
+                class="risk-badge"
+              ></span>
+
+            </div>
+
+            <p
+              id="risk-message"
+              class="risk-message"
+            ></p>
+
+          </div>
+
+        </section>
+
+
+        <!-- ===================================================
+             INDICATORS
+             =================================================== -->
+
+        <section class="climate-indicators-section">
+
+<div class="climate-section-heading">
+
+  <div>
+    <span
+      class="climate-section-kicker"
+      data-i18n="climate_subtitle"
+    >
+      Environmental conditions and analysis
+    </span>
+
+    <h2 data-i18n="climate_analysis_subtitle">
+      Environmental conditions favoring mosquito proliferation
+    </h2>
+  </div>
+
+</div>
+
+          <div class="climate-indicators">
+
+            <!-- TEMPERATURE -->
+
+            <div class="indicator-card">
+
+              <div class="indicator-icon">
+                🌡️
+              </div>
+
+              <div class="indicator-info">
+
+                <span
+                  class="indicator-label"
+                  data-i18n="climate_temp_label"
+                >
+                  Temperature
+                </span>
+
+                <span
+                  class="indicator-value"
+                  id="ind-temp"
+                ></span>
+
+                <span class="indicator-bar-wrap">
+                  <span
+                    class="indicator-bar"
+                    id="bar-temp"
+                  ></span>
+                </span>
+
+                <span
+                  class="indicator-hint"
+                  id="hint-temp"
+                  data-i18n="climate_temp_msg_high"
+                >
+                  Dengue mosquitoes thrive between 25°C and 35°C.
+                </span>
+
+              </div>
+
+            </div>
+
+
+            <!-- HUMIDITY -->
+
+            <div class="indicator-card">
+
+              <div class="indicator-icon">
+                💧
+              </div>
+
+              <div class="indicator-info">
+
+                <span
+                  class="indicator-label"
+                  data-i18n="climate_humidity_label"
+                >
+                  Humidity
+                </span>
+
+                <span
+                  class="indicator-value"
+                  id="ind-humidity"
+                ></span>
+
+                <span class="indicator-bar-wrap">
+                  <span
+                    class="indicator-bar"
+                    id="bar-humidity"
+                  ></span>
+                </span>
+
+                <span
+                  class="indicator-hint"
+                  id="hint-humidity"
+                  data-i18n="climate_humidity_msg_high"
+                >
+                  Humidity above 60% favors mosquito breeding.
+                </span>
+
+              </div>
+
+            </div>
+
+
+            <!-- WIND -->
+
+            <div class="indicator-card">
+
+              <div class="indicator-icon">
+                💨
+              </div>
+
+              <div class="indicator-info">
+
+                <span
+                  class="indicator-label"
+                  data-i18n="climate_wind_label"
+                >
+                  Wind Speed
+                </span>
+
+                <span
+                  class="indicator-value"
+                  id="ind-wind"
+                ></span>
+
+                <span class="indicator-bar-wrap">
+                  <span
+                    class="indicator-bar"
+                    id="bar-wind"
+                  ></span>
+                </span>
+
+                <span
+                  class="indicator-hint"
+                  id="hint-wind"
+                  data-i18n="climate_wind_msg_low"
+                >
+                  Low wind speeds allow mosquitoes to remain active.
+                </span>
+
+              </div>
+
+            </div>
+
+
+            <!-- PRECIPITATION -->
+
+            <div class="indicator-card">
+
+              <div class="indicator-icon">
+                🌧️
+              </div>
+
+              <div class="indicator-info">
+
+                <span
+                  class="indicator-label"
+                  data-i18n="climate_precipitation_label"
+                >
+                  Precipitation
+                </span>
+
+                <span
+                  class="indicator-value"
+                  id="ind-precipitation"
+                ></span>
+
+                <span class="indicator-bar-wrap">
+                  <span
+                    class="indicator-bar"
+                    id="bar-precipitation"
+                  ></span>
+                </span>
+
+                <span
+                  class="indicator-hint"
+                  id="hint-precipitation"
+                  data-i18n="climate_precip_msg_medium"
+                >
+                  Rain increases mosquito breeding sites by creating
+                  standing water.
+                </span>
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </section>
+
+      </div>
+
     </div>
 
-    <div class="footer-institutions-block">
-      <h3 class="footer-heading" data-i18n="footer_institutions_title">Partner institutions</h3>
-      <ul class="footer-institutions">
-        <li>UFOP — Universidade Federal de Ouro Preto</li>
-        <li>UCASAL</li>
-        <li>Yncrea</li>
-        <li>UEMG</li>
-        <li>Fiocruz Minas</li>
-        <li>Universidad Nacional de San Cristóbal de Huamanga</li>
+  </main>
+
+
+  <!-- =========================================================
+       FOOTER
+       ========================================================= -->
+
+  <footer class="site-footer">
+
+    <div class="footer-inner">
+
+      <div class="footer-brand">
+
+        <div class="footer-logo">
+
+          <img
+            src="../assets/Logos/simple_logo.png"
+            alt="Pakarina"
+            class="footer-logo-mark"
+          />
+
+          <span class="footer-logo-name">
+            Pakarina
+          </span>
+
+        </div>
+
+        <p
+          class="footer-mission"
+          data-i18n="footer_mission"
+        >
+          Geo-referenced arboviral disease surveillance platform
+          (dengue, chikungunya, Zika, Oropouche) using a One Health
+          approach.
+        </p>
+
+      </div>
+
+
+      <div class="footer-institutions-block">
+
+        <h3
+          class="footer-heading"
+          data-i18n="footer_institutions_title"
+        >
+          Partner institutions
+        </h3>
+
+        <ul class="footer-institutions">
+
+          <li>
+            UFOP — Universidade Federal de Ouro Preto
+          </li>
+
+          <li>
+            UCASAL
+          </li>
+
+          <li>
+            Yncrea
+          </li>
+
+          <li>
+            UEMG
+          </li>
+
+          <li>
+            Fiocruz Minas
+          </li>
+
+          <li>
+            Universidad Nacional de San Cristóbal de Huamanga
+          </li>
+
+        </ul>
+
+      </div>
+
+
+      <div class="footer-contact-block">
+
+        <h3
+          class="footer-heading"
+          data-i18n="footer_contact_title"
+        >
+          Contact
+        </h3>
+
+        <p
+          class="footer-mission"
+          style="margin-bottom: 0.8rem;"
+          data-i18n="footer_contact_text"
+        >
+          A question, data to share, a collaboration to propose?
+        </p>
+
+        <a
+          href="contact.html"
+          class="footer-contact-btn"
+          data-i18n="footer_contact_btn"
+        >
+          Contact us
+        </a>
+
+      </div>
+
+    </div>
+
+
+    <div class="footer-bottom">
+
+      <span class="footer-copyright">
+
+        © 2026 Pakarina —
+
+        <span data-i18n="footer_academic">
+          Multi-university academic project
+        </span>
+
+      </span>
+
+      <ul
+        class="footer-links"
+        style="flex-direction: row; gap: 1.2rem;"
+      >
+
+        <li>
+          <a
+            href="../index.html"
+            data-i18n="nav_home"
+          >
+            Home
+          </a>
+        </li>
+
+        <li>
+          <a
+            href="dashboard.html"
+            data-i18n="nav_dashboard"
+          >
+            Dashboard
+          </a>
+        </li>
+
+        <li>
+          <a
+            href="about.html"
+            data-i18n="nav_about"
+          >
+            About Us
+          </a>
+        </li>
+
       </ul>
+
     </div>
 
-    <div class="footer-contact-block">
-      <h3 class="footer-heading" data-i18n="footer_contact_title">Contact</h3>
-      <p class="footer-mission" style="margin-bottom: 0.8rem;" data-i18n="footer_contact_text">
-        A question, data to share, a collaboration to propose?
-      </p>
-      <a href="contact.html" class="footer-contact-btn" data-i18n="footer_contact_btn">Contact us</a>
-    </div>
+  </footer>
 
-  </div>
 
-  <div class="footer-bottom">
-    <span class="footer-copyright">© 2026 Pakarina — <span data-i18n="footer_academic">Multi-university academic project</span></span>
-    <ul class="footer-links" style="flex-direction: row; gap: 1.2rem;">
-      <li><a href="../index.html" data-i18n="nav_home">Home</a></li>
-      <li><a href="dashboard.html" data-i18n="nav_dashboard">Dashboard</a></li>
-      <li><a href="about.html" data-i18n="nav_about">About Us</a></li>
-    </ul>
-  </div>
-</footer>
-  </body>
+  <!-- =========================================================
+       SCRIPTS
+       ========================================================= -->
+
+  <script src="../js/config.js"></script>
+  <script src="../js/app.js"></script>
+  <script src="../js/languageswitcher.js"></script>
+  <script src="../js/navbar-auth.js"></script>
+  <script src="../js/climate.js"></script>
+
+</body>
 </html>

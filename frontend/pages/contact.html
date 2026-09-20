@@ -1,113 +1,600 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Pakarina — Contact</title>
-    <link rel="icon" type="image/png" href="../assets/Logos/Favicon.png">
-    <link rel="stylesheet" href="../css/style.css" />
-  </head>
-  <body>
 
-    <header class="topbar">
-      <div class="logo">
-        <img src="../assets/Logos/horizontal_logo.png" alt="Pakarina">
-      </div> 
-      <nav class="nav">
-        <a href="../index.html" data-i18n="nav_home">Home</a>
-        <a href="news.html" data-i18n="nav_news">News</a>
-        <a href="climate.html" data-i18n="nav_climate">Climate</a>
-        <a href="awareness.html" data-i18n="nav_awareness">Awareness</a>
-        <a href="dashboard.html" data-i18n="nav_dashboard">Dashboard</a>
-        <a href="about.html" data-i18n="nav_about">About Us</a>
-        <a href="contact.html" data-i18n="nav_contact">Contact</a>
-      </nav>
-      <div class="topbar-right">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-        <span id="user-greeting" class="user-greeting"></span>
+  <title>Pakarina — Contact</title>
 
-        <a href="login.html"
-          id="auth-btn"
-          class="auth-btn">
-          Login
+  <link
+    rel="icon"
+    type="image/png"
+    href="../assets/Logos/Favicon.png"
+  >
+
+  <link
+    rel="stylesheet"
+    href="../css/global.css"
+  />
+
+  <link
+    rel="stylesheet"
+    href="../css/contact.css"
+  />
+</head>
+
+<body>
+
+  <!-- =====================================================
+       NAVBAR
+       ===================================================== -->
+
+  <header class="topbar">
+
+    <div class="logo">
+      <img
+        src="../assets/Logos/horizontal_logo.png"
+        alt="Pakarina"
+      >
+    </div>
+
+    <nav class="nav">
+
+      <a href="../index.html" data-i18n="nav_home">
+        Home
+      </a>
+
+      <a href="news.html" data-i18n="nav_news">
+        News
+      </a>
+
+      <a href="climate.html" data-i18n="nav_climate">
+        Climate
+      </a>
+
+      <a href="awareness.html" data-i18n="nav_awareness">
+        Awareness
+      </a>
+
+      <a href="dashboard.html" data-i18n="nav_dashboard">
+        Dashboard
+      </a>
+
+      <a href="about.html" data-i18n="nav_about">
+        About Us
+      </a>
+
+      <a href="contact.html" data-i18n="nav_contact">
+        Contact
+      </a>
+
+    </nav>
+
+    <div class="topbar-right">
+
+      <span
+        id="user-greeting"
+        class="user-greeting"
+      ></span>
+
+      <a
+        href="login.html"
+        id="auth-btn"
+        class="auth-btn"
+        data-i18n="nav_login"
+      >
+        Login
+      </a>
+
+      <div class="lang-switcher">
+
+        <button
+          id="lang-btn"
+          class="lang-btn"
+          type="button"
+          onclick="toggleDropdown()"
+          aria-label="Select language"
+        >
+          EN ▾
+        </button>
+
+        <div
+          id="lang-dropdown"
+          class="lang-dropdown"
+        ></div>
+
+      </div>
+
+    </div>
+
+  </header>
+
+
+  <!-- =====================================================
+       MAIN
+       ===================================================== -->
+
+  <main class="contact-page">
+
+
+    <!-- ===================================================
+         HERO
+         =================================================== -->
+
+    <section class="contact-hero">
+
+      <div class="contact-hero-overlay"></div>
+
+      <div class="contact-hero-content">
+
+        <span class="contact-hero-kicker">
+          PAKARINA
+        </span>
+
+        <h1 data-i18n="contact_title">
+          Contact
+        </h1>
+
+        <p data-i18n="contact_subtitle">
+          Get in touch with us
+        </p>
+
+      </div>
+
+      <div class="contact-hero-location">
+        <span>●</span> Ouro Preto
+      </div>
+
+    </section>
+
+
+    <!-- ===================================================
+         CONTACT CONTENT
+         =================================================== -->
+
+    <section class="contact-content">
+
+      <div class="contact-layout">
+
+
+        <!-- =================================================
+             INTRODUCTION
+             ================================================= -->
+
+        <div class="contact-intro">
+
+          <span
+            class="contact-section-kicker"
+            data-i18n="contact_kicker"
+          >
+            GET IN TOUCH
+          </span>
+
+          <h2 data-i18n="contact_project_title">
+            Contact the project
+          </h2>
+
+          <p data-i18n="contact_intro">
+            Pakarina is a collaborative initiative developed by
+            the Federal University of Ouro Preto (UFOP) in
+            partnership with the Catholic University of Salta
+            (UCASAL) and Yncrea. If you would like to learn more
+            about the project, explore collaboration opportunities,
+            or request additional information, please contact us:
+          </p>
+
+
+          <!-- CONTACT INFORMATION -->
+
+          <div class="contact-info">
+
+
+            <!-- UFOP -->
+
+            <div class="contact-info-item">
+
+              <span class="contact-info-number">
+                01
+              </span>
+
+              <div>
+
+                <h3 data-i18n="contact_ufop">
+                  UFOP
+                </h3>
+
+                <p data-i18n="contact_ufop_phone">
+                  Phone: +55 31 3559-1240
+                </p>
+
+              </div>
+
+            </div>
+
+
+            <!-- PROJECT COORDINATOR -->
+
+            <div class="contact-info-item">
+
+              <span class="contact-info-number">
+                02
+              </span>
+
+              <div>
+
+                <h3 data-i18n="contact_coordinator">
+                  Project Coordinator
+                </h3>
+
+                <p data-i18n="contact_coordinator_phone">
+                  Phone: +54 9 3874 08-7037
+                </p>
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- =================================================
+             CONTACT FORM
+             ================================================= -->
+
+        <div class="contact-form-wrapper">
+
+          <form
+            id="contact-form"
+            class="contact-form"
+          >
+
+
+            <!-- NAME + EMAIL -->
+
+            <div class="form-row">
+
+              <div class="form-group">
+
+                <label
+                  for="contact-name"
+                  data-i18n="contact_name"
+                >
+                  Name *
+                </label>
+
+                <input
+                  type="text"
+                  id="contact-name"
+                  name="name"
+                  required
+                  autocomplete="name"
+                  data-i18n-placeholder="contact_name_placeholder"
+                  placeholder="Your name"
+                />
+
+              </div>
+
+
+              <div class="form-group">
+
+                <label
+                  for="contact-email"
+                  data-i18n="contact_email"
+                >
+                  Email *
+                </label>
+
+                <input
+                  type="email"
+                  id="contact-email"
+                  name="email"
+                  required
+                  autocomplete="email"
+                  data-i18n-placeholder="contact_email_placeholder"
+                  placeholder="your@email.com"
+                />
+
+              </div>
+
+            </div>
+
+
+            <!-- INSTITUTION + SUBJECT -->
+
+            <div class="form-row">
+
+              <div class="form-group">
+
+                <label
+                  for="contact-institution"
+                  data-i18n="contact_institution"
+                >
+                  Institution
+                </label>
+
+                <input
+                  type="text"
+                  id="contact-institution"
+                  name="institution"
+                  data-i18n-placeholder="contact_institution_placeholder"
+                  placeholder="University or organization"
+                />
+
+              </div>
+
+
+              <div class="form-group">
+
+                <label
+                  for="contact-subject"
+                  data-i18n="contact_subject"
+                >
+                  Subject *
+                </label>
+
+                <input
+                  type="text"
+                  id="contact-subject"
+                  name="subject"
+                  required
+                  data-i18n-placeholder="contact_subject_placeholder"
+                  placeholder="Message subject"
+                />
+
+              </div>
+
+            </div>
+
+
+            <!-- MESSAGE -->
+
+            <div class="form-group">
+
+              <label
+                for="contact-message"
+                data-i18n="contact_message"
+              >
+                Message *
+              </label>
+
+              <textarea
+                id="contact-message"
+                name="message"
+                rows="7"
+                required
+                data-i18n-placeholder="contact_message_placeholder"
+                placeholder="Write your message..."
+              ></textarea>
+
+            </div>
+
+
+            <!-- FORM FOOTER -->
+
+            <div class="contact-form-footer">
+
+              <span
+                id="contact-status"
+                class="contact-status"
+                aria-live="polite"
+              ></span>
+
+              <button
+                type="submit"
+                class="contact-submit"
+                data-i18n="contact_send"
+              >
+                Send message →
+              </button>
+
+            </div>
+
+          </form>
+
+        </div>
+
+      </div>
+
+
+      <!-- ===================================================
+           CLOSING
+           =================================================== -->
+
+      <div class="contact-closing">
+
+        <p data-i18n="contact_closing">
+          We look forward to hearing from you.
+        </p>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <!-- =====================================================
+       SCRIPTS
+       ===================================================== -->
+
+  <script src="../js/app.js"></script>
+  <script src="../js/languageswitcher.js"></script>
+  <script src="../js/navbar-auth.js"></script>
+  <script src="../js/contact.js"></script>
+
+
+  <!-- =====================================================
+       FOOTER
+       ===================================================== -->
+
+  <footer class="site-footer">
+
+    <div class="footer-inner">
+
+
+      <!-- BRAND -->
+
+      <div class="footer-brand">
+
+        <div class="footer-logo">
+
+          <div class="footer-logo">
+
+            <img
+              src="../assets/Logos/simple_logo.png"
+              alt="Pakarina"
+              class="footer-logo-mark"
+            >
+
+            <span class="footer-logo-name">
+              Pakarina
+            </span>
+
+          </div>
+
+        </div>
+
+        <p
+          class="footer-mission"
+          data-i18n="footer_mission"
+        >
+          Geo-referenced arboviral disease surveillance platform
+          (dengue, chikungunya, Zika, Oropouche)
+          using a One Health approach.
+        </p>
+
+      </div>
+
+
+      <!-- PARTNER INSTITUTIONS -->
+
+      <div class="footer-institutions-block">
+
+        <h3
+          class="footer-heading"
+          data-i18n="footer_institutions_title"
+        >
+          Partner institutions
+        </h3>
+
+        <ul class="footer-institutions">
+
+          <li>
+            UFOP — Universidade Federal de Ouro Preto
+          </li>
+
+          <li>
+            UCASAL
+          </li>
+
+          <li>
+            Yncrea
+          </li>
+
+          <li>
+            UEMG
+          </li>
+
+          <li>
+            Fiocruz Minas
+          </li>
+
+          <li>
+            Universidad Nacional de San Cristóbal de Huamanga
+          </li>
+
+        </ul>
+
+      </div>
+
+
+      <!-- CONTACT -->
+
+      <div class="footer-contact-block">
+
+        <h3
+          class="footer-heading"
+          data-i18n="footer_contact_title"
+        >
+          Contact
+        </h3>
+
+        <p
+          class="footer-mission"
+          style="margin-bottom: 0.8rem;"
+          data-i18n="footer_contact_text"
+        >
+          A question, data to share, a collaboration to propose?
+        </p>
+
+        <a
+          href="contact.html"
+          class="footer-contact-btn"
+          data-i18n="footer_contact_btn"
+        >
+          Contact us
         </a>
 
-        <div class="lang-switcher">
-          <button id="lang-btn" class="lang-btn" onclick="toggleDropdown()">EN ▾</button>
-          <div id="lang-dropdown" class="lang-dropdown"></div>
-        </div>
-
       </div>
-    </header>
 
-    <main class="main contact-main">
-      <section class="contact-container">
-        <h1 data-i18n="contact_title">Contact</h1>
-        <p data-i18n="contact_intro"></p>
-
-        <div class="contact-block">
-          <h2 data-i18n="contact_ufop">UFOP</h2>
-          <p data-i18n="contact_ufop_phone"></p>
-        </div>
-
-        <div class="contact-block">
-          <h2 data-i18n="contact_coordinator">Project Coordinator</h2>
-          <p data-i18n="contact_coordinator_phone"></p>
-        </div>
-
-        <p class="contact-closing" data-i18n="contact_closing"></p>
-      </section>
-    </main>
-
-    <script src="../js/app.js"></script>
-    <script src="../js/languageswitcher.js"></script>
-    <script src="../js/navbar-auth.js"></script>
-  <footer class="site-footer">
-  <div class="footer-inner">
-
-    <div class="footer-brand">
-      <div class="footer-logo">
-        <div class="footer-logo">
-          <img src="../assets/Logos/simple_logo.png" alt="Pakarina" class="footer-logo-mark">
-          <span class="footer-logo-name">Pakarina</span>
-        </div>
-      </div>
-      <p class="footer-mission" data-i18n="footer_mission">
-        Geo-referenced arboviral disease surveillance platform (dengue, chikungunya, Zika, Oropouche)
-        using a One Health approach.
-      </p>
     </div>
 
-    <div class="footer-institutions-block">
-      <h3 class="footer-heading" data-i18n="footer_institutions_title">Partner institutions</h3>
-      <ul class="footer-institutions">
-        <li>UFOP — Universidade Federal de Ouro Preto</li>
-        <li>UCASAL</li>
-        <li>Yncrea</li>
-        <li>UEMG</li>
-        <li>Fiocruz Minas</li>
-        <li>Universidad Nacional de San Cristóbal de Huamanga</li>
+
+    <!-- FOOTER BOTTOM -->
+
+    <div class="footer-bottom">
+
+      <span class="footer-copyright">
+
+        © 2026 Pakarina —
+
+        <span data-i18n="footer_academic">
+          Multi-university academic project
+        </span>
+
+      </span>
+
+
+      <ul
+        class="footer-links"
+        style="flex-direction: row; gap: 1.2rem;"
+      >
+
+        <li>
+          <a
+            href="../index.html"
+            data-i18n="nav_home"
+          >
+            Home
+          </a>
+        </li>
+
+        <li>
+          <a
+            href="dashboard.html"
+            data-i18n="nav_dashboard"
+          >
+            Dashboard
+          </a>
+        </li>
+
+        <li>
+          <a
+            href="about.html"
+            data-i18n="nav_about"
+          >
+            About Us
+          </a>
+        </li>
+
       </ul>
+
     </div>
 
-    <div class="footer-contact-block">
-      <h3 class="footer-heading" data-i18n="footer_contact_title">Contact</h3>
-      <p class="footer-mission" style="margin-bottom: 0.8rem;" data-i18n="footer_contact_text">
-        A question, data to share, a collaboration to propose?
-      </p>
-      <a href="contact.html" class="footer-contact-btn" data-i18n="footer_contact_btn">Contact us</a>
-    </div>
+  </footer>
 
-  </div>
-
-  <div class="footer-bottom">
-    <span class="footer-copyright">© 2026 Pakarina — <span data-i18n="footer_academic">Multi-university academic project</span></span>
-    <ul class="footer-links" style="flex-direction: row; gap: 1.2rem;">
-      <li><a href="../index.html" data-i18n="nav_home">Home</a></li>
-      <li><a href="dashboard.html" data-i18n="nav_dashboard">Dashboard</a></li>
-      <li><a href="about.html" data-i18n="nav_about">About Us</a></li>
-    </ul>
-  </div>
-</footer>
-  </body>
+</body>
 </html>

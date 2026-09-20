@@ -1,18 +1,121 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Pakarina — Dashboard</title>
-    <link rel="icon" type="image/png" href="../assets/Logos/Favicon.png">
-    <link rel="stylesheet" href="../css/style.css" />
-  </head>
-  <body>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Pakarina — Dashboard</title>
+
+  <link
+    rel="icon"
+    type="image/png"
+    href="../assets/Logos/Favicon.png"
+  />
+
+  <link rel="stylesheet" href="../css/global.css" />
+  <link rel="stylesheet" href="../css/dashboard.css" />
+</head>
+
+<body>
+
+  <!-- =========================================================
+       DASHBOARD AUTH OVERLAY
+       ========================================================= -->
+
+  <div id="dashboard-auth-overlay" class="dashboard-auth-overlay active">
+    <div class="dashboard-auth-card">
+
+      <div class="dashboard-auth-logo">
+        <img src="../assets/Logos/simple_logo.png" alt="Pakarina">
+      </div>
+
+      <span class="dashboard-auth-kicker">PAKARINA</span>
+
+      <h2 data-i18n="dashboard_auth_title">
+        Access Dashboard
+      </h2>
+
+      <p
+        class="dashboard-auth-description"
+        data-i18n="dashboard_auth_description"
+      >
+        Sign in to access environmental and field monitoring data.
+      </p>
+
+      <div id="dashboard-auth-message" class="dashboard-auth-message"></div>
+
+      <form id="dashboard-login-form">
+
+        <div class="dashboard-auth-field">
+          <label
+            for="dashboard-email"
+            data-i18n="dashboard_auth_email"
+          >
+            Email
+          </label>
+
+          <input
+            type="email"
+            id="dashboard-email"
+            required
+          >
+        </div>
+
+        <div class="dashboard-auth-field">
+          <label
+            for="dashboard-password"
+            data-i18n="dashboard_auth_password"
+          >
+            Password
+          </label>
+
+          <input
+            type="password"
+            id="dashboard-password"
+            required
+          >
+        </div>
+
+        <button
+          type="submit"
+          class="dashboard-auth-submit"
+          data-i18n="dashboard_auth_login"
+        >
+          Login
+        </button>
+
+      </form>
+
+      <p class="dashboard-auth-register">
+        <span data-i18n="dashboard_auth_no_account">
+          Don't have an account?
+        </span>
+
+        <a
+          href="register.html"
+          data-i18n="dashboard_auth_register"
+        >
+          Register
+        </a>
+      </p>
+
+    </div>
+  </div>
+
+
+  <!-- =========================================================
+       NAVBAR
+       ========================================================= -->
 
   <header class="topbar">
-      <div class="logo">
-        <img src="../assets/Logos/horizontal_logo.png" alt="Pakarina">
-      </div> 
+
+    <div class="logo">
+      <img
+        src="../assets/Logos/horizontal_logo.png"
+        alt="Pakarina"
+      />
+    </div>
+
     <nav class="nav">
       <a href="../index.html" data-i18n="nav_home">Home</a>
       <a href="news.html" data-i18n="nav_news">News</a>
@@ -22,186 +125,1084 @@
       <a href="about.html" data-i18n="nav_about">About Us</a>
       <a href="contact.html" data-i18n="nav_contact">Contact</a>
     </nav>
+
     <div class="topbar-right">
-      <span id="user-greeting" class="user-greeting"></span>
-      <a href="login.html" id="auth-btn" class="auth-btn" data-i18n="nav_login">Login</a>
+
+      <span
+        id="user-greeting"
+        class="user-greeting"
+      ></span>
+
+      <a
+        href="login.html"
+        id="auth-btn"
+        class="auth-btn"
+        data-i18n="nav_login"
+      >
+        Login
+      </a>
+
       <div class="lang-switcher">
-        <button id="lang-btn" class="lang-btn" onclick="toggleDropdown()">EN ▾</button>
-        <div id="lang-dropdown" class="lang-dropdown"></div>
+
+        <button
+          id="lang-btn"
+          class="lang-btn"
+          type="button"
+          onclick="toggleDropdown()"
+          aria-label="Select language"
+        >
+          EN ▾
+        </button>
+
+        <div
+          id="lang-dropdown"
+          class="lang-dropdown"
+        ></div>
+
       </div>
+
     </div>
+
   </header>
 
-    <main class="main dashboard-main">
-      <section class="dashboard-container">
 
-        <div class="dashboard-header">
-          <h1 data-i18n="dashboard_title">Dashboard</h1>
-          <p class="dashboard-notice" data-i18n="dashboard_notice"></p>
-        </div>
+  <!-- =========================================================
+       DASHBOARD
+       ========================================================= -->
 
-        <!-- WEATHER WIDGET -->
-        <div class="dashboard-card weather-card">
-          <h2 data-i18n="dashboard_weather_title">Weather</h2>
+  <main class="dashboard-page">
+
+    <!-- HERO -->
+
+    <section class="dashboard-hero">
+
+      <div class="dashboard-hero-overlay"></div>
+
+      <div class="dashboard-hero-content">
+
+        <span class="dashboard-hero-kicker">
+          PAKARINA
+        </span>
+
+        <h1 data-i18n="dashboard_title">
+          Dashboard
+        </h1>
+
+        <p data-i18n="dashboard_notice">
+          Integrated monitoring of environmental data, mosquito
+          detections and risk indicators.
+        </p>
+
+      </div>
+
+      <div class="dashboard-hero-location">
+        <span>●</span>
+        João Monlevade, MG
+      </div>
+
+    </section>
+
+
+    <!-- DASHBOARD CONTENT -->
+
+    <section class="dashboard-content">
+
+      <!-- TOP ROW -->
+
+      <div class="dashboard-top-grid">
+
+        <!-- WEATHER -->
+
+        <section class="dashboard-card weather-card">
+
+          <div class="dashboard-card-heading">
+
+            <div>
+
+              <span
+                class="dashboard-kicker"
+                data-i18n="dashboard_environmental_data"
+              >
+                ENVIRONMENTAL DATA
+              </span>
+
+              <h2 data-i18n="dashboard_weather_title">
+                Weather
+              </h2>
+
+            </div>
+
+          </div>
+
 
           <div class="weather-search">
-            <input
-              type="text"
-              id="city-input"
-              placeholder="Search a city..."
-            />
-            <button onclick="searchCity()" data-i18n="dashboard_search_btn">Search</button>
-            <button class="gps-btn" onclick="getGPSLocation()" data-i18n-title="dashboard_gps_tooltip">📍</button>
+
+            <div class="weather-input-wrapper">
+
+              <span>⌕</span>
+
+              <input
+                type="text"
+                id="city-input"
+                data-i18n-placeholder="dashboard_search_placeholder"
+                placeholder="Search a city..."
+              />
+
+            </div>
+
+            <button
+              onclick="searchCity()"
+              data-i18n="dashboard_search_btn"
+            >
+              Search
+            </button>
+
+            <button
+              class="gps-btn"
+              onclick="getGPSLocation()"
+              data-i18n-title="dashboard_gps_tooltip"
+            >
+              📍
+            </button>
+
           </div>
 
-          <div id="weather-result" class="weather-result">
-            <div class="weather-loading" id="weather-loading">
-              <span data-i18n="dashboard_loading">Loading...</span>
+
+          <div
+            id="weather-result"
+            class="weather-result"
+          >
+
+            <div
+              class="weather-loading"
+              id="weather-loading"
+            >
+              <span data-i18n="dashboard_loading">
+                Loading...
+              </span>
             </div>
-            <div class="weather-data" id="weather-data" style="display:none;">
+
+
+            <div
+              class="weather-data"
+              id="weather-data"
+              style="display:none;"
+            >
+
               <div class="weather-top">
-                <img id="weather-icon" src="" alt="weather icon" />
+
+                <img
+                  id="weather-icon"
+                  src=""
+                  alt="weather icon"
+                />
+
                 <div>
-                  <p class="weather-city" id="weather-city"></p>
-                  <p class="weather-temp" id="weather-temp"></p>
-                  <p class="weather-desc" id="weather-desc"></p>
+
+                  <p
+                    class="weather-city"
+                    id="weather-city"
+                  ></p>
+
+                  <p
+                    class="weather-temp"
+                    id="weather-temp"
+                  ></p>
+
+                  <p
+                    class="weather-desc"
+                    id="weather-desc"
+                  ></p>
+
                 </div>
+
               </div>
+
+
               <div class="weather-details">
+
                 <div class="weather-detail-item">
-                  <span data-i18n="dashboard_humidity">Humidity</span>
+
+                  <span data-i18n="dashboard_humidity">
+                    Humidity
+                  </span>
+
                   <strong id="weather-humidity"></strong>
+
                 </div>
+
+
                 <div class="weather-detail-item">
-                  <span data-i18n="dashboard_wind">Wind</span>
+
+                  <span data-i18n="dashboard_wind">
+                    Wind
+                  </span>
+
                   <strong id="weather-wind"></strong>
+
                 </div>
+
+
                 <div class="weather-detail-item">
-                  <span data-i18n="dashboard_feels_like">Feels like</span>
+
+                  <span data-i18n="dashboard_feels_like">
+                    Feels like
+                  </span>
+
                   <strong id="weather-feels"></strong>
+
                 </div>
+
               </div>
-              <p class="weather-dengue-warning" id="weather-dengue-warning"></p>
+
+
+              <p
+                class="weather-dengue-warning"
+                id="weather-dengue-warning"
+              ></p>
+
             </div>
-            <div class="weather-error" id="weather-error" style="display:none;">
-              <p data-i18n="dashboard_error">City not found. Please try again.</p>
+
+
+            <div
+              class="weather-error"
+              id="weather-error"
+              style="display:none;"
+            >
+
+              <p data-i18n="dashboard_error">
+                City not found. Please try again.
+              </p>
+
             </div>
+
           </div>
-        </div>
-        <!-- SENSOR DATA -->
-        <div class="dashboard-card sensor-card">
-          <h2 data-i18n="dashboard_sensor_title">🦟 Field Sensor — Mosquito Detection</h2>
-          <p class="sensor-location" id="sensor-location"></p>
-          <div class="sensor-loading" id="sensor-loading" data-i18n="dashboard_loading">Loading...</div>
-          <div class="sensor-content" id="sensor-content" style="display:none;">
+
+        </section>
+
+
+        <!-- SENSOR -->
+
+        <section class="dashboard-card sensor-card">
+
+          <div class="dashboard-card-heading sensor-heading">
+
+            <div>
+
+              <span
+                class="dashboard-kicker"
+                data-i18n="dashboard_field_monitoring"
+              >
+                FIELD MONITORING
+              </span>
+
+              <h2 data-i18n="dashboard_sensor_title">
+                🦟 Field Sensor — Mosquito Detection
+              </h2>
+
+            </div>
+
+            <span
+              class="sensor-status"
+              data-i18n="dashboard_sensor_online"
+            >
+              Online <span>●</span>
+            </span>
+
+          </div>
+
+
+          <p
+            class="sensor-location"
+            id="sensor-location"
+          ></p>
+
+
+          <div
+            class="sensor-loading"
+            id="sensor-loading"
+            data-i18n="dashboard_loading"
+          >
+            Loading...
+          </div>
+
+
+          <div
+            class="sensor-content"
+            id="sensor-content"
+            style="display:none;"
+          >
+
             <div class="sensor-stats">
+
               <div class="sensor-stat">
-                <span class="sensor-stat-value" id="sensor-total">0</span>
-                <span class="sensor-stat-label" data-i18n="dashboard_sensor_total">Total detections</span>
+
+                <span
+                  class="sensor-stat-value"
+                  id="sensor-total"
+                >
+                  0
+                </span>
+
+                <span
+                  class="sensor-stat-label"
+                  data-i18n="dashboard_sensor_total"
+                >
+                  Total detections
+                </span>
+
               </div>
+
+
               <div class="sensor-stat sensor-stat-alert">
-                <span class="sensor-stat-value" id="sensor-vectors">0</span>
-                <span class="sensor-stat-label" data-i18n="dashboard_sensor_vectors">Dengue vectors</span>
+
+                <span
+                  class="sensor-stat-value"
+                  id="sensor-vectors"
+                >
+                  0
+                </span>
+
+                <span
+                  class="sensor-stat-label"
+                  data-i18n="dashboard_sensor_vectors"
+                >
+                  Dengue vectors
+                </span>
+
               </div>
+
+
               <div class="sensor-stat">
-                <span class="sensor-stat-value" id="sensor-temp">0°C</span>
-                <span class="sensor-stat-label" data-i18n="dashboard_sensor_temp">Avg temperature</span>
+
+                <span
+                  class="sensor-stat-value"
+                  id="sensor-temp"
+                >
+                  0°C
+                </span>
+
+                <span
+                  class="sensor-stat-label"
+                  data-i18n="dashboard_sensor_temp"
+                >
+                  Avg temperature
+                </span>
+
               </div>
+
+
               <div class="sensor-stat">
-                <span class="sensor-stat-value" id="sensor-humidity">0%</span>
-                <span class="sensor-stat-label" data-i18n="dashboard_sensor_humidity">Avg humidity</span>
+
+                <span
+                  class="sensor-stat-value"
+                  id="sensor-humidity"
+                >
+                  0%
+                </span>
+
+                <span
+                  class="sensor-stat-label"
+                  data-i18n="dashboard_sensor_humidity"
+                >
+                  Avg humidity
+                </span>
+
               </div>
+
             </div>
-            <h3 class="sensor-subtitle" data-i18n="dashboard_sensor_species">Detections by species</h3>
-            <div class="sensor-species" id="sensor-species"></div>
+
+
+            <h3
+              class="sensor-subtitle"
+              data-i18n="dashboard_sensor_species"
+            >
+              Detections by species
+            </h3>
+
+
+            <div
+              class="sensor-species"
+              id="sensor-species"
+            ></div>
+
           </div>
-          <div class="sensor-error" id="sensor-error" style="display:none;" data-i18n="dashboard_sensor_error">
+
+
+          <div
+            class="sensor-error"
+            id="sensor-error"
+            style="display:none;"
+            data-i18n="dashboard_sensor_error"
+          >
             Unable to load sensor data.
           </div>
-        </div>
-        <!-- PREVIEW MODELS -->
-        <div class="dashboard-card models-card">
-          <h2 data-i18n="dashboard_models_title">Monitoring Models</h2>
-          <p class="models-notice" data-i18n="dashboard_models_notice"></p>
-          <div class="models-grid">
-            <div class="model-item">
-              <div class="model-icon">📡</div>
-              <p data-i18n="dashboard_model_sensors">Sensors</p>
-              <span class="model-badge" data-i18n="dashboard_coming_soon">Coming soon</span>
+
+        </section>
+
+
+        <!-- DETECTION MAP -->
+
+        <section class="dashboard-card detection-map-card coming-soon-card">
+
+          <div class="dashboard-card-heading">
+
+            <div>
+
+              <span
+                class="dashboard-kicker"
+                data-i18n="dashboard_geographic_coverage"
+              >
+                GEOGRAPHIC COVERAGE
+              </span>
+
+              <h2 data-i18n="dashboard_detection_map">
+                Detection map
+              </h2>
+
+              <p
+                class="card-description"
+                data-i18n="dashboard_detection_map_description"
+              >
+                Spatial visualization of mosquito detections and risk areas.
+              </p>
+
             </div>
-            <div class="model-item">
-              <div class="model-icon">🗺️</div>
-              <p data-i18n="dashboard_model_map">Dengue Map</p>
-              <span class="model-badge" data-i18n="dashboard_coming_soon">Coming soon</span>
+
+
+            <div class="map-heading-actions">
+
+              <span
+                class="models-status"
+                data-i18n="dashboard_coming_soon"
+              >
+                Coming soon
+              </span>
+
+              <span
+                class="map-action"
+                data-i18n="dashboard_view_full_map"
+              >
+                View full map ↗
+              </span>
+
             </div>
-            <div class="model-item">
-              <div class="model-icon">📊</div>
-              <p data-i18n="dashboard_model_stats">Statistics</p>
-              <span class="model-badge" data-i18n="dashboard_coming_soon">Coming soon</span>
-            </div>
-            <div class="model-item">
-              <div class="model-icon">🚨</div>
-              <p data-i18n="dashboard_model_alerts">Alerts</p>
-              <span class="model-badge" data-i18n="dashboard_coming_soon">Coming soon</span>
-            </div>
+
           </div>
-        </div>
 
-      </section>
-    </main>
-    <script src="../js/dashboard-auth.js"></script>
-    <script src="../js/config.js"></script>
-    <script src="../js/app.js"></script>
-    <script src="../js/languageswitcher.js"></script>
-    <script src="../js/weather.js"></script>
-    <script src="../js/sensor.js"></script>
-    <script src="../js/navbar-auth.js"></script>
-    <footer class="site-footer">
-  <div class="footer-inner">
 
-    <div class="footer-brand">
-      <div class="footer-logo">
-        <div class="footer-logo">
-          <img src="../assets/Logos/simple_logo.png" alt="Pakarina" class="footer-logo-mark">
-          <span class="footer-logo-name">Pakarina</span>
-        </div>
+          <div class="coming-soon-map">
+
+            <div class="coming-soon-map-background">
+
+              <div class="fake-map-grid"></div>
+
+              <div class="fake-map-road road-1"></div>
+              <div class="fake-map-road road-2"></div>
+              <div class="fake-map-road road-3"></div>
+              <div class="fake-map-road road-4"></div>
+
+              <div class="fake-map-marker marker-one"></div>
+              <div class="fake-map-marker marker-two"></div>
+              <div class="fake-map-marker marker-three"></div>
+
+
+              <div class="fake-map-location">
+                João Monlevade
+              </div>
+
+
+              <div class="fake-map-legend">
+
+                <div>
+                  <span class="legend-dot vector"></span>
+
+                  <span data-i18n="dashboard_dengue_vector">
+                    Dengue vector
+                  </span>
+                </div>
+
+
+                <div>
+                  <span class="legend-dot other"></span>
+
+                  <span data-i18n="dashboard_other_detection">
+                    Other detection
+                  </span>
+                </div>
+
+              </div>
+
+
+              <div
+                class="fake-map-scale"
+                data-i18n="dashboard_map_scale"
+              >
+                5 km
+              </div>
+
+            </div>
+
+
+            <div class="coming-soon-overlay">
+
+              <div class="coming-soon-message">
+
+                <div class="coming-soon-lock">
+                  🔒
+                </div>
+
+                <strong data-i18n="dashboard_coming_soon">
+                  Coming soon
+                </strong>
+
+                <span data-i18n="dashboard_map_future">
+                  Spatial detection mapping will be integrated
+                  in a future sprint.
+                </span>
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </section>
+
       </div>
-      <p class="footer-mission" data-i18n="footer_mission">
-        Geo-referenced arboviral disease surveillance platform (dengue, chikungunya, Zika, Oropouche)
-        using a One Health approach.
-      </p>
+
+
+      <!-- SECOND ROW -->
+
+      <div class="dashboard-bottom-grid">
+
+        <!-- SPECIES -->
+
+        <section class="dashboard-card species-card">
+
+          <div class="dashboard-card-heading">
+
+            <div>
+
+              <span
+                class="dashboard-kicker"
+                data-i18n="dashboard_field_monitoring"
+              >
+                FIELD MONITORING
+              </span>
+
+              <h2 data-i18n="dashboard_species_title">
+                Detections by species
+              </h2>
+
+              <p
+                class="card-description"
+                data-i18n="dashboard_species_description"
+              >
+                Distribution of detected mosquito species.
+              </p>
+
+            </div>
+
+          </div>
+
+
+          <div
+            class="species-bars"
+            id="species-bars"
+          >
+
+            <div class="species-row">
+
+              <span class="species-name">
+                Culex (♀)
+              </span>
+
+              <div class="species-bar-track">
+                <div
+                  class="species-bar non-vector"
+                  style="width:100%"
+                ></div>
+              </div>
+
+              <span class="species-value">
+                22
+              </span>
+
+            </div>
+
+
+            <div class="species-row">
+
+              <span class="species-name">
+                Aedes aegypti (♀) ⚠
+              </span>
+
+              <div class="species-bar-track">
+                <div
+                  class="species-bar vector"
+                  style="width:82%"
+                ></div>
+              </div>
+
+              <span class="species-value">
+                18
+              </span>
+
+            </div>
+
+
+            <div class="species-row">
+
+              <span class="species-name">
+                Aedes albopictus (♀) ⚠
+              </span>
+
+              <div class="species-bar-track">
+                <div
+                  class="species-bar vector"
+                  style="width:73%"
+                ></div>
+              </div>
+
+              <span class="species-value">
+                16
+              </span>
+
+            </div>
+
+
+            <div class="species-row">
+
+              <span class="species-name">
+                Culex (♂)
+              </span>
+
+              <div class="species-bar-track">
+                <div
+                  class="species-bar non-vector"
+                  style="width:73%"
+                ></div>
+              </div>
+
+              <span class="species-value">
+                16
+              </span>
+
+            </div>
+
+
+            <div class="species-row">
+
+              <span class="species-name">
+                Aedes albopictus (♂) ⚠
+              </span>
+
+              <div class="species-bar-track">
+                <div
+                  class="species-bar vector"
+                  style="width:68%"
+                ></div>
+              </div>
+
+              <span class="species-value">
+                15
+              </span>
+
+            </div>
+
+
+            <div class="species-row">
+
+              <span class="species-name">
+                Unidentified
+              </span>
+
+              <div class="species-bar-track">
+                <div
+                  class="species-bar non-vector"
+                  style="width:55%"
+                ></div>
+              </div>
+
+              <span class="species-value">
+                12
+              </span>
+
+            </div>
+
+
+            <div class="species-row">
+
+              <span class="species-name">
+                Aedes aegypti (♂) ⚠
+              </span>
+
+              <div class="species-bar-track">
+                <div
+                  class="species-bar vector"
+                  style="width:45%"
+                ></div>
+              </div>
+
+              <span class="species-value">
+                10
+              </span>
+
+            </div>
+
+          </div>
+
+        </section>
+
+
+        <!-- MONITORING MODELS -->
+
+        <section class="dashboard-card models-card">
+
+          <div class="dashboard-card-heading">
+
+            <div>
+
+              <span
+                class="dashboard-kicker"
+                data-i18n="dashboard_future_modules"
+              >
+                FUTURE MODULES
+              </span>
+
+              <h2 data-i18n="dashboard_models_title">
+                Monitoring Models
+              </h2>
+
+              <p
+                class="card-description"
+                data-i18n="dashboard_models_description"
+              >
+                Advanced analytics and spatial models.
+              </p>
+
+            </div>
+
+            <span
+              class="models-status"
+              data-i18n="dashboard_coming_soon"
+            >
+              Coming soon
+            </span>
+
+          </div>
+
+
+          <div class="models-grid">
+
+            <div class="model-item locked">
+
+              <div class="model-blur">
+
+                <div class="model-icon">
+                  📡
+                </div>
+
+                <strong data-i18n="dashboard_model_sensors">
+                  Sensors
+                </strong>
+
+                <small data-i18n="dashboard_model_sensors_description">
+                  Real-time monitoring
+                </small>
+
+              </div>
+
+              <div class="model-lock">
+
+                <span>🔒</span>
+
+                <span data-i18n="dashboard_coming_soon">
+                  Coming soon
+                </span>
+
+              </div>
+
+            </div>
+
+
+            <div class="model-item locked">
+
+              <div class="model-blur">
+
+                <div class="model-icon">
+                  🗺️
+                </div>
+
+                <strong data-i18n="dashboard_model_map">
+                  Dengue Map
+                </strong>
+
+                <small data-i18n="dashboard_model_map_description">
+                  Spatial risk analysis
+                </small>
+
+              </div>
+
+              <div class="model-lock">
+
+                <span>🔒</span>
+
+                <span data-i18n="dashboard_coming_soon">
+                  Coming soon
+                </span>
+
+              </div>
+
+            </div>
+
+
+            <div class="model-item locked">
+
+              <div class="model-blur">
+
+                <div class="model-icon">
+                  📊
+                </div>
+
+                <strong data-i18n="dashboard_model_stats">
+                  Statistics
+                </strong>
+
+                <small data-i18n="dashboard_model_stats_description">
+                  Trends and predictions
+                </small>
+
+              </div>
+
+              <div class="model-lock">
+
+                <span>🔒</span>
+
+                <span data-i18n="dashboard_coming_soon">
+                  Coming soon
+                </span>
+
+              </div>
+
+            </div>
+
+
+            <div class="model-item locked">
+
+              <div class="model-blur">
+
+                <div class="model-icon">
+                  🚨
+                </div>
+
+                <strong data-i18n="dashboard_model_alerts">
+                  Alerts
+                </strong>
+
+                <small data-i18n="dashboard_model_alerts_description">
+                  Early warnings
+                </small>
+
+              </div>
+
+              <div class="model-lock">
+
+                <span>🔒</span>
+
+                <span data-i18n="dashboard_coming_soon">
+                  Coming soon
+                </span>
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </section>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <!-- =========================================================
+       SCRIPTS
+       ========================================================= -->
+
+  <script src="../js/dashboard-auth.js"></script>
+  <script src="../js/config.js"></script>
+  <script src="../js/app.js"></script>
+  <script src="../js/languageswitcher.js"></script>
+  <script src="../js/weather.js"></script>
+  <script src="../js/sensor.js"></script>
+  <script src="../js/navbar-auth.js"></script>
+
+
+  <!-- =========================================================
+       FOOTER
+       ========================================================= -->
+
+  <footer class="site-footer">
+
+    <div class="footer-inner">
+
+      <div class="footer-brand">
+
+        <div class="footer-logo">
+
+          <div class="footer-logo">
+
+            <img
+              src="../assets/Logos/simple_logo.png"
+              alt="Pakarina"
+              class="footer-logo-mark"
+            />
+
+            <span class="footer-logo-name">
+              Pakarina
+            </span>
+
+          </div>
+
+        </div>
+
+        <p
+          class="footer-mission"
+          data-i18n="footer_mission"
+        >
+          Geo-referenced arboviral disease surveillance platform
+          (dengue, chikungunya, Zika, Oropouche) using a One Health
+          approach.
+        </p>
+
+      </div>
+
+
+      <div class="footer-institutions-block">
+
+        <h3
+          class="footer-heading"
+          data-i18n="footer_institutions_title"
+        >
+          Partner institutions
+        </h3>
+
+        <ul class="footer-institutions">
+
+          <li>
+            UFOP — Universidade Federal de Ouro Preto
+          </li>
+
+          <li>
+            UCASAL
+          </li>
+
+          <li>
+            Yncrea
+          </li>
+
+          <li>
+            UEMG
+          </li>
+
+          <li>
+            Fiocruz Minas
+          </li>
+
+          <li>
+            Universidad Nacional de San Cristóbal de Huamanga
+          </li>
+
+        </ul>
+
+      </div>
+
+
+      <div class="footer-contact-block">
+
+        <h3
+          class="footer-heading"
+          data-i18n="footer_contact_title"
+        >
+          Contact
+        </h3>
+
+        <p
+          class="footer-mission"
+          style="margin-bottom: 0.8rem;"
+          data-i18n="footer_contact_text"
+        >
+          A question, data to share, a collaboration to propose?
+        </p>
+
+        <a
+          href="contact.html"
+          class="footer-contact-btn"
+          data-i18n="footer_contact_btn"
+        >
+          Contact us
+        </a>
+
+      </div>
+
     </div>
 
-    <div class="footer-institutions-block">
-      <h3 class="footer-heading" data-i18n="footer_institutions_title">Partner institutions</h3>
-      <ul class="footer-institutions">
-        <li>UFOP — Universidade Federal de Ouro Preto</li>
-        <li>UCASAL</li>
-        <li>Yncrea</li>
-        <li>UEMG</li>
-        <li>Fiocruz Minas</li>
-        <li>Universidad Nacional de San Cristóbal de Huamanga</li>
+
+    <div class="footer-bottom">
+
+      <span class="footer-copyright">
+
+        © 2026 Pakarina —
+
+        <span data-i18n="footer_academic">
+          Multi-university academic project
+        </span>
+
+      </span>
+
+
+      <ul
+        class="footer-links"
+        style="flex-direction: row; gap: 1.2rem;"
+      >
+
+        <li>
+          <a
+            href="../index.html"
+            data-i18n="nav_home"
+          >
+            Home
+          </a>
+        </li>
+
+        <li>
+          <a
+            href="dashboard.html"
+            data-i18n="nav_dashboard"
+          >
+            Dashboard
+          </a>
+        </li>
+
+        <li>
+          <a
+            href="about.html"
+            data-i18n="nav_about"
+          >
+            About Us
+          </a>
+        </li>
+
       </ul>
+
     </div>
 
-    <div class="footer-contact-block">
-      <h3 class="footer-heading" data-i18n="footer_contact_title">Contact</h3>
-      <p class="footer-mission" style="margin-bottom: 0.8rem;" data-i18n="footer_contact_text">
-        A question, data to share, a collaboration to propose?
-      </p>
-      <a href="contact.html" class="footer-contact-btn" data-i18n="footer_contact_btn">Contact us</a>
-    </div>
+  </footer>
 
-  </div>
-
-  <div class="footer-bottom">
-    <span class="footer-copyright">© 2026 Pakarina — <span data-i18n="footer_academic">Multi-university academic project</span></span>
-    <ul class="footer-links" style="flex-direction: row; gap: 1.2rem;">
-      <li><a href="../index.html" data-i18n="nav_home">Home</a></li>
-      <li><a href="dashboard.html" data-i18n="nav_dashboard">Dashboard</a></li>
-      <li><a href="about.html" data-i18n="nav_about">About Us</a></li>
-    </ul>
-  </div>
-</footer>
-  </body>
+</body>
 </html>
