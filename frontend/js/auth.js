@@ -4,7 +4,14 @@ const loginForm = document.getElementById("login-form");
 const registerForm = document.getElementById("register-form");
 const authMessage = document.getElementById("auth-message");
 
+function getTranslation(key, fallback) {
+  const translations = window._currentTranslations || {};
+  return translations[key] || fallback;
+}
+
 function showMessage(message, isError = false) {
+  if (!authMessage) return;
+
   authMessage.textContent = message;
   authMessage.style.color = isError ? "#e74c3c" : "#27ae60";
   authMessage.style.marginBottom = "1rem";
@@ -26,18 +33,38 @@ if (loginForm) {
 
       const data = await response.json();
 
-  if (response.ok) {
-            localStorage.setItem("token", data.token);
-            localStorage.setItem("user", JSON.stringify(data.user));
-            window.location.href = "dashboard.html";
-        } else {
-          showMessage(data.error || "Login failed", true);
-        }
-      } catch (err) {
-        showMessage("Server error. Please try again.", true);
-      }
-    });
+      if (response.ok) {
+        localStorage.setItem("token", data.token);
+        localStorage.setItem("user", JSON.stringify(data.user));
+
+        window.location.href = "dashboard.html";
+      } else {
+  let errorMessage;
+
+  if (data.error === "Invalid credentials") {
+    errorMessage = getTranslation(
+      "auth_invalid_credentials",
+      "Invalid credentials"
+    );
+  } else {
+    errorMessage =
+      data.error ||
+      getTranslation("auth_login_failed", "Login failed");
   }
+
+  showMessage(errorMessage, true);
+}
+    } catch (err) {
+      showMessage(
+        getTranslation(
+          "auth_server_error",
+          "Server error. Please try again."
+        ),
+        true
+      );
+    }
+  });
+}
 
 if (registerForm) {
   registerForm.addEventListener("submit", async (e) => {
@@ -59,10 +86,24 @@ if (registerForm) {
       if (response.ok) {
         window.location.href = "login.html";
       } else {
-        showMessage(data.error || "Registration failed", true);
+        showMessage(
+          data.error ||
+            getTranslation("auth_registration_failed", "Registration failed"),
+          true
+        );
       }
     } catch (err) {
-      showMessage("Server error. Please try again.", true);
+      showMessage(
+        getTranslation(
+          "auth_server_error",
+          "Server error. Please try again."
+        ),
+        true
+      );
     }
   });
 }
+
+document.addEventListener("languageChanged", () => {
+  // The message is only updated when a new authentication error occurs.
+});

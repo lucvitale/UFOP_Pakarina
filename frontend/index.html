@@ -1,227 +1,661 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <title>Pakarina Project</title>
-  <link rel="icon" type="image/png" href="assets/Logos/Favicon.png">
-  <link rel="stylesheet" href="css/style.css" />
+
+  <link
+    rel="icon"
+    type="image/png"
+    href="assets/Logos/Favicon.png"
+  >
+
+  <!-- Global styles -->
+  <link rel="stylesheet" href="css/global.css">
+
+  <!-- Home page styles -->
+  <link rel="stylesheet" href="css/home.css">
+
+  <!-- Authentication -->
+  <script src="js/navbar-auth.js" defer></script>
 </head>
 
-<script src="js/navbar-auth.js"></script>
 
 <body>
 
-  <header class="topbar">
-    <div class="logo">
-      <img src="assets/Logos/horizontal_logo.png" alt="Pakarina">
-    </div> 
+  <!-- =====================================================
+       NAVIGATION
+       ===================================================== -->
 
-    <nav class="nav">
-      <a href="index.html" data-i18n="nav_home">Home</a>
-      <a href="pages/news.html" data-i18n="nav_news">News</a>
-      <a href="pages/climate.html" data-i18n="nav_climate">Climate</a>
-      <a href="pages/awareness.html" data-i18n="nav_awareness">Awareness</a>
-      <a href="pages/dashboard.html" data-i18n="nav_dashboard">Dashboard</a>
-      <a href="pages/about.html" data-i18n="nav_about">About Us</a>
-      <a href="pages/contact.html" data-i18n="nav_contact">Contact</a>
+  <header class="topbar">
+
+    <div class="logo">
+      <a href="index.html" aria-label="Pakarina Home">
+        <img
+          src="assets/Logos/horizontal_logo.png"
+          alt="Pakarina"
+        >
+      </a>
+    </div>
+
+
+    <nav class="nav" aria-label="Main navigation">
+
+      <a
+        href="index.html"
+        data-i18n="nav_home"
+      >
+        Home
+      </a>
+
+      <a
+        href="pages/news.html"
+        data-i18n="nav_news"
+      >
+        News
+      </a>
+
+      <a
+        href="pages/climate.html"
+        data-i18n="nav_climate"
+      >
+        Climate
+      </a>
+
+      <a
+        href="pages/awareness.html"
+        data-i18n="nav_awareness"
+      >
+        Awareness
+      </a>
+
+      <a
+        href="pages/dashboard.html"
+        data-i18n="nav_dashboard"
+      >
+        Dashboard
+      </a>
+
+      <a
+        href="pages/about.html"
+        data-i18n="nav_about"
+      >
+        About Us
+      </a>
+
+      <a
+        href="pages/contact.html"
+        data-i18n="nav_contact"
+      >
+        Contact
+      </a>
+
     </nav>
+
 
     <div class="topbar-right">
 
-      <span id="user-greeting" class="user-greeting"></span>
+      <span
+        id="user-greeting"
+        class="user-greeting"
+      ></span>
 
-      <a href="pages/login.html"
-         id="auth-btn"
-         class="auth-btn"
-         data-i18n="login_button_nav">
-         Login
+
+      <a
+        href="pages/login.html"
+        id="auth-btn"
+        class="auth-btn"
+        data-i18n="login_button_nav"
+      >
+        Login
       </a>
 
+
       <div class="lang-switcher">
-        <button id="lang-btn" class="lang-btn" onclick="toggleDropdown()">EN ▾</button>
-        <div id="lang-dropdown" class="lang-dropdown"></div>
+
+        <button
+          id="lang-btn"
+          class="lang-btn"
+          type="button"
+          onclick="toggleDropdown()"
+          aria-label="Select language"
+        >
+          EN ▾
+        </button>
+
+        <div
+          id="lang-dropdown"
+          class="lang-dropdown"
+        ></div>
+
       </div>
 
     </div>
+
   </header>
+
+
+
+  <!-- =====================================================
+       MAIN CONTENT
+       ===================================================== -->
 
   <main class="home-main">
 
-    <!-- HERO -->
+
+    <!-- ===================================================
+         HERO
+         =================================================== -->
+
     <section class="hero">
-      <h1 data-i18n="home_title">Pakarina</h1>
 
-      <p class="hero-mission" data-i18n="home_hero_text">
-        A centralized platform for dengue monitoring, data integration, and community awareness — developed at UFOP.
-      </p>
+      <div class="hero-content">
 
-      <div class="hero-actions">
-        <a href="pages/dashboard.html"
-           class="btn-primary"
-           data-i18n="home_btn_dashboard">
-           Explore Dashboard
-        </a>
+        <p class="hero-eyebrow">
+          UFOP · UCASAL · Yncrea
+        </p>
 
-        <a href="pages/about.html"
-           class="btn-secondary"
-           data-i18n="home_btn_about">
-           Learn More
-        </a>
+        <h1 data-i18n="home_title">
+          Pakarina
+        </h1>
+
+        <p
+          class="hero-mission"
+          data-i18n="home_hero_text"
+        >
+          A centralized platform for dengue monitoring,
+          data integration, and community awareness —
+          developed at UFOP.
+        </p>
+
+
+        <div class="hero-actions">
+
+          <a
+            href="pages/dashboard.html"
+            class="btn-primary"
+            data-i18n="home_btn_dashboard"
+          >
+            Explore Dashboard
+          </a>
+
+          <a
+            href="pages/about.html"
+            class="btn-secondary"
+            data-i18n="home_btn_about"
+          >
+            Learn More
+          </a>
+
+        </div>
+
       </div>
+
     </section>
 
-    <!-- DENGUE -->
-    <section class="home-section">
+
+
+    <!-- ===================================================
+         DENGUE IN BRAZIL
+         =================================================== -->
+
+    <!-- ===================================================
+     DENGUE IN BRAZIL
+     =================================================== -->
+
+<section class="dengue-section">
+
+  <div class="home-section-inner">
+
+    <div class="dengue-intro">
+
+<span class="section-kicker" data-i18n="home_public_health_context">
+  PUBLIC HEALTH CONTEXT
+</span>
 
       <h2 data-i18n="home_dengue_title">
         Dengue in Brazil — A Growing Crisis
       </h2>
 
       <p data-i18n="home_dengue_text">
-        Brazil is the country most affected by dengue in the world. In 2024, over 10 million cases were recorded — a historic record — along with nearly 6,000 deaths.
+        Brazil is the country most affected by dengue
+        in the world. In 2024, over 10 million cases
+        were recorded — a historic record — along with
+        nearly 6,000 deaths.
       </p>
 
-      <div class="stats-grid">
+    </div>
 
-        <div class="stat-card">
-          <span class="stat-number">10M+</span>
-          <span class="stat-label" data-i18n="home_stat_cases">
-            cases in Brazil in 2024
-          </span>
-        </div>
 
-        <div class="stat-card">
-          <span class="stat-number">~6,000</span>
-          <span class="stat-label" data-i18n="home_stat_deaths">
-            deaths recorded in 2024
-          </span>
-        </div>
+    <div class="stats-grid">
 
-        <div class="stat-card">
-          <span class="stat-number">50%</span>
-          <span class="stat-label" data-i18n="home_stat_share">
-            of all Latin American cases
-          </span>
-        </div>
+      <div class="stat-card">
 
-        <div class="stat-card">
-          <span class="stat-number">4</span>
-          <span class="stat-label" data-i18n="home_stat_serotypes">
-            serotypes circulating simultaneously
-          </span>
-        </div>
+        <span class="stat-number">
+          10M+
+        </span>
+
+        <span
+          class="stat-label"
+          data-i18n="home_stat_cases"
+        >
+          cases in Brazil in 2024
+        </span>
 
       </div>
 
-      <p class="stat-source" data-i18n="home_stat_source">
-        Sources: Brazilian Ministry of Health, PAHO — 2024 data
-      </p>
 
-    </section>
+      <div class="stat-card">
 
-    <!-- WHAT IS PAKARINA -->
-    <section class="home-section">
+        <span class="stat-number">
+          ~6,000
+        </span>
 
-      <h2 data-i18n="home_summary_title">
-        What is Pakarina?
-      </h2>
-
-      <p data-i18n="home_summary_text">
-        Pakarina is an interdisciplinary initiative developed at the Federal University of Ouro Preto (UFOP) in partnership with UCASAL and Yncrea.
-      </p>
-
-    </section>
-
-    <!-- MODULES -->
-    <section class="home-section">
-
-      <h2 data-i18n="home_modules_title">
-        Platform Modules
-      </h2>
-
-      <div class="carousel-wrapper">
-
-        <button class="carousel-btn" onclick="slideCarousel(-1)">
-          &#8592;
-        </button>
-
-        <div class="carousel-viewport">
-          <div class="carousel-track" id="carousel-track"></div>
-        </div>
-
-        <button class="carousel-btn" onclick="slideCarousel(1)">
-          &#8594;
-        </button>
+        <span
+          class="stat-label"
+          data-i18n="home_stat_deaths"
+        >
+          deaths recorded in 2024
+        </span>
 
       </div>
 
-      <div class="carousel-dots" id="carousel-dots"></div>
 
-    </section>
+      <div class="stat-card">
 
-    <!-- MISSION -->
-    <section class="home-section home-mission-section">
+        <span class="stat-number">
+          50%
+        </span>
 
-      <h2 data-i18n="home_mission_title">
-        Our Mission
-      </h2>
+        <span
+          class="stat-label"
+          data-i18n="home_stat_share"
+        >
+          of all Latin American cases
+        </span>
 
-      <p data-i18n="home_mission_text">
-        Pakarina aims to build a sustainable technological ecosystem that strengthens monitoring capabilities and promotes collaboration.
+      </div>
+
+
+      <div class="stat-card">
+
+        <span class="stat-number">
+          4
+        </span>
+
+        <span
+          class="stat-label"
+          data-i18n="home_stat_serotypes"
+        >
+          serotypes circulating simultaneously
+        </span>
+
+      </div>
+
+      <p class="stats-source">
+        <span data-i18n="home_dengue_source">
+  Source: World Health Organization (WHO) and Pan American Health Organization (PAHO).
+</span>
       </p>
 
+    </div>
+
+  </div>
+
+</section>
+
+
+
+    <!-- ===================================================
+         PROJECT + PLATFORM MODULES
+         =================================================== -->
+
+    <div class="project-modules">
+
+
+      <!-- =================================================
+           WHAT IS PAKARINA?
+           ================================================= -->
+
+      <section class="pakarina-section">
+
+        <div class="section-heading">
+
+<span class="section-kicker" data-i18n="home_project">
+  THE PROJECT
+</span>
+
+          <h2 data-i18n="home_summary_title">
+            What is Pakarina?
+          </h2>
+
+          <p data-i18n="home_summary_text">
+            Pakarina is an interdisciplinary initiative
+            developed at the Federal University of Ouro Preto
+            (UFOP) in partnership with UCASAL and Yncrea.
+          </p>
+
+        </div>
+
+      </section>
+
+
+
+      <!-- =================================================
+           PLATFORM MODULES
+           ================================================= -->
+
+      <section class="modules-section">
+
+        <div class="section-heading">
+
+<span class="section-kicker" data-i18n="home_integrated_platform">
+  INTEGRATED PLATFORM
+</span>
+
+          <h2 data-i18n="home_modules_title">
+            Platform Modules
+          </h2>
+
+        </div>
+
+
+        <div class="carousel-wrapper">
+
+          <button
+            class="carousel-btn"
+            type="button"
+            onclick="slideCarousel(-1)"
+            aria-label="Previous module"
+          >
+            &#8592;
+          </button>
+
+
+          <div class="carousel-viewport">
+
+            <div
+              class="carousel-track"
+              id="carousel-track"
+            ></div>
+
+          </div>
+
+
+          <button
+            class="carousel-btn"
+            type="button"
+            onclick="slideCarousel(1)"
+            aria-label="Next module"
+          >
+            &#8594;
+          </button>
+
+        </div>
+
+
+        <div
+          class="carousel-dots"
+          id="carousel-dots"
+        ></div>
+
+      </section>
+
+    </div>
+
+
+
+    <!-- ===================================================
+         MISSION
+         =================================================== -->
+
+    <section class="home-mission-section">
+
+      <div class="mission-content">
+
+<span class="section-kicker" data-i18n="home_our_approach">
+  OUR APPROACH
+</span>
+
+        <h2 data-i18n="home_mission_title">
+          Our Mission
+        </h2>
+
+        <p data-i18n="home_mission_text">
+          Pakarina aims to build a sustainable technological
+          ecosystem that strengthens monitoring capabilities
+          and promotes collaboration.
+        </p>
+
+      </div>
+
     </section>
+
 
   </main>
+
+
+
+  <!-- =====================================================
+       FOOTER
+       ===================================================== -->
+
+  <footer class="site-footer">
+
+    <div class="footer-inner">
+
+
+      <!-- Brand -->
+
+      <div class="footer-brand">
+
+        <div class="footer-logo">
+
+          <img
+            src="assets/Logos/simple_logo.png"
+            alt="Pakarina"
+            class="footer-logo-mark"
+          >
+
+          <span class="footer-logo-name">
+            Pakarina
+          </span>
+
+        </div>
+
+
+        <p
+          class="footer-mission"
+          data-i18n="footer_mission"
+        >
+          Geo-referenced arboviral disease surveillance
+          platform (dengue, chikungunya, Zika, Oropouche)
+          using a One Health approach.
+        </p>
+
+      </div>
+
+
+
+      <!-- Institutions -->
+
+      <div class="footer-institutions-block">
+
+        <h3
+          class="footer-heading"
+          data-i18n="footer_institutions_title"
+        >
+          Partner institutions
+        </h3>
+
+
+        <ul class="footer-institutions">
+
+  <li>
+    <a
+      href="https://www.ufop.br/"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      UFOP — Universidade Federal de Ouro Preto
+    </a>
+  </li>
+
+  <li>
+    <a
+      href="https://www.ucasal.edu.ar/"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      UCASAL
+    </a>
+  </li>
+
+  <li>
+    <a
+      href="https://yncrea.fr/"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      Yncrea
+    </a>
+  </li>
+
+  <li>
+    <a
+      href="https://www.uemg.br/"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      UEMG
+    </a>
+  </li>
+
+  <li>
+    <a
+      href="https://minas.fiocruz.br/"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      Fiocruz Minas
+    </a>
+  </li>
+
+  <li>
+    <a
+      href="https://appweb.unsch.edu.pe/"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      Universidad Nacional de San Cristóbal de Huamanga
+    </a>
+  </li>
+
+</ul>
+
+      </div>
+
+
+
+      <!-- Contact -->
+
+      <div class="footer-contact-block">
+
+        <h3
+          class="footer-heading"
+          data-i18n="footer_contact_title"
+        >
+          Contact
+        </h3>
+
+
+        <p
+          class="footer-mission"
+          data-i18n="footer_contact_text"
+        >
+          A question, data to share, a collaboration to
+          propose?
+        </p>
+
+
+        <a
+          href="pages/contact.html"
+          class="footer-contact-btn"
+          data-i18n="footer_contact_btn"
+        >
+          Contact us
+        </a>
+
+      </div>
+
+
+    </div>
+
+
+
+    <!-- Footer bottom -->
+
+    <div class="footer-bottom">
+
+      <span class="footer-copyright">
+
+        © 2026 Pakarina —
+
+        <span data-i18n="footer_academic">
+          Multi-university academic project
+        </span>
+
+      </span>
+
+
+      <ul class="footer-links">
+
+        <li>
+          <a
+            href="index.html"
+            data-i18n="nav_home"
+          >
+            Home
+          </a>
+        </li>
+
+        <li>
+          <a
+            href="pages/dashboard.html"
+            data-i18n="nav_dashboard"
+          >
+            Dashboard
+          </a>
+        </li>
+
+        <li>
+          <a
+            href="pages/about.html"
+            data-i18n="nav_about"
+          >
+            About Us
+          </a>
+        </li>
+
+      </ul>
+
+    </div>
+
+  </footer>
+
+
+
+  <!-- =====================================================
+       JAVASCRIPT
+       ===================================================== -->
 
   <script src="js/app.js"></script>
   <script src="js/languageswitcher.js"></script>
   <script src="js/carousel.js"></script>
-<footer class="site-footer">
-  <div class="footer-inner">
 
-    <div class="footer-brand">
-      <div class="footer-logo">
-        <img src="assets/Logos/simple_logo.png" alt="Pakarina" class="footer-logo-mark">
-        <span class="footer-logo-name">Pakarina</span>
-      </div>
-      <p class="footer-mission" data-i18n="footer_mission">
-        Geo-referenced arboviral disease surveillance platform (dengue, chikungunya, Zika, Oropouche)
-        using a One Health approach.
-      </p>
-    </div>
-
-    <div class="footer-institutions-block">
-      <h3 class="footer-heading" data-i18n="footer_institutions_title">Partner institutions</h3>
-      <ul class="footer-institutions">
-        <li>UFOP — Universidade Federal de Ouro Preto</li>
-        <li>UCASAL</li>
-        <li>Yncrea</li>
-        <li>UEMG</li>
-        <li>Fiocruz Minas</li>
-        <li>Universidad Nacional de San Cristóbal de Huamanga</li>
-      </ul>
-    </div>
-
-    <div class="footer-contact-block">
-      <h3 class="footer-heading" data-i18n="footer_contact_title">Contact</h3>
-      <p class="footer-mission" style="margin-bottom: 0.8rem;" data-i18n="footer_contact_text">
-        A question, data to share, a collaboration to propose?
-      </p>
-      <a href="pages/contact.html" class="footer-contact-btn" data-i18n="footer_contact_btn">Contact us</a>
-    </div>
-
-  </div>
-
-  <div class="footer-bottom">
-    <span class="footer-copyright">© 2026 Pakarina — <span data-i18n="footer_academic">Multi-university academic project</span></span>
-    <ul class="footer-links" style="flex-direction: row; gap: 1.2rem;">
-      <li><a href="index.html" data-i18n="nav_home">Home</a></li>
-      <li><a href="pages/dashboard.html" data-i18n="nav_dashboard">Dashboard</a></li>
-      <li><a href="pages/about.html" data-i18n="nav_about">About Us</a></li>
-    </ul>
-  </div>
-</footer>
 </body>
+
 </html>

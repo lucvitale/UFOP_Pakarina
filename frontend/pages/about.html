@@ -5,14 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Pakarina — About Us</title>
     <link rel="icon" type="image/png" href="../assets/Logos/Favicon.png">
-    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/global.css" />
+    <link rel="stylesheet" href="../css/about.css" />
   </head>
+
   <body>
 
     <header class="topbar">
+
       <div class="logo">
-        <img src="../assets/Logos/horizontal_logo.png" alt="Pakarina">
-      </div> 
+        <img
+          src="../assets/Logos/horizontal_logo.png"
+          alt="Pakarina"
+        >
+      </div>
+
       <nav class="nav">
         <a href="../index.html" data-i18n="nav_home">Home</a>
         <a href="news.html" data-i18n="nav_news">News</a>
@@ -22,102 +29,504 @@
         <a href="about.html" data-i18n="nav_about">About Us</a>
         <a href="contact.html" data-i18n="nav_contact">Contact</a>
       </nav>
+
       <div class="topbar-right">
-        <span id="user-greeting" class="user-greeting"></span>
-        <a href="login.html"
+
+        <span
+          id="user-greeting"
+          class="user-greeting"
+        ></span>
+
+        <a
+          href="login.html"
           id="auth-btn"
-          class="auth-btn">
+          class="auth-btn"
+          data-i18n="nav_login"
+        >
           Login
         </a>
+
         <div class="lang-switcher">
-          <button id="lang-btn" class="lang-btn" onclick="toggleDropdown()">EN ▾</button>
-          <div id="lang-dropdown" class="lang-dropdown"></div>
+
+          <button
+            id="lang-btn"
+            class="lang-btn"
+            onclick="toggleDropdown()"
+          >
+            EN ▾
+          </button>
+
+          <div
+            id="lang-dropdown"
+            class="lang-dropdown"
+          ></div>
+
         </div>
-        
+
       </div>
+
     </header>
 
-    <main class="main about-main">
-      <section class="about-container">
 
-  <h1 data-i18n="about_title"></h1>
+    <main class="about-page">
 
-  <h2 data-i18n="about_section_project"></h2>
-  <p data-i18n="about_p1"></p>
 
-  <h2 data-i18n="about_section_mission"></h2>
-  <p data-i18n="about_p2"></p>
+      <!-- =====================================================
+           HERO
+           ===================================================== -->
 
-  <h2 data-i18n="about_section_environment"></h2>
-  <p data-i18n="about_p3"></p>
+      <section class="about-hero">
 
-  <h2 data-i18n="about_section_onehealth"></h2>
-  <p data-i18n="about_p4"></p>
+        <div class="about-hero-overlay"></div>
 
-  <h2 data-i18n="about_section_diseases"></h2>
-  <p data-i18n="about_p5"></p>
+        <div class="about-hero-content">
 
-  <h2 data-i18n="about_section_oropouche"></h2>
-  <p data-i18n="about_p6"></p>
+          <span class="about-hero-kicker">
+            PAKARINA
+          </span>
 
-  <h2 data-i18n="about_section_platform"></h2>
-  <p data-i18n="about_p7"></p>
+          <h1 data-i18n="about_title">
+            About Us
+          </h1>
 
-  <h2 data-i18n="about_section_vision"></h2>
-  <p data-i18n="about_p8"></p>
+          <p data-i18n="about_hero_subtitle">
+            A collaborative approach to arboviral disease surveillance,
+            environmental monitoring and public health.
+          </p>
 
-</section>
+        </div>
+
+        <div class="about-hero-location">
+          <span>●</span> Ouro Preto
+        </div>
+
+      </section>
+
+
+      <!-- =====================================================
+           ABOUT CONTENT
+           ===================================================== -->
+
+      <section class="about-content">
+
+
+        <!-- ===================================================
+             THE PROJECT
+             =================================================== -->
+
+        <section class="about-introduction">
+
+          <div class="about-section-heading">
+
+            <span
+              class="about-section-kicker"
+              data-i18n="about_kicker_project"
+            >
+              THE PROJECT
+            </span>
+
+            <h2 data-i18n="about_section_project">
+              The Project
+            </h2>
+
+          </div>
+
+          <p data-i18n="about_p1">
+            Pakarina is a spatio-temporal platform created in 2026
+            through the collaboration of professors and students
+            from multiple academic institutions.
+          </p>
+
+        </section>
+
+
+        <!-- ===================================================
+             MAIN AREAS
+             =================================================== -->
+
+        <div class="about-grid">
+
+
+          <!-- MISSION -->
+
+          <article class="about-section">
+
+            <span
+              class="about-section-kicker"
+              data-i18n="about_kicker_mission"
+            >
+              MISSION
+            </span>
+
+            <h2 data-i18n="about_section_mission">
+              Mission
+            </h2>
+
+            <p data-i18n="about_p2">
+              Pakarina aims to georeference arboviral occurrences
+              and bring together information, tools, devices and
+              people currently operating in separate environments,
+              recognizing that the dynamics of these diseases are
+              determined by interconnected factors.
+            </p>
+
+          </article>
+
+
+          <!-- ENVIRONMENT -->
+
+          <article class="about-section">
+
+            <span
+              class="about-section-kicker"
+              data-i18n="about_kicker_environment"
+            >
+              ENVIRONMENT
+            </span>
+
+            <h2 data-i18n="about_section_environment">
+              Environmental Context
+            </h2>
+
+            <p data-i18n="about_p3">
+              Climate variability influences abundance and vector
+              competence, while unplanned urbanization and
+              insufficient sanitation systems increase contact
+              between humans and vectors.
+            </p>
+
+          </article>
+
+
+          <!-- ONE HEALTH -->
+
+          <article class="about-section">
+
+            <span
+              class="about-section-kicker"
+              data-i18n="about_kicker_onehealth"
+            >
+              ONE HEALTH
+            </span>
+
+            <h2 data-i18n="about_section_onehealth">
+              One Health Approach
+            </h2>
+
+            <p data-i18n="about_p4">
+              The project adopts an integrated perspective that
+              considers human health, environmental conditions and
+              the factors that influence the transmission of
+              arboviral diseases.
+            </p>
+
+          </article>
+
+
+          <!-- DISEASES -->
+
+          <article class="about-section">
+
+            <span
+              class="about-section-kicker"
+              data-i18n="about_kicker_diseases"
+            >
+              DISEASES
+            </span>
+
+            <h2 data-i18n="about_section_diseases">
+              Arboviruses and Public Health
+            </h2>
+
+            <p data-i18n="about_p5">
+              Arboviral diseases represent a complex public health
+              challenge involving environmental, epidemiological
+              and social factors.
+            </p>
+
+          </article>
+
+        </div>
+
+
+        <!-- ===================================================
+             ARBOVIRAL SURVEILLANCE
+             =================================================== -->
+
+        <section class="about-highlight">
+
+          <div class="about-highlight-heading">
+
+            <span
+              class="about-section-kicker"
+              data-i18n="about_kicker_surveillance"
+            >
+              ARBOVIRAL SURVEILLANCE
+            </span>
+
+            <h2 data-i18n="about_section_oropouche">
+              Emerging Threats
+            </h2>
+
+          </div>
+
+          <p data-i18n="about_p6">
+            More recently, Oropouche virus has received increasing
+            attention due to its rapid geographic expansion in the
+            Americas. Its transmission is primarily associated
+            with biting midges, creating complex epidemiological
+            and ecological challenges for arboviral surveillance.
+          </p>
+
+        </section>
+
+
+        <!-- ===================================================
+             PLATFORM
+             =================================================== -->
+
+        <section class="about-platform">
+
+          <div class="about-platform-heading">
+
+            <span
+              class="about-section-kicker"
+              data-i18n="about_kicker_platform"
+            >
+              PLATFORM
+            </span>
+
+            <h2 data-i18n="about_section_platform">
+              Technological Platform
+            </h2>
+
+          </div>
+
+          <p data-i18n="about_p7">
+            At the core of the project, Pakarina develops a modern
+            web platform capable of integrating information from
+            sensors, surveillance devices, databases, mapping
+            systems, external services and educational resources,
+            creating an evolving and adaptable technological base.
+          </p>
+
+        </section>
+
+
+        <!-- ===================================================
+             FUTURE
+             =================================================== -->
+
+        <section class="about-vision">
+
+          <div class="about-section-heading">
+
+            <span
+              class="about-section-kicker"
+              data-i18n="about_kicker_future"
+            >
+              FUTURE
+            </span>
+
+            <h2 data-i18n="about_section_vision">
+              Vision
+            </h2>
+
+          </div>
+
+          <p data-i18n="about_p8">
+            Our vision is to build a sustainable technological
+            ecosystem that strengthens surveillance capabilities,
+            improves information accessibility and promotes
+            collaboration between technical and non-technical
+            participants, connecting people, information and action.
+          </p>
+
+        </section>
+
+      </section>
+
     </main>
+
+
+    <!-- =====================================================
+         SCRIPTS
+         ===================================================== -->
 
     <script src="../js/app.js"></script>
     <script src="../js/languageswitcher.js"></script>
     <script src="../js/navbar-auth.js"></script>
-  <footer class="site-footer">
-  <div class="footer-inner">
 
-    <div class="footer-brand">
-      <div class="footer-logo">
-        <div class="footer-logo">
-          <img src="../assets/Logos/simple_logo.png" alt="Pakarina" class="footer-logo-mark">
-          <span class="footer-logo-name">Pakarina</span>
+
+    <!-- =====================================================
+         FOOTER
+         ===================================================== -->
+
+    <footer class="site-footer">
+
+      <div class="footer-inner">
+
+
+        <!-- BRAND -->
+
+        <div class="footer-brand">
+
+          <div class="footer-logo">
+
+            <div class="footer-logo">
+
+              <img
+                src="../assets/Logos/simple_logo.png"
+                alt="Pakarina"
+                class="footer-logo-mark"
+              >
+
+              <span class="footer-logo-name">
+                Pakarina
+              </span>
+
+            </div>
+
+          </div>
+
+          <p
+            class="footer-mission"
+            data-i18n="footer_mission"
+          >
+            Geo-referenced arboviral disease surveillance platform
+            (dengue, chikungunya, Zika, Oropouche)
+            using a One Health approach.
+          </p>
+
         </div>
+
+
+        <!-- PARTNER INSTITUTIONS -->
+
+        <div class="footer-institutions-block">
+
+          <h3
+            class="footer-heading"
+            data-i18n="footer_institutions_title"
+          >
+            Partner institutions
+          </h3>
+
+          <ul class="footer-institutions">
+
+            <li>
+              UFOP — Universidade Federal de Ouro Preto
+            </li>
+
+            <li>
+              UCASAL
+            </li>
+
+            <li>
+              Yncrea
+            </li>
+
+            <li>
+              UEMG
+            </li>
+
+            <li>
+              Fiocruz Minas
+            </li>
+
+            <li>
+              Universidad Nacional de San Cristóbal de Huamanga
+            </li>
+
+          </ul>
+
+        </div>
+
+
+        <!-- CONTACT -->
+
+        <div class="footer-contact-block">
+
+          <h3
+            class="footer-heading"
+            data-i18n="footer_contact_title"
+          >
+            Contact
+          </h3>
+
+          <p
+            class="footer-mission"
+            style="margin-bottom: 0.8rem;"
+            data-i18n="footer_contact_text"
+          >
+            A question, data to share, a collaboration to propose?
+          </p>
+
+          <a
+            href="contact.html"
+            class="footer-contact-btn"
+            data-i18n="footer_contact_btn"
+          >
+            Contact us
+          </a>
+
+        </div>
+
       </div>
-      <p class="footer-mission" data-i18n="footer_mission">
-        Geo-referenced arboviral disease surveillance platform (dengue, chikungunya, Zika, Oropouche)
-        using a One Health approach.
-      </p>
-    </div>
 
-    <div class="footer-institutions-block">
-      <h3 class="footer-heading" data-i18n="footer_institutions_title">Partner institutions</h3>
-      <ul class="footer-institutions">
-        <li>UFOP — Universidade Federal de Ouro Preto</li>
-        <li>UCASAL</li>
-        <li>Yncrea</li>
-        <li>UEMG</li>
-        <li>Fiocruz Minas</li>
-        <li>Universidad Nacional de San Cristóbal de Huamanga</li>
-      </ul>
-    </div>
 
-    <div class="footer-contact-block">
-      <h3 class="footer-heading" data-i18n="footer_contact_title">Contact</h3>
-      <p class="footer-mission" style="margin-bottom: 0.8rem;" data-i18n="footer_contact_text">
-        A question, data to share, a collaboration to propose?
-      </p>
-      <a href="pages/contact.html" class="footer-contact-btn" data-i18n="footer_contact_btn">Contact us</a>
-    </div>
+      <!-- FOOTER BOTTOM -->
 
-  </div>
+      <div class="footer-bottom">
 
-  <div class="footer-bottom">
-    <span class="footer-copyright">© 2026 Pakarina — <span data-i18n="footer_academic">Multi-university academic project</span></span>
-    <ul class="footer-links" style="flex-direction: row; gap: 1.2rem;">
-      <li><a href="../index.html" data-i18n="nav_home">Home</a></li>
-      <li><a href="pages/dashboard.html" data-i18n="nav_dashboard">Dashboard</a></li>
-      <li><a href="pages/about.html" data-i18n="nav_about">About Us</a></li>
-    </ul>
-  </div>
-</footer>
+        <span class="footer-copyright">
+
+          © 2026 Pakarina —
+
+          <span data-i18n="footer_academic">
+            Multi-university academic project
+          </span>
+
+        </span>
+
+
+        <ul
+          class="footer-links"
+          style="flex-direction: row; gap: 1.2rem;"
+        >
+
+          <li>
+            <a
+              href="../index.html"
+              data-i18n="nav_home"
+            >
+              Home
+            </a>
+          </li>
+
+          <li>
+            <a
+              href="dashboard.html"
+              data-i18n="nav_dashboard"
+            >
+              Dashboard
+            </a>
+          </li>
+
+          <li>
+            <a
+              href="about.html"
+              data-i18n="nav_about"
+            >
+              About Us
+            </a>
+          </li>
+
+        </ul>
+
+      </div>
+
+    </footer>
+
   </body>
 </html>
