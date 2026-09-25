@@ -31,16 +31,16 @@
 - [Installation](#installation)
 - [Running the Project](#running-the-project)
 - [Environment Variables](#environment-variables)
+- [Dengue Risk Logic — Climate Indicators](#dengue-risk-logic--climate-indicators)
+  - [Why this exists](#why-this-exists)
+  - [Variables used and why](#variables-used-and-why)
+  - [Limitations / notes for contributors](#limitations--notes-for-contributors)
 
 </td>
 <td valign="top" width="50%">
 
 ### System & Development
 
-- [Dengue Risk Logic — Climate Indicators](#dengue-risk-logic--climate-indicators)
-  - [Why this exists](#why-this-exists)
-  - [Variables used and why](#variables-used-and-why)
-  - [Limitations / notes for contributors](#limitations--notes-for-contributors)
 - [News Module](#news-module)
   - [Purpose](#purpose)
   - [Features](#features)
